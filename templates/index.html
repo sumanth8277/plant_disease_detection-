@@ -1,0 +1,224 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="hero-container">
+        <div class="hero-content">
+            <span class="badge category-badge">🌱 Intelligent Agronomic Advisory</span>
+            <h1 class="hero-title">Agrotech</h1>
+            <h2 class="hero-tagline">Plant Disease Detection and Smart Pesticide &amp; Fertilizer</h2>
+            <p class="hero-subtitle">
+                Upload a plant leaf photograph to receive real-time deep-learning foliar disease diagnosis, paired with targeted pest management and growth-stage fertilizer recommendations.
+            </p>
+            <div class="hero-buttons">
+                <a href="#upload" class="btn btn-primary">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                        <polyline points="17 8 12 3 7 8"/>
+                        <line x1="12" y1="3" x2="12" y2="15"/>
+                    </svg>
+                    Upload Leaf Image
+                </a>
+                <a href="#how-it-works" class="btn btn-outline">
+                    How It Works ↓
+                </a>
+            </div>
+        </div>
+        <div class="hero-graphic">
+            <div class="leaf-card-preview">
+                <div class="agrotech-hero-badge-logo">
+                    <svg class="agrotech-hero-svg" width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Shield Outer Ring -->
+                        <rect x="6" y="6" width="84" height="84" rx="24" fill="url(#hero-bg-grad)" stroke="#34d399" stroke-width="2" stroke-dasharray="6 4"/>
+                        <!-- Botanical Leaf Geometry -->
+                        <path d="M48 18C48 18 69 28 71 50C73 71 48 80 48 80C48 80 23 71 25 50C27 28 48 18 48 18Z" fill="url(#leaf-main-grad)" stroke="#10b981" stroke-width="2.5" stroke-linejoin="round"/>
+                        <!-- Central Spine -->
+                        <path d="M48 24V74" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round"/>
+                        <!-- Digital Circuit Veins -->
+                        <path d="M48 36L61 30" stroke="#a7f3d0" stroke-width="2" stroke-linecap="round"/>
+                        <circle cx="61" cy="30" r="3" fill="#34d399" stroke="#ffffff" stroke-width="1"/>
+                        <path d="M48 45L34 39" stroke="#a7f3d0" stroke-width="2" stroke-linecap="round"/>
+                        <circle cx="34" cy="39" r="3" fill="#34d399" stroke="#ffffff" stroke-width="1"/>
+                        <path d="M48 54L62 49" stroke="#a7f3d0" stroke-width="2" stroke-linecap="round"/>
+                        <circle cx="62" cy="49" r="3" fill="#34d399" stroke="#ffffff" stroke-width="1"/>
+                        <path d="M48 63L36 59" stroke="#a7f3d0" stroke-width="2" stroke-linecap="round"/>
+                        <circle cx="36" cy="59" r="3" fill="#34d399" stroke="#ffffff" stroke-width="1"/>
+                        <!-- Gradients -->
+                        <defs>
+                            <linearGradient id="hero-bg-grad" x1="6" y1="6" x2="90" y2="90" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#064e3b" stop-opacity="0.9"/>
+                                <stop offset="1" stop-color="#022c22" stop-opacity="0.98"/>
+                            </linearGradient>
+                            <linearGradient id="leaf-main-grad" x1="28" y1="20" x2="68" y2="78" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#10b981"/>
+                                <stop offset="0.6" stop-color="#059669"/>
+                                <stop offset="1" stop-color="#047857"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <div class="leaf-card-caption">
+                    <strong class="agrotech-card-brand-title">Agrotech</strong>
+                    <span class="agrotech-card-brand-sub">Smart Disease Detection &amp; Crop Care</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <!-- Notice Banner -->
+    <div class="notice-card">
+        <div class="notice-icon">🌱</div>
+        <div class="notice-body">
+            <h3>Agrotech AI Diagnosis &amp; Recommendation Pipeline</h3>
+            <p>
+                The image upload, deep-learning computer vision, and agronomic advisory systems are fully integrated.
+                Select or drag &amp; drop an affected leaf image below to run diagnosis and generate crop-care recommendations.
+            </p>
+        </div>
+    </div>
+
+    <!-- Upload Section -->
+    <section id="upload" class="upload-section">
+        <div class="card upload-card">
+            <div class="card-header">
+                <div>
+                    <h2>📤 Upload Plant Leaf Image</h2>
+                    <p class="section-desc">Select or drag &amp; drop a clear photo of an affected plant leaf for automated analysis.</p>
+                </div>
+                <span class="tag tag-active">Analysis Ready</span>
+            </div>
+
+            <div class="card-body">
+                <form id="upload-form" action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
+                    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                    <div id="dropzone" class="dropzone">
+                        <input type="file" id="leaf-image-input" name="leaf_image" accept=".jpg,.jpeg,.png,image/jpeg,image/png" class="file-input" required>
+                        <div class="dropzone-prompt" id="dropzone-prompt">
+                            <div class="dropzone-icon">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                    <polyline points="17 8 12 3 7 8"/>
+                                    <line x1="12" y1="3" x2="12" y2="15"/>
+                                </svg>
+                            </div>
+                            <h3>Drag & Drop Leaf Photo Here</h3>
+                            <p>or <span class="dropzone-browse">browse from your computer</span></p>
+                            <div class="upload-specs">
+                                <span>Formats: <strong>JPG, JPEG, PNG</strong></span>
+                                <span>•</span>
+                                <span>Max Size: <strong>5 MB</strong></span>
+                            </div>
+                        </div>
+
+                        <!-- Image Preview Area -->
+                        <div id="preview-container" class="preview-container" style="display: none;">
+                            <img id="image-preview" src="" alt="Selected plant leaf preview" class="preview-image">
+                            <div class="preview-details">
+                                <span id="preview-filename" class="preview-filename">filename.jpg</span>
+                                <span id="preview-filesize" class="preview-filesize">0 KB</span>
+                            </div>
+                            <button type="button" id="remove-image-btn" class="btn btn-sm btn-danger">
+                                ✕ Remove & Select Another
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Client-Side Validation Feedback -->
+                    <div id="client-error-box" class="client-feedback error-feedback" style="display: none;" role="alert"></div>
+
+                    <!-- Submission Controls -->
+                    <div class="upload-actions">
+                        <button type="submit" id="submit-btn" class="btn btn-primary btn-lg" disabled>
+                            <span class="btn-text">Analyze Leaf Health</span>
+                            <span class="btn-spinner" style="display: none;">
+                                <span class="spinner"></span> Processing...
+                            </span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="section-block">
+        <div class="section-header">
+            <h2 class="section-title">How the Diagnostic System Works</h2>
+            <p class="section-subtitle">A seamless 4-step workflow bridging foliar photography with agronomic advisory</p>
+        </div>
+        <div class="steps-grid">
+            <div class="step-card active-step">
+                <div class="step-badge">Step 1</div>
+                <div class="step-icon">📸</div>
+                <h3>1. Leaf Image Upload</h3>
+                <p>Upload a clear photo of an infected or suspect crop leaf (Tomato, Potato, Corn, Apple, etc.).</p>
+                <span class="step-tag tag-active">Operational</span>
+            </div>
+            <div class="step-card active-step">
+                <div class="step-badge">Step 2</div>
+                <div class="step-icon">🛡️</div>
+                <h3>2. Server Validation</h3>
+                <p>Pillow checks file integrity, sanitizes filenames, and verifies image quality.</p>
+                <span class="step-tag tag-active">Operational</span>
+            </div>
+            <div class="step-card active-step">
+                <div class="step-badge">Step 3</div>
+                <div class="step-icon">🧠</div>
+                <h3>3. AI Model Inference</h3>
+                <p>Deep Learning MobileNetV2 classifies crop disease and calculates prediction confidence.</p>
+                <span class="step-tag tag-active">Operational</span>
+            </div>
+            <div class="step-card active-step">
+                <div class="step-badge">Step 4</div>
+                <div class="step-icon">💊</div>
+                <h3>4. Smart Advisory</h3>
+                <p>Retrieve tailored pesticide treatment, organic prevention guidelines, and fertilizer schedules.</p>
+                <span class="step-tag tag-active">Operational</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section-block">
+        <div class="section-header">
+            <h2 class="section-title">System Capabilities</h2>
+            <p class="section-subtitle">Engineered features designed for agricultural disease mitigation</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">📁</div>
+                <h3>Secure Image Upload</h3>
+                <p>Cryptographically secure UUID file naming, decompression bomb prevention, and path traversal protection.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🗄️</div>
+                <h3>Diagnostic Audit History</h3>
+                <p>Reliable tracking for user accounts, scan history logs, disease guidelines, and fertilizer plans.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔬</div>
+                <h3>Botanical Disease Library</h3>
+                <p>Comprehensive pathology mapping across 38 foliar conditions including blights, spots, rusts, and viruses.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🤖</div>
+                <h3>MobileNetV2 Deep Learning</h3>
+                <p>Multi-class transfer learning architecture providing high-precision, low-latency foliar disease diagnosis.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🧪</div>
+                <h3>Targeted Pesticide Advisory</h3>
+                <p>Vetted disease management measures to mitigate crop loss while avoiding excessive chemical application.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌱</div>
+                <h3>Fertilizer Schedules</h3>
+                <p>Stage-specific crop nutrition advice tailored to plant growth stages and soil nutrient context.</p>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

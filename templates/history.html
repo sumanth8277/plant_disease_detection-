@@ -1,0 +1,133 @@
+{% extends "base.html" %}
+
+{% block title %}My Prediction History — Agrotech{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="breadcrumb">
+        <a href="{{ url_for('index') }}">Home</a> &rsaquo; <span>My Prediction History</span>
+    </div>
+
+    <div class="history-header-card">
+        <div class="history-title-group">
+            <span class="history-icon">📜</span>
+            <div>
+                <h2>Diagnostic History Dashboard</h2>
+                <p class="section-desc">
+                    Review your past leaf disease predictions, confidence metrics, and verified agronomic treatment reports.
+                </p>
+            </div>
+        </div>
+        <div class="history-header-actions">
+            <a href="{{ url_for('upload') }}" class="btn btn-primary btn-sm">
+                📤 New Diagnosis
+            </a>
+        </div>
+    </div>
+
+    {% if db_error %}
+        <div class="alert alert-danger" role="alert">
+            <span class="alert-icon">⚠️</span>
+            <span class="alert-text">{{ db_error }}</span>
+        </div>
+    {% endif %}
+
+    <div class="card history-card">
+        <div class="card-header history-card-header">
+            <h3>Saved Records ({{ total }} total)</h3>
+            <span class="text-muted small">Sorted by newest first</span>
+        </div>
+
+        <div class="card-body p-0">
+            {% if predictions and predictions|length > 0 %}
+                <div class="table-responsive">
+                    <table class="table history-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Date &amp; Time</th>
+                                <th>Crop</th>
+                                <th>Diagnostic Condition</th>
+                                <th>Confidence</th>
+                                <th>Model</th>
+                                <th class="text-right">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for pred in predictions %}
+                                <tr>
+                                    <td><code>#{{ pred.id }}</code></td>
+                                    <td>{{ pred.created_at.strftime('%Y-%m-%d %H:%M') if pred.created_at and pred.created_at.strftime else (pred.created_at or 'Recent') }}</td>
+                                    <td>
+                                        <span class="badge badge-crop">{{ pred.crop_name }}</span>
+                                    </td>
+                                    <td>
+                                        {% if pred.is_healthy %}
+                                            <span class="badge badge-healthy">✅ {{ pred.disease_name }}</span>
+                                        {% else %}
+                                            <span class="badge badge-danger">⚠️ {{ pred.disease_name }}</span>
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        <div class="history-conf-cell">
+                                            <strong>{{ pred.confidence_percent }}%</strong>
+                                            <div class="history-mini-meter">
+                                                <div class="meter-fill {% if pred.confidence >= 0.8 %}fill-high{% elif pred.confidence >= 0.5 %}fill-med{% else %}fill-low{% endif %}"
+                                                     style="width: {{ pred.confidence_percent }}%;"></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td><small class="text-muted">{{ pred.model_version }}</small></td>
+                                    <td class="text-right">
+                                        <a href="{{ url_for('view_result', prediction_id=pred.id) }}" class="btn btn-secondary btn-sm">
+                                            🔍 View Report
+                                        </a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Pagination Controls -->
+                {% if total_pages > 1 %}
+                    <div class="pagination-bar">
+                        {% if page > 1 %}
+                            <a href="{{ url_for('auth.history', page=page-1) }}" class="btn btn-outline btn-sm">
+                                &larr; Previous
+                            </a>
+                        {% else %}
+                            <span class="btn btn-outline btn-sm disabled">&larr; Previous</span>
+                        {% endif %}
+
+                        <span class="page-indicator">
+                            Page <strong>{{ page }}</strong> of <strong>{{ total_pages }}</strong>
+                        </span>
+
+                        {% if page < total_pages %}
+                            <a href="{{ url_for('auth.history', page=page+1) }}" class="btn btn-outline btn-sm">
+                                Next &rarr;
+                            </a>
+                        {% else %}
+                            <span class="btn btn-outline btn-sm disabled">Next &rarr;</span>
+                        {% endif %}
+                    </div>
+                {% endif %}
+
+            {% else %}
+                <!-- Empty State -->
+                <div class="empty-state-box text-center">
+                    <div class="empty-state-icon">🌱</div>
+                    <h3>No Diagnostic Records Found</h3>
+                    <p class="text-muted">You have not submitted any plant leaf images under this account yet.</p>
+                    <div class="mt-3">
+                        <a href="{{ url_for('upload') }}" class="btn btn-primary">
+                            📤 Analyze Your First Leaf Image
+                        </a>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,514 @@
+{% extends "base.html" %}
+
+{% block title %}Diagnosis Results — {{ result.crop_name }} {{ result.disease_name }} — Agrotech{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="breadcrumb">
+        <a href="{{ url_for('index') }}">Home</a> &rsaquo;
+        <a href="{{ url_for('upload') }}">Upload</a> &rsaquo;
+        <span>Diagnosis & Recommendations</span>
+    </div>
+
+    <!-- Diagnostic Banner -->
+    <div class="results-header-banner">
+        <div class="header-status-indicator {% if result.is_healthy %}status-healthy{% else %}status-disease{% endif %}">
+            <span class="status-icon">{% if result.is_healthy %}🌱{% else %}🔬{% endif %}</span>
+            <div class="header-text">
+                <h2>Diagnostic Analysis & Advisory Report</h2>
+                <p>AI-powered leaf vision diagnosis matched with vetted agronomic recommendations.</p>
+            </div>
+        </div>
+        <div class="header-actions">
+            <button onclick="window.print()" class="btn btn-secondary btn-sm no-print">
+                🖨️ Print Report
+            </button>
+            <a href="{{ url_for('upload') }}" class="btn btn-primary btn-sm no-print">
+                📤 Analyze Another Leaf
+            </a>
+        </div>
+    </div>
+
+    <div class="results-layout-grid">
+        <!-- Left Column: Visual Leaf Inspection & Top Predictions -->
+        <div class="results-sidebar-col">
+            <!-- Leaf Image Card -->
+            <div class="card result-card">
+                <div class="card-header">
+                    <h3>Uploaded Leaf Sample</h3>
+                </div>
+                <div class="card-body text-center">
+                    <div class="result-image-box">
+                        {% if result.image_path %}
+                            {% set img_filename = result.image_path.split('/')[-1] %}
+                            <img src="{{ url_for('serve_upload', filename=img_filename) }}"
+                                 alt="Diagnosed plant leaf"
+                                 class="result-leaf-img">
+                        {% else %}
+                            <div class="placeholder-img-box">Image not available</div>
+                        {% endif %}
+                    </div>
+                    <div class="image-meta-info">
+                        <span class="text-muted small">Reference: <code>{{ result.upload_id or result.prediction_id or 'N/A' }}</code></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Classification Confidence & Top-K Predictions -->
+            <div class="card result-card">
+                <div class="card-header">
+                    <h3>Classification Confidence</h3>
+                </div>
+                <div class="card-body">
+                    <div class="confidence-summary">
+                        <div class="confidence-big-stat">
+                            <span class="stat-num">{{ result.confidence_percent }}%</span>
+                            <span class="stat-label">Model Confidence</span>
+                        </div>
+                        <div class="confidence-meter-bar">
+                            <div class="meter-fill {% if result.confidence >= 0.8 %}fill-high{% elif result.confidence >= 0.5 %}fill-med{% else %}fill-low{% endif %}"
+                                 style="width: {{ result.confidence_percent }}%;"></div>
+                        </div>
+                    </div>
+
+                    {% if result.top_predictions and result.top_predictions|length > 1 %}
+                        {% if result.disease_code == 'UNSUPPORTED_SPECIMEN' or not result.is_supported %}
+                            <h4 class="top-preds-title">Candidate Matches (Inconclusive)</h4>
+                            <p class="small text-muted mb-2">Weak model activations across closed-set classes (unsupported input):</p>
+                        {% else %}
+                            <h4 class="top-preds-title">Alternative Diagnoses</h4>
+                        {% endif %}
+                        <ul class="top-predictions-list">
+                            {% for pred in result.top_predictions %}
+                                <li class="top-pred-item {% if loop.first and result.is_supported %}active-pred{% endif %}">
+                                    <div class="pred-item-header">
+                                        <span class="pred-name">
+                                            <strong>{{ pred.crop_name }}</strong>: {{ pred.disease_name }}
+                                        </span>
+                                        <span class="pred-score">{{ pred.confidence_percent }}%</span>
+                                    </div>
+                                    <div class="pred-mini-bar">
+                                        <div class="mini-fill" style="width: {{ pred.confidence_percent }}%;"></div>
+                                    </div>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+
+                    <div class="audit-metadata-box">
+                        <p class="small text-muted">
+                            <strong>Model Version:</strong> {{ result.model_version }}<br>
+                            <strong>Audit Log:</strong>
+                            {% if result.persisted %}
+                                <span class="text-success">✅ Persisted in MySQL (ID: #{{ result.prediction_id }})</span>
+                            {% else %}
+                                <span class="text-warning">⚡ {{ result.persist_message }}</span>
+                            {% endif %}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column: Hierarchical Diagnosis, Plant Identification, Symptoms, Treatment & Fertilizer -->
+        <div class="results-main-col">
+            <!-- Special Notification for Neem Specimen -->
+            {% if result.is_neem or result.disease_code == 'NEEM_DISEASE_UNSUPPORTED' %}
+                <div class="card result-card mb-3" style="border-left: 6px solid #2e7d32; background-color: #f1f8e9;">
+                    <div class="card-body" style="padding: 1.25rem 1.5rem;">
+                        <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                            <span style="font-size: 2.2rem; line-height: 1;">🌿</span>
+                            <div>
+                                <h3 style="color: #1b5e20; margin-top: 0; margin-bottom: 0.5rem; font-size: 1.25rem;">
+                                    Neem identified, but neem disease detection is not yet supported
+                                </h3>
+                                <p style="color: #2e7d32; margin-bottom: 0.5rem; font-size: 0.95rem; line-height: 1.5;">
+                                    The hierarchical plant classifier verified this leaf as <strong>Neem (<em>Azadirachta indica</em>)</strong>. However, foliar disease diagnosis and chemical spray recommendations for Neem are not currently supported by this model version.
+                                </p>
+                                <p class="small text-muted mb-0" style="color: #4a6b4a !important;">
+                                    <strong>🛡️ Agricultural Protection Protocol:</strong> To preserve tree vigor and prevent chemical misapplication, crop-specific pesticide and fertilizer recommendations are strictly withheld for Neem.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+
+            <!-- Primary Hierarchical Diagnosis Card -->
+            <div class="card result-card main-diagnosis-card">
+                <div class="card-body">
+                    <!-- Status Badges -->
+                    <div class="diagnosis-top-row">
+                        <div class="crop-badge-group">
+                            <span class="badge badge-crop">{{ result.identified_plant or result.crop_name }}</span>
+                            {% if result.is_plant_supported %}
+                                <span class="badge badge-healthy">✅ Plant Species Supported</span>
+                            {% else %}
+                                <span class="badge badge-warning">⚠️ Plant Species Unsupported</span>
+                            {% endif %}
+
+                            {% if result.is_disease_supported %}
+                                <span class="badge badge-danger">🔬 Disease Diagnosed</span>
+                            {% elif result.is_neem %}
+                                <span class="badge badge-warning">🌿 Neem Disease Unsupported</span>
+                            {% elif result.is_healthy %}
+                                <span class="badge badge-healthy">🌱 Healthy Plant</span>
+                            {% else %}
+                                <span class="badge badge-warning">⚠️ Disease Inconclusive</span>
+                            {% endif %}
+                            <span class="badge badge-code">Code: {{ result.disease_code }}</span>
+                        </div>
+                    </div>
+
+                    <!-- Distinct Field 1: Identified Plant Species -->
+                    <div class="hierarchical-field-block mb-3" style="border-bottom: 1px solid #e0e0e0; padding-bottom: 0.75rem;">
+                        <span class="text-muted small" style="text-transform: uppercase; font-weight: 600; letter-spacing: 0.5px;">Identified Plant Species</span>
+                        <div style="display: flex; align-items: baseline; gap: 0.75rem; margin-top: 0.25rem;">
+                            <h2 style="font-size: 1.5rem; margin: 0; color: #2e7d32;">{{ result.identified_plant or result.crop_name }}</h2>
+                            <span class="small text-muted">
+                                {% if result.is_plant_supported %}
+                                    (Plant Classifier Confidence: <strong>{{ result.plant_confidence_percent or result.confidence_percent }}%</strong>)
+                                {% else %}
+                                    (Species verification inconclusive)
+                                {% endif %}
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Distinct Field 2: Predicted Foliar Condition / Disease -->
+                    <div class="hierarchical-field-block mb-3" style="border-bottom: 1px solid #e0e0e0; padding-bottom: 0.75rem;">
+                        <span class="text-muted small" style="text-transform: uppercase; font-weight: 600; letter-spacing: 0.5px;">Predicted Disease / Condition</span>
+                        <h1 class="diagnosis-heading" style="margin-top: 0.25rem; margin-bottom: 0.5rem; font-size: 1.6rem;">
+                            {{ result.predicted_disease or result.disease_name }}
+                        </h1>
+                        <p class="diagnosis-subheading mb-0" style="font-size: 0.95rem;">
+                            {{ result.disease_status_message or ('Condition detected in ' ~ result.crop_name ~ ' leaf sample.') }}
+                        </p>
+                    </div>
+
+                    <!-- Distinct Field 3: Model Confidence & Meaning -->
+                    <div class="hierarchical-field-block">
+                        <span class="text-muted small" style="text-transform: uppercase; font-weight: 600; letter-spacing: 0.5px;">Confidence Score & Diagnostic Meaning</span>
+                        <div style="background-color: #f9f9f9; border-radius: 6px; padding: 0.75rem 1rem; margin-top: 0.35rem;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem;">
+                                <span style="font-weight: 600; font-size: 1rem; color: #333;">Raw Model Score: {{ result.confidence_percent }}%</span>
+                                <span class="small text-muted">Entropy: {{ result.normalized_entropy }} | Margin: {{ result.prediction_margin }}</span>
+                            </div>
+                            <p class="small text-muted mb-0" style="line-height: 1.4;">
+                                <strong>Diagnostic Meaning:</strong> {{ result.confidence_meaning or 'Statistical classification confidence derived from convolutional neural network feature representations.' }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gemini Supplementary Multimodal Botanical Analysis Card -->
+            <div class="card result-card gemini-analysis-card" id="gemini-card" style="border: 1px solid #c7d2fe; box-shadow: 0 4px 14px rgba(99, 102, 241, 0.08); margin-bottom: 1.5rem;">
+                <div class="card-header header-with-icon" style="background: linear-gradient(135deg, #eef2ff 0%, #f5f3ff 100%); border-bottom: 1px solid #e0e7ff; display: flex; justify-content: space-between; align-items: center; padding: 0.85rem 1.25rem;">
+                    <div style="display: flex; align-items: center; gap: 0.65rem;">
+                        <span class="section-icon" style="font-size: 1.35rem;">✨</span>
+                        <div>
+                            <h3 style="margin: 0; color: #3730a3; font-size: 1.15rem; font-weight: 700;">Gemini Supplementary Botanical Analysis</h3>
+                            <span class="small text-muted" style="font-size: 0.78rem;">Multimodal Vision Layer &bull; Independent of CNN Classifier</span>
+                        </div>
+                    </div>
+                    <span class="badge" style="background: #4f46e5; color: #fff; font-size: 0.75rem; padding: 0.3rem 0.65rem; border-radius: 9999px;">
+                        {{ result.gemini_analysis.model if result.gemini_analysis and result.gemini_analysis.model else 'Gemini Multimodal AI' }}
+                    </span>
+                </div>
+                <div class="card-body" id="gemini-card-body" style="padding: 1.25rem;">
+                    {% if result.gemini_analysis and result.gemini_analysis.status == 'success' %}
+                        {% set g = result.gemini_analysis %}
+                        <div class="gemini-results-grid">
+                            <!-- Species Identification Row -->
+                            <div class="gemini-field-row" style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid #f1f5f9; padding-bottom: 0.75rem; margin-bottom: 0.85rem;">
+                                <div>
+                                    <span class="text-muted small" style="text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; color: #64748b; font-size: 0.75rem;">Observed Plant Species</span>
+                                    <h4 style="margin: 0.2rem 0 0 0; color: #1e1b4b; font-size: 1.2rem; font-weight: 700;">{{ g.identified_plant_species }}</h4>
+                                </div>
+                                <span class="badge {% if g.certainty_level == 'High' %}badge-healthy{% elif g.certainty_level == 'Moderate' %}badge-warning{% else %}badge-code{% endif %}" style="font-size: 0.8rem; padding: 0.35rem 0.65rem;">
+                                    Observation Certainty: {{ g.certainty_level }}
+                                </span>
+                            </div>
+
+                            <!-- Visual Symptoms -->
+                            <div class="gemini-field-block mb-3" style="border-bottom: 1px solid #f1f5f9; padding-bottom: 0.75rem;">
+                                <span class="text-muted small" style="text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; color: #64748b; font-size: 0.75rem;">Visual Foliar Symptoms</span>
+                                <p style="margin: 0.3rem 0 0 0; color: #334155; line-height: 1.55; font-size: 0.95rem;">
+                                    {{ g.visual_symptoms }}
+                                </p>
+                            </div>
+
+                            <!-- Suspected Pathology & Image Clarity Box -->
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 0.85rem;">
+                                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 0.75rem 0.9rem;">
+                                    <span class="text-muted small" style="text-transform: uppercase; font-weight: 700; font-size: 0.72rem; color: #64748b;">Suspected Condition</span>
+                                    <p style="margin: 0.25rem 0 0 0; color: #0f172a; font-weight: 600; font-size: 0.95rem;">{{ g.suspected_condition }}</p>
+                                </div>
+                                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 0.75rem 0.9rem;">
+                                    <span class="text-muted small" style="text-transform: uppercase; font-weight: 700; font-size: 0.72rem; color: #64748b;">Specimen Image Clarity</span>
+                                    <p style="margin: 0.25rem 0 0 0; color: #0f172a; font-weight: 600; font-size: 0.95rem;">
+                                        {% if g.is_leaf_clear %}
+                                            <span style="color: #16a34a;">✅ Clear & In Focus</span>
+                                        {% else %}
+                                            <span style="color: #ea580c;">⚠️ Obscured or Ambiguous</span>
+                                        {% endif %}
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Botanical Observations -->
+                            {% if g.botanical_observations %}
+                                <div class="gemini-field-block mb-3" style="background: #faf5ff; border: 1px solid #f3e8ff; border-radius: 8px; padding: 0.75rem 0.9rem;">
+                                    <span class="text-muted small" style="text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; color: #7e22ce; font-size: 0.72rem;">Botanical Observations</span>
+                                    <p style="margin: 0.25rem 0 0 0; color: #581c87; font-style: italic; line-height: 1.5; font-size: 0.92rem;">
+                                        &ldquo;{{ g.botanical_observations }}&rdquo;
+                                    </p>
+                                </div>
+                            {% endif %}
+
+                            <!-- Recommended Next Step -->
+                            {% if g.recommended_next_step %}
+                                <div style="background: #eff6ff; border-left: 4px solid #3b82f6; padding: 0.65rem 0.9rem; border-radius: 4px; margin-bottom: 0.85rem;">
+                                    <span class="small" style="font-weight: 700; color: #1d4ed8;">🌱 Recommended Next Step: </span>
+                                    <span class="small" style="color: #1e40af;">{{ g.recommended_next_step }}</span>
+                                </div>
+                            {% endif %}
+
+                            <!-- Safety & Separation Disclaimer -->
+                            <div style="background: #fafafa; border: 1px solid #e5e5e5; border-radius: 6px; padding: 0.6rem 0.85rem;">
+                                <p class="small text-muted mb-0" style="font-size: 0.78rem; line-height: 1.4;">
+                                    <strong>🛡️ Architectural Independence:</strong> {{ g.disclaimer }}
+                                </p>
+                            </div>
+                        </div>
+
+                    {% else %}
+                        <!-- Gemini Status when not yet run, unavailable, or rate limited -->
+                        <div id="gemini-fallback-box" style="padding: 0.5rem 0;">
+                            <div style="display: flex; align-items: flex-start; gap: 0.85rem; margin-bottom: 0.75rem;">
+                                <span style="font-size: 1.6rem; line-height: 1;">ℹ️</span>
+                                <div>
+                                    <h4 style="margin: 0 0 0.25rem 0; font-size: 1rem; color: #334155;">
+                                        {% if result.gemini_analysis and result.gemini_analysis.status == 'not_configured' %}
+                                            Gemini API Key Not Configured
+                                        {% elif result.gemini_analysis and result.gemini_analysis.status == 'rate_limited' %}
+                                            Gemini Rate Limit Exceeded
+                                        {% elif result.gemini_analysis and result.gemini_analysis.status == 'unavailable' %}
+                                            Gemini Service Temporarily Busy
+                                        {% else %}
+                                            Supplementary Multimodal AI Analysis
+                                        {% endif %}
+                                    </h4>
+                                    <p class="small text-muted mb-0" style="line-height: 1.45;">
+                                        {{ result.gemini_analysis.botanical_observations if (result.gemini_analysis and result.gemini_analysis.botanical_observations) else 'Supplementary multimodal vision analysis provides botanical species recognition and visible symptom descriptions without overriding CNN classification.' }}
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div style="display: flex; gap: 0.75rem; align-items: center; margin-top: 0.65rem;">
+                                <button type="button" class="btn btn-primary btn-sm" id="btn-run-gemini" onclick="triggerGeminiAnalysis('{{ result.prediction_id or result.upload_id }}')">
+                                    <span id="gemini-btn-icon">✨</span>
+                                    <span id="gemini-btn-text">Run Gemini Botanical Analysis</span>
+                                </button>
+                                <span id="gemini-loading-spinner" style="display: none; font-size: 0.85rem; color: #4f46e5; font-weight: 600;">
+                                    ⏳ Analyzing leaf imagery with Gemini AI...
+                                </span>
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Disease Management & Treatment Guidance -->
+            <div class="card result-card">
+                <div class="card-header header-with-icon">
+                    <span class="section-icon">🩺</span>
+                    <h3>Agronomic Guidance & Treatment Measures</h3>
+                </div>
+                <div class="card-body">
+                    {% if result.has_disease_guidance and result.disease_recommendation %}
+                        {% set rec = result.disease_recommendation %}
+
+                        <!-- Symptoms Section -->
+                        <div class="guidance-block">
+                            <h4 class="guidance-subtitle">🔍 Observed Foliar Symptoms</h4>
+                            <p class="guidance-text">{{ rec.symptoms }}</p>
+                        </div>
+
+                        <!-- Cultural & IPM Treatments -->
+                        <div class="guidance-block">
+                            <h4 class="guidance-subtitle">🌿 Integrated Pest Management (IPM) & Cultural Controls</h4>
+                            <div class="treatment-box">
+                                <p class="guidance-text">{{ rec.treatment_guidance }}</p>
+                            </div>
+                        </div>
+
+                        <!-- Prevention Measures -->
+                        <div class="guidance-block">
+                            <h4 class="guidance-subtitle">🛡️ Prevention & Sanitation Practices</h4>
+                            <p class="guidance-text">{{ rec.prevention_guidance }}</p>
+                        </div>
+
+                        <!-- Source Reference & Review Status -->
+                        <div class="source-attribution">
+                            <span class="attr-item"><strong>Source Reference:</strong> {{ rec.source_reference or 'Agricultural Extension Guidelines' }}</span>
+                            <span class="attr-item"><strong>Review Status:</strong> <span class="tag tag-active">{{ rec.review_status|replace('_', ' ')|title }}</span></span>
+                        </div>
+
+                    {% else %}
+                        <!-- Fallback / Unsupported Guidance Notice -->
+                        <div class="notice-card notice-warning">
+                            <div class="notice-icon">⚠️</div>
+                            <div class="notice-body">
+                                <h4>
+                                    {% if result.disease_code == 'UNSUPPORTED_SPECIMEN' or not result.is_supported %}
+                                        Unsupported Plant Species Notice
+                                    {% else %}
+                                        Specific Treatment Recommendation Not Cataloged
+                                    {% endif %}
+                                </h4>
+                                <p>
+                                    {{ result.guidance_notice or 'A specific agronomic treatment plan for this condition has not yet been cataloged.' }}
+                                </p>
+                                <p class="small text-muted mt-2">
+                                    <strong>Safety Protocol:</strong> Chemical fungicides, synthetic pesticides, and active chemicals must NEVER be applied to unidentified or unsupported plant species. Consult a certified local agricultural extension specialist.
+                                </p>
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Smart Fertilizer & Crop Nutrition Recommendations -->
+            <div class="card result-card">
+                <div class="card-header header-with-icon">
+                    <span class="section-icon">🧪</span>
+                    <h3>Crop Nutrition &amp; Fertilizer Advisory</h3>
+                </div>
+                <div class="card-body">
+                    <!-- Agronomic Nutrition Principles Explainer -->
+                    <div class="fertilizer-composition-explainer mb-3" style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 0.85rem 1rem;">
+                        <h5 style="color: #166534; margin: 0 0 0.35rem 0; font-size: 0.95rem; font-weight: 700;">
+                            🌾 Agronomic Crop Nutrition & Growth-Stage Principles
+                        </h5>
+                        <p class="small mb-2" style="color: #15803d; line-height: 1.45;">
+                            Fertilizer requirements are dynamic and depend on the specific crop variety, native soil fertility, pH balance, and vegetative versus reproductive growth stages:
+                        </p>
+                        <ul class="small mb-0" style="color: #166534; padding-left: 1.25rem; line-height: 1.45;">
+                            <li><strong>Nitrogen (N):</strong> Essential for vegetative growth, canopy development, and leaf chlorophyll biosynthesis.</li>
+                            <li><strong>Phosphorus (P):</strong> Drives primary root architecture, cellular ATP energy transfer, and early flower induction.</li>
+                            <li><strong>Potassium (K):</strong> Regulates stomatal water conductance, drought tolerance, and natural disease resistance.</li>
+                        </ul>
+                    </div>
+
+                    {% if result.has_fertilizer_guidance and result.fertilizer_recommendations %}
+                        <p class="section-intro">
+                            Targeted fertilizer management schedules for <strong>{{ result.crop_name }}</strong>:
+                        </p>
+                        <div class="fertilizer-schedule-grid">
+                            {% for fert in result.fertilizer_recommendations %}
+                                <div class="fertilizer-card">
+                                    <div class="fertilizer-header">
+                                        <span class="fert-stage">{{ fert.growth_stage or 'General Growth Period' }}</span>
+                                        {% if fert.soil_condition %}
+                                            <span class="fert-soil">🌱 {{ fert.soil_condition }}</span>
+                                        {% endif %}
+                                    </div>
+                                    <div class="fertilizer-body">
+                                        <p>{{ fert.recommendation_text }}</p>
+                                    </div>
+                                    {% if fert.source_reference %}
+                                        <div class="fertilizer-footer">
+                                            <span class="small text-muted">Reference: {{ fert.source_reference }}</span>
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        <div class="notice-card notice-info">
+                            <div class="notice-icon">🌱</div>
+                            <div class="notice-body">
+                                <h4>
+                                    {% if result.disease_code == 'UNSUPPORTED_SPECIMEN' or not result.is_supported %}
+                                        Fertilizer Guidance Withheld
+                                    {% else %}
+                                        General Crop Nutrition Advisory
+                                    {% endif %}
+                                </h4>
+                                <p>
+                                    {% if result.disease_code == 'UNSUPPORTED_SPECIMEN' or not result.is_supported %}
+                                        Fertilizer schedules are strictly withheld for unverified or unsupported plant species to prevent phytotoxic chemical burns, improper soil nutrient loading, and crop damage.
+                                    {% else %}
+                                        No specific staged fertilizer guidelines are currently cataloged for {{ result.crop_name }}. Conduct a comprehensive soil nutrient test (NPK and pH test) to determine accurate fertilizer application rates tailored to your field.
+                                    {% endif %}
+                                </p>
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Legal & Clinical Agronomy Disclaimer -->
+            <div class="notice-card notice-disclaimer">
+                <div class="notice-icon">⚠️</div>
+                <div class="notice-body">
+                    <h4>Responsible Agronomic Use Notice</h4>
+                    <p>
+                        This system is a diagnostic computer-vision aid developed for educational and research support.
+                        Prediction confidence scores reflect statistical visual patterns and can be affected by lighting, leaf angle, or camera artifacts.
+                        <strong>Always verify plant health conditions with a certified agronomist or extension professional before making financial crop management or chemical treatment decisions.</strong>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="results-actions-bar no-print">
+                <a href="{{ url_for('upload') }}" class="btn btn-primary">
+                    📤 Analyze Another Image
+                </a>
+                <a href="{{ url_for('index') }}" class="btn btn-secondary">
+                    🏠 Return to Homepage
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function triggerGeminiAnalysis(predictionId) {
+    const btn = document.getElementById("btn-run-gemini");
+    const spinner = document.getElementById("gemini-loading-spinner");
+    const csrfMeta = document.querySelector('meta[name="csrf-token"]');
+    const csrfToken = csrfMeta ? csrfMeta.getAttribute("content") : "";
+
+    if (btn) btn.disabled = true;
+    if (spinner) spinner.style.display = "inline-block";
+
+    fetch(`/api/gemini/analyze/${encodeURIComponent(predictionId)}`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "X-CSRFToken": csrfToken,
+            "X-Requested-With": "XMLHttpRequest",
+        },
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success && data.gemini_analysis) {
+            window.location.reload();
+        } else {
+            alert(data.error || "Gemini analysis could not be completed. Please check network connectivity.");
+            if (btn) btn.disabled = false;
+            if (spinner) spinner.style.display = "none";
+        }
+    })
+    .catch(err => {
+        alert("Network communication error with Gemini service.");
+        if (btn) btn.disabled = false;
+        if (spinner) spinner.style.display = "none";
+    });
+}
+</script>
+{% endblock %}

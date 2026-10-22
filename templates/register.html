@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block title %}User Registration — Agrotech{% endblock %}
+
+{% block content %}
+<div class="container container-sm">
+    <div class="breadcrumb">
+        <a href="{{ url_for('index') }}">Home</a> &rsaquo; <span>Register</span>
+    </div>
+
+    <div class="card auth-card">
+        <div class="card-header text-center">
+            <div class="auth-icon-badge">📝</div>
+            <h2>Create an Agrotech Account</h2>
+            <p class="section-desc">Register to save, track, and review your diagnostic history and treatment plans.</p>
+        </div>
+
+        <div class="card-body">
+            <form action="{{ url_for('auth.register') }}" method="POST" class="auth-form" novalidate>
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
+                <div class="form-group">
+                    <label for="username" class="form-label">Username <span class="required">*</span></label>
+                    <input type="text"
+                           id="username"
+                           name="username"
+                           value="{{ username or '' }}"
+                           class="form-control"
+                           required
+                           minlength="3"
+                           maxlength="50"
+                           pattern="[A-Za-z0-9_]+"
+                           autocomplete="username"
+                           placeholder="e.g. karthik_farmer">
+                    <small class="form-hint">3 to 50 characters; letters, numbers, and underscores only.</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="email" class="form-label">Email Address <span class="required">*</span></label>
+                    <input type="email"
+                           id="email"
+                           name="email"
+                           value="{{ email or '' }}"
+                           class="form-control"
+                           required
+                           maxlength="190"
+                           autocomplete="email"
+                           placeholder="name@example.com">
+                    <small class="form-hint">Used for account identification and notifications.</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="password" class="form-label">Password <span class="required">*</span></label>
+                    <input type="password"
+                           id="password"
+                           name="password"
+                           class="form-control"
+                           required
+                           minlength="8"
+                           maxlength="128"
+                           autocomplete="new-password"
+                           placeholder="••••••••">
+                    <small class="form-hint">At least 8 characters, containing at least one letter and one number.</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirm_password" class="form-label">Confirm Password <span class="required">*</span></label>
+                    <input type="password"
+                           id="confirm_password"
+                           name="confirm_password"
+                           class="form-control"
+                           required
+                           minlength="8"
+                           maxlength="128"
+                           autocomplete="new-password"
+                           placeholder="••••••••">
+                </div>
+
+                <div class="form-actions mt-4">
+                    <button type="submit" class="btn btn-primary btn-block">
+                        ✨ Create Account
+                    </button>
+                </div>
+            </form>
+
+            <div class="auth-card-footer text-center mt-4">
+                <p>Already have an account? <a href="{{ url_for('auth.login') }}" class="auth-link">Log In Here &rarr;</a></p>
+                <p class="small text-muted mt-2">
+                    🔒 Passwords are cryptographically salted and hashed using scrypt/Werkzeug.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block title %}Upload Plant Leaf Image — Agrotech{% endblock %}
+
+{% block content %}
+<div class="container container-sm">
+    <div class="breadcrumb">
+        <a href="{{ url_for('index') }}">Home</a> &rsaquo; <span>Upload Leaf Image</span>
+    </div>
+
+    <div class="card upload-card">
+        <div class="card-header">
+            <div>
+                <h2>📸 Plant Leaf Image Upload</h2>
+                <p class="section-desc">Submit a foliar photograph for automated diagnosis and smart pesticide &amp; fertilizer recommendations.</p>
+            </div>
+            <span class="tag tag-active">AI Analysis</span>
+        </div>
+
+        <div class="card-body">
+            <form id="upload-form" action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                <div id="dropzone" class="dropzone">
+                    <input type="file" id="leaf-image-input" name="leaf_image" accept=".jpg,.jpeg,.png,image/jpeg,image/png" class="file-input" required>
+                    <div class="dropzone-prompt" id="dropzone-prompt">
+                        <div class="dropzone-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                <polyline points="17 8 12 3 7 8"/>
+                                <line x1="12" y1="3" x2="12" y2="15"/>
+                            </svg>
+                        </div>
+                        <h3>Drag & Drop Leaf Photo Here</h3>
+                        <p>or <span class="dropzone-browse">browse files from your device</span></p>
+                        <div class="upload-specs">
+                            <span>Formats: <strong>JPG, JPEG, PNG</strong></span>
+                            <span>•</span>
+                            <span>Max Size: <strong>5 MB</strong></span>
+                        </div>
+                    </div>
+
+                    <!-- Image Preview Container -->
+                    <div id="preview-container" class="preview-container" style="display: none;">
+                        <img id="image-preview" src="" alt="Plant leaf preview" class="preview-image">
+                        <div class="preview-details">
+                            <span id="preview-filename" class="preview-filename">filename.jpg</span>
+                            <span id="preview-filesize" class="preview-filesize">0 KB</span>
+                        </div>
+                        <button type="button" id="remove-image-btn" class="btn btn-sm btn-danger">
+                            ✕ Remove & Select Another
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Client-Side Feedback Alert -->
+                <div id="client-error-box" class="client-feedback error-feedback" style="display: none;" role="alert"></div>
+
+                <div class="upload-actions">
+                    <button type="submit" id="submit-btn" class="btn btn-primary btn-lg" disabled>
+                        <span class="btn-text">Proceed & Save Image</span>
+                        <span class="btn-spinner" style="display: none;">
+                            <span class="spinner"></span> Processing...
+                        </span>
+                    </button>
+                    <a href="{{ url_for('index') }}" class="btn btn-secondary btn-lg">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

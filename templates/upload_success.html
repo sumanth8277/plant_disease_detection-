@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block title %}Upload Success — Agrotech{% endblock %}
+
+{% block content %}
+<div class="container container-sm">
+    <div class="breadcrumb">
+        <a href="{{ url_for('index') }}">Home</a> &rsaquo; <span>Upload Success</span>
+    </div>
+
+    <!-- Success Header Card -->
+    <div class="card success-card">
+        <div class="success-header">
+            <div class="success-badge-icon">✅</div>
+            <h2>Image Uploaded Successfully</h2>
+            <p class="status-callout">Ready for AI analysis</p>
+        </div>
+
+        <div class="card-body">
+            <!-- Uploaded Image Display (Controlled Route) -->
+            <div class="uploaded-image-preview-box">
+                <img src="{{ url_for('serve_upload', filename=upload.stored_filename) }}"
+                     alt="Uploaded plant leaf"
+                     class="uploaded-display-img">
+            </div>
+
+            <!-- Upload Metadata Information -->
+            <div class="metadata-grid">
+                <div class="meta-item">
+                    <span class="meta-label">Upload Identifier</span>
+                    <span class="meta-value"><code>{{ upload.upload_id }}</code></span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Original Filename</span>
+                    <span class="meta-value">{{ upload.original_filename }}</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Image Dimensions</span>
+                    <span class="meta-value">
+                        {% if upload.image_width and upload.image_height %}
+                            {{ upload.image_width }} &times; {{ upload.image_height }} px
+                        {% else %}
+                            Standard resolution
+                        {% endif %}
+                    </span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">File Size</span>
+                    <span class="meta-value">
+                        {% if upload.file_size %}
+                            {{ (upload.file_size / 1024)|round(1) }} KB
+                        {% else %}
+                            N/A
+                        {% endif %}
+                    </span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">MIME Format</span>
+                    <span class="meta-value">{{ upload.mime_type }}</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Pipeline Status</span>
+                    <span class="meta-value"><span class="tag tag-active">{{ upload.status|replace('_', ' ')|title }}</span></span>
+                </div>
+            </div>
+
+            <!-- Notice Callout Regarding Diagnosis -->
+            <div class="notice-card">
+                <div class="notice-icon">🔬</div>
+                <div class="notice-body">
+                    <h4>Leaf Image Upload Verified</h4>
+                    <p>
+                        Your plant specimen has been verified, sanitized, and stored. Automated deep learning disease detection, classification confidence analysis, and targeted pesticide &amp; fertilizer recommendations are generated through the diagnosis portal.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Action Controls -->
+            <div class="card-actions-centered">
+                <a href="{{ url_for('upload') }}" class="btn btn-primary">
+                    📤 Upload Another Leaf Image
+                </a>
+                <a href="{{ url_for('index') }}" class="btn btn-secondary">
+                    🏠 Return to Homepage
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

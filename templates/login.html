@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block title %}User Login — Agrotech{% endblock %}
+
+{% block content %}
+<div class="container container-sm">
+    <div class="breadcrumb">
+        <a href="{{ url_for('index') }}">Home</a> &rsaquo; <span>Log In</span>
+    </div>
+
+    <div class="card auth-card">
+        <div class="card-header text-center">
+            <div class="auth-icon-badge">🔐</div>
+            <h2>Log In to Agrotech</h2>
+            <p class="section-desc">Access your foliar diagnostic records and crop recommendation history.</p>
+        </div>
+
+        <div class="card-body">
+            <form action="{{ url_for('auth.login') }}" method="POST" class="auth-form" novalidate>
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                {% if next %}
+                    <input type="hidden" name="next" value="{{ next }}">
+                {% endif %}
+
+                <div class="form-group">
+                    <label for="username_or_email" class="form-label">Username or Email <span class="required">*</span></label>
+                    <input type="text"
+                           id="username_or_email"
+                           name="username_or_email"
+                           value="{{ identifier or '' }}"
+                           class="form-control"
+                           required
+                           autocomplete="username"
+                           placeholder="Enter your username or email address">
+                </div>
+
+                <div class="form-group">
+                    <label for="password" class="form-label">Password <span class="required">*</span></label>
+                    <input type="password"
+                           id="password"
+                           name="password"
+                           class="form-control"
+                           required
+                           autocomplete="current-password"
+                           placeholder="••••••••">
+                </div>
+
+                <div class="form-actions mt-4">
+                    <button type="submit" class="btn btn-primary btn-block">
+                        🚀 Log In
+                    </button>
+                </div>
+            </form>
+
+            <div class="auth-card-footer text-center mt-4">
+                <p>New to Agrotech? <a href="{{ url_for('auth.register') }}" class="auth-link">Create an Account &rarr;</a></p>
+                <p class="small text-muted mt-2">
+                    💡 Guest leaf diagnoses are always supported without logging in.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

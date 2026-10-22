@@ -1,0 +1,233 @@
+{
+  "_comment": "Deterministic mapping from PlantVillage model class names to crop, disease, and database codes.",
+  "mappings": {
+    "Apple___Apple_scab": {
+      "crop_name": "Apple",
+      "disease_name": "Apple Scab (Venturia inaequalis)",
+      "disease_code": "APPLE_APPLE_SCAB",
+      "is_healthy": false
+    },
+    "Apple___Black_rot": {
+      "crop_name": "Apple",
+      "disease_name": "Black Rot (Botryosphaeria obtusa)",
+      "disease_code": "APPLE_BLACK_ROT",
+      "is_healthy": false
+    },
+    "Apple___Cedar_apple_rust": {
+      "crop_name": "Apple",
+      "disease_name": "Cedar Apple Rust (Gymnosporangium juniperi-virginianae)",
+      "disease_code": "APPLE_CEDAR_APPLE_RUST",
+      "is_healthy": false
+    },
+    "Apple___healthy": {
+      "crop_name": "Apple",
+      "disease_name": "Healthy Foliage",
+      "disease_code": "APPLE_HEALTHY",
+      "is_healthy": true
+    },
+    "Blueberry___healthy": {
+      "crop_name": "Blueberry",
+      "disease_name": "Healthy Foliage",
+      "disease_code": "BLUEBERRY_HEALTHY",
+      "is_healthy": true
+    },
+    "Cherry_(including_sour)___Powdery_mildew": {
+      "crop_name": "Cherry",
+      "disease_name": "Powdery Mildew (Podosphaera clandestina)",
+      "disease_code": "CHERRY_POWDERY_MILDEW",
+      "is_healthy": false
+    },
+    "Cherry_(including_sour)___healthy": {
+      "crop_name": "Cherry",
+      "disease_name": "Healthy Foliage",
+      "disease_code": "CHERRY_HEALTHY",
+      "is_healthy": true
+    },
+    "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot": {
+      "crop_name": "Corn (Maize)",
+      "disease_name": "Gray Leaf Spot (Cercospora zeae-maydis)",
+      "disease_code": "CORN_GRAY_LEAF_SPOT",
+      "is_healthy": false
+    },
+    "Corn_(maize)___Common_rust_": {
+      "crop_name": "Corn (Maize)",
+      "disease_name": "Common Rust (Puccinia sorghi)",
+      "disease_code": "CORN_COMMON_RUST",
+      "is_healthy": false
+    },
+    "Corn_(maize)___Northern_Leaf_Blight": {
+      "crop_name": "Corn (Maize)",
+      "disease_name": "Northern Leaf Blight (Exserohilum turcicum)",
+      "disease_code": "CORN_NORTHERN_LEAF_BLIGHT",
+      "is_healthy": false
+    },
+    "Corn_(maize)___healthy": {
+      "crop_name": "Corn (Maize)",
+      "disease_name": "Healthy Foliage",
+      "disease_code": "CORN_HEALTHY",
+      "is_healthy": true
+    },
+    "Grape___Black_rot": {
+      "crop_name": "Grape",
+      "disease_name": "Black Rot (Guignardia bidwellii)",
+      "disease_code": "GRAPE_BLACK_ROT",
+      "is_healthy": false
+    },
+    "Grape___Esca_(Black_Measles)": {
+      "crop_name": "Grape",
+      "disease_name": "Esca / Black Measles (Phaeomoniella chlamydospora)",
+      "disease_code": "GRAPE_ESCA",
+      "is_healthy": false
+    },
+    "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)": {
+      "crop_name": "Grape",
+      "disease_name": "Leaf Blight (Pseudocercospora cladosporioides)",
+      "disease_code": "GRAPE_LEAF_BLIGHT",
+      "is_healthy": false
+    },
+    "Grape___healthy": {
+      "crop_name": "Grape",
+      "disease_name": "Healthy Foliage",
+      "disease_code": "GRAPE_HEALTHY",
+      "is_healthy": true
+    },
+    "Orange___Haunglongbing_(Citrus_greening)": {
+      "crop_name": "Orange",
+      "disease_name": "Huanglongbing / Citrus Greening (Candidatus Liberibacter)",
+      "disease_code": "ORANGE_CITRUS_GREENING",
+      "is_healthy": false
+    },
+    "Peach___Bacterial_spot": {
+      "crop_name": "Peach",
+      "disease_name": "Bacterial Spot (Xanthomonas campestris pv. pruni)",
+      "disease_code": "PEACH_BACTERIAL_SPOT",
+      "is_healthy": false
+    },
+    "Peach___healthy": {
+      "crop_name": "Peach",
+      "disease_name": "Healthy Foliage",
+      "disease_code": "PEACH_HEALTHY",
+      "is_healthy": true
+    },
+    "Pepper,_bell___Bacterial_spot": {
+      "crop_name": "Bell Pepper",
+      "disease_name": "Bacterial Spot (Xanthomonas vesicatoria)",
+      "disease_code": "PEPPER_BELL_BACTERIAL_SPOT",
+      "is_healthy": false
+    },
+    "Pepper,_bell___healthy": {
+      "crop_name": "Bell Pepper",
+      "disease_name": "Healthy Foliage",
+      "disease_code": "PEPPER_BELL_HEALTHY",
+      "is_healthy": true
+    },
+    "Potato___Early_blight": {
+      "crop_name": "Potato",
+      "disease_name": "Early Blight (Alternaria solani)",
+      "disease_code": "POTATO_EARLY_BLIGHT",
+      "is_healthy": false
+    },
+    "Potato___Late_blight": {
+      "crop_name": "Potato",
+      "disease_name": "Late Blight (Phytophthora infestans)",
+      "disease_code": "POTATO_LATE_BLIGHT",
+      "is_healthy": false
+    },
+    "Potato___healthy": {
+      "crop_name": "Potato",
+      "disease_name": "Healthy Foliage",
+      "disease_code": "POTATO_HEALTHY",
+      "is_healthy": true
+    },
+    "Raspberry___healthy": {
+      "crop_name": "Raspberry",
+      "disease_name": "Healthy Foliage",
+      "disease_code": "RASPBERRY_HEALTHY",
+      "is_healthy": true
+    },
+    "Soybean___healthy": {
+      "crop_name": "Soybean",
+      "disease_name": "Healthy Foliage",
+      "disease_code": "SOYBEAN_HEALTHY",
+      "is_healthy": true
+    },
+    "Squash___Powdery_mildew": {
+      "crop_name": "Squash",
+      "disease_name": "Powdery Mildew (Podosphaera xanthii)",
+      "disease_code": "SQUASH_POWDERY_MILDEW",
+      "is_healthy": false
+    },
+    "Strawberry___Leaf_scorch": {
+      "crop_name": "Strawberry",
+      "disease_name": "Leaf Scorch (Diplocarpon earlianum)",
+      "disease_code": "STRAWBERRY_LEAF_SCORCH",
+      "is_healthy": false
+    },
+    "Strawberry___healthy": {
+      "crop_name": "Strawberry",
+      "disease_name": "Healthy Foliage",
+      "disease_code": "STRAWBERRY_HEALTHY",
+      "is_healthy": true
+    },
+    "Tomato___Bacterial_spot": {
+      "crop_name": "Tomato",
+      "disease_name": "Bacterial Spot (Xanthomonas vesicatoria)",
+      "disease_code": "TOMATO_BACTERIAL_SPOT",
+      "is_healthy": false
+    },
+    "Tomato___Early_blight": {
+      "crop_name": "Tomato",
+      "disease_name": "Early Blight (Alternaria solani)",
+      "disease_code": "TOMATO_EARLY_BLIGHT",
+      "is_healthy": false
+    },
+    "Tomato___Late_blight": {
+      "crop_name": "Tomato",
+      "disease_name": "Late Blight (Phytophthora infestans)",
+      "disease_code": "TOMATO_LATE_BLIGHT",
+      "is_healthy": false
+    },
+    "Tomato___Leaf_Mold": {
+      "crop_name": "Tomato",
+      "disease_name": "Leaf Mold (Passalora fulva)",
+      "disease_code": "TOMATO_LEAF_MOLD",
+      "is_healthy": false
+    },
+    "Tomato___Septoria_leaf_spot": {
+      "crop_name": "Tomato",
+      "disease_name": "Septoria Leaf Spot (Septoria lycopersici)",
+      "disease_code": "TOMATO_SEPTORIA_LEAF_SPOT",
+      "is_healthy": false
+    },
+    "Tomato___Spider_mites Two-spotted_spider_mite": {
+      "crop_name": "Tomato",
+      "disease_name": "Two-Spotted Spider Mite (Tetranychus urticae)",
+      "disease_code": "TOMATO_SPIDER_MITES",
+      "is_healthy": false
+    },
+    "Tomato___Target_Spot": {
+      "crop_name": "Tomato",
+      "disease_name": "Target Spot (Corynespora cassiicola)",
+      "disease_code": "TOMATO_TARGET_SPOT",
+      "is_healthy": false
+    },
+    "Tomato___Tomato_Yellow_Leaf_Curl_Virus": {
+      "crop_name": "Tomato",
+      "disease_name": "Tomato Yellow Leaf Curl Virus (TYLCV)",
+      "disease_code": "TOMATO_YELLOW_LEAF_CURL_VIRUS",
+      "is_healthy": false
+    },
+    "Tomato___Tomato_mosaic_virus": {
+      "crop_name": "Tomato",
+      "disease_name": "Tomato Mosaic Virus (ToMV)",
+      "disease_code": "TOMATO_MOSAIC_VIRUS",
+      "is_healthy": false
+    },
+    "Tomato___healthy": {
+      "crop_name": "Tomato",
+      "disease_name": "Healthy Foliage",
+      "disease_code": "TOMATO_HEALTHY",
+      "is_healthy": true
+    }
+  }
+}

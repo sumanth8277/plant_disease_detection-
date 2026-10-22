@@ -1,0 +1,11 @@
+{
+  "model_version": "MobileNetV2-v1.0",
+  "input_shape": [
+    224,
+    224,
+    3
+  ],
+  "num_classes": 38,
+  "architecture": "MobileNetV2 Transfer Learning",
+  "dataset": "PlantVillage 38-class"
+}

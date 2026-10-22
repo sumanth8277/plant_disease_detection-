@@ -1,0 +1,23 @@
+{
+  "architecture": "MobileNetV2",
+  "input_shape": [
+    224,
+    224,
+    3
+  ],
+  "preprocessing": "mobilenet_v2.preprocess_input [-1.0, 1.0]",
+  "num_classes": 38,
+  "epochs": 12,
+  "batch_size": 8,
+  "initial_learning_rate": 0.001,
+  "fine_tune": true,
+  "fine_tune_epochs": 4,
+  "fine_tune_lr": 1e-05,
+  "random_seed": 42,
+  "device": "CPU (oneDNN enabled)",
+  "manifest_path": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\reports\\dataset_manifest.json",
+  "train_samples": 86,
+  "val_samples": 29,
+  "trained_at": "2026-10-20T14:03:33.462498",
+  "model_sha256": "08daa96f0e3adc676ce993af47b32534f69e4340d0bfd0e2ae4487a1bd425fd2"
+}
