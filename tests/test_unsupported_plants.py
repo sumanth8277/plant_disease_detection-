@@ -18,7 +18,7 @@ from services.recommendation_service import get_recommendations_for_prediction
 
 def test_neem_is_not_in_training_classes():
     """Verify that Neem is honestly verified as NOT present in the model's 38 classes."""
-    class_indices_path = Path("model/class_indices.json")
+    class_indices_path = Path("models/class_indices.json") if Path("models/class_indices.json").exists() else Path("model/class_indices.json")
     assert class_indices_path.exists(), "class_indices.json must exist"
 
     with open(class_indices_path, "r", encoding="utf-8") as f:
@@ -31,10 +31,13 @@ def test_neem_is_not_in_training_classes():
 
 def test_class_mapping_consistency_and_dimensions():
     """Verify that class_indices.json matches disease_class_mapping.json exactly."""
-    with open("model/class_indices.json", "r", encoding="utf-8") as f:
+    indices_path = Path("models/class_indices.json") if Path("models/class_indices.json").exists() else Path("model/class_indices.json")
+    mapping_path = Path("models/disease_class_mapping.json") if Path("models/disease_class_mapping.json").exists() else Path("model/disease_class_mapping.json")
+
+    with open(indices_path, "r", encoding="utf-8") as f:
         class_indices = json.load(f)
 
-    with open("model/disease_class_mapping.json", "r", encoding="utf-8") as f:
+    with open(mapping_path, "r", encoding="utf-8") as f:
         disease_mapping = json.load(f)["mappings"]
 
     # Every class in class_indices must have a valid mapping entry
@@ -68,7 +71,8 @@ def test_ood_diffuse_probabilities_flagged_as_unsupported():
     mock_probs = mock_probs / np.sum(mock_probs)
     ms._model.predict.return_value = np.array([mock_probs], dtype=np.float32)
 
-    with open("model/class_indices.json", "r") as f:
+    indices_path = Path("models/class_indices.json") if Path("models/class_indices.json").exists() else Path("model/class_indices.json")
+    with open(indices_path, "r", encoding="utf-8") as f:
         indices = json.load(f)
     ms._class_indices = {v: k for k, v in indices.items()}
 

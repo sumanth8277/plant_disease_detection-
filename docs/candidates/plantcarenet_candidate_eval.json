@@ -1,0 +1,16 @@
+{
+  "candidate_model": "plantcarenet_candidate.keras",
+  "architecture": "Custom PlantCareNet CNN (Muhaimin008)",
+  "input_shape": [
+    128,
+    128,
+    3
+  ],
+  "lab_test_accuracy_percent": 50.86,
+  "field_test_accuracy_percent": 14.41,
+  "combined_test_accuracy_percent": 37.44,
+  "combined_macro_f1": 0.383,
+  "plantvillage_samples_evaluated": 405,
+  "plantdoc_samples_evaluated": 236,
+  "total_test_samples": 641
+}

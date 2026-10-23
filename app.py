@@ -23,7 +23,12 @@ def create_app(config_class: Optional[Type[Config]] = None) -> Flask:
     Initializes Flask app, registers configurations, attaches CSRF protection,
     and registers application routes.
     """
-    app = Flask(__name__)
+    frontend_dir = Config.BASE_DIR / "frontend"
+    app = Flask(
+        __name__,
+        template_folder=str(frontend_dir / "templates"),
+        static_folder=str(frontend_dir / "static"),
+    )
 
     # Load configuration
     if config_class is None:

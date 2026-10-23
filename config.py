@@ -43,7 +43,7 @@ class Config:
     DB_POOL_SIZE = int(os.environ.get("DB_POOL_SIZE", 5))
 
     # Prediction & Upload Settings (Phase 2)
-    UPLOAD_FOLDER = BASE_DIR / "static" / "uploads"
+    UPLOAD_FOLDER = BASE_DIR / "frontend" / "static" / "uploads"
     MAX_CONTENT_LENGTH = int(os.environ.get("MAX_CONTENT_LENGTH", 5 * 1024 * 1024))  # 5 MB max upload size
     ALLOWED_EXTENSIONS = {"png", "jpg", "jpeg"}
     MAX_IMAGE_DIMENSION = 5000  # Max width or height in pixels to avoid decompression bombs
@@ -51,10 +51,10 @@ class Config:
 
     # Dataset Paths (Phase 2 & 3)
     DATASET_DIR = BASE_DIR / "dataset"
-    REPORTS_DIR = BASE_DIR / "reports"
+    REPORTS_DIR = BASE_DIR / "docs"
 
     # Model Artifacts (Phases 3, 4 & 8 Multi-Dataset Pipeline)
-    MODEL_DIR = BASE_DIR / "model"
+    MODEL_DIR = BASE_DIR / "models"
     MODELS_DIR = BASE_DIR / "models"
     MODEL_PATH = Path(os.environ.get(
         "MODEL_PATH",

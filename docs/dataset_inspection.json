@@ -1,0 +1,338 @@
+{
+  "timestamp": "2026-10-20T13:35:25.377797",
+  "scan_root": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw",
+  "five_targets": {
+    "PlantVillage": {
+      "name": "PlantVillage Dataset",
+      "official_url": "https://github.com/spMohanty/PlantVillage-Dataset",
+      "description": "54,000+ laboratory leaf images across 38 crop-disease categories.",
+      "type": "folder_based",
+      "typical_paths": [
+        "PlantVillage",
+        "plantvillage",
+        "raw/PlantVillage",
+        "PlantVillage-Dataset"
+      ]
+    },
+    "NewPlantDiseases": {
+      "name": "New Plant Diseases Dataset (Augmented)",
+      "official_url": "https://www.kaggle.com/datasets/vipoooool/new-plant-diseases-dataset",
+      "description": "87,000+ augmented and raw crop leaf images spanning 38 classes.",
+      "type": "folder_based",
+      "typical_paths": [
+        "NewPlantDiseases",
+        "new-plant-diseases-dataset",
+        "New Plant Diseases Dataset(Augmented)",
+        "raw/NewPlantDiseases"
+      ]
+    },
+    "PlantDoc": {
+      "name": "PlantDoc Dataset",
+      "official_url": "https://github.com/pratikkayal/PlantDoc-Dataset",
+      "description": "2,500+ in-situ, real-world field images across 27 classes with bounding boxes.",
+      "type": "annotation_or_folder",
+      "typical_paths": [
+        "PlantDoc",
+        "PlantDoc-Dataset",
+        "plantdoc",
+        "raw/PlantDoc"
+      ]
+    },
+    "PlantPathology2020": {
+      "name": "Plant Pathology 2020 (FGVC7)",
+      "official_url": "https://www.kaggle.com/competitions/plant-pathology-2020-fgvc7/data",
+      "description": "Folio images of apple leaves with CSV annotations: healthy, rust, scab, multiple_diseases.",
+      "type": "csv_based",
+      "typical_paths": [
+        "PlantPathology2020",
+        "plant-pathology-2020-fgvc7",
+        "plant_pathology_2020",
+        "raw/PlantPathology2020"
+      ]
+    },
+    "NeemLeaf": {
+      "name": "NeemLeaf Dataset",
+      "official_url": "https://data.mendeley.com/datasets/h3786mkn7t/1",
+      "description": "Images of Azadirachta indica (Neem) leaves categorized by appearance/condition.",
+      "type": "folder_based",
+      "typical_paths": [
+        "NeemLeaf",
+        "neemleaf",
+        "neem_leaf",
+        "raw/NeemLeaf",
+        "Neem"
+      ]
+    }
+  },
+  "datasets_found": {
+    "PlantVillage": {
+      "key": "PlantVillage",
+      "path": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage",
+      "scanned_at": "2026-10-20T13:35:25.385162",
+      "total_files_scanned": 144,
+      "valid_images": 144,
+      "corrupt_files": [],
+      "extensions": {
+        ".jpg": 144
+      },
+      "dimensions": {
+        "256x256": 144
+      },
+      "classes": {
+        "Apple___Apple_scab": 4,
+        "Apple___Black_rot": 6,
+        "Apple___Cedar_apple_rust": 4,
+        "Apple___healthy": 5,
+        "Blueberry___healthy": 5,
+        "Cherry_(including_sour)___healthy": 5,
+        "Cherry_(including_sour)___Powdery_mildew": 5,
+        "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot": 5,
+        "Corn_(maize)___Common_rust_": 5,
+        "Corn_(maize)___healthy": 5,
+        "Corn_(maize)___Northern_Leaf_Blight": 5,
+        "Grape___Black_rot": 5,
+        "Grape___Esca_(Black_Measles)": 5,
+        "Grape___healthy": 5,
+        "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)": 5,
+        "Orange___Haunglongbing_(Citrus_greening)": 5,
+        "Peach___Bacterial_spot": 5,
+        "Peach___healthy": 5,
+        "Pepper,_bell___Bacterial_spot": 5,
+        "Pepper,_bell___healthy": 5,
+        "Potato___Early_blight": 5,
+        "Potato___healthy": 5,
+        "Potato___Late_blight": 5,
+        "Raspberry___healthy": 5,
+        "Soybean___healthy": 5,
+        "Squash___Powdery_mildew": 5,
+        "Strawberry___healthy": 5,
+        "Strawberry___Leaf_scorch": 5,
+        "Tomato___Bacterial_spot": 5
+      },
+      "class_examples": {
+        "Apple___Apple_scab": [
+          "00075aa8-d81a-4184-8541-b692b78d398a___FREC_Scab 3335.JPG",
+          "01a66316-0e98-4d3b-a56f-d78752cd043f___FREC_Scab 3003.JPG",
+          "01f3deaa-6143-4b6c-9c22-620a46d8be04___FREC_Scab 3112.JPG"
+        ],
+        "Apple___Black_rot": [
+          "0090d05d-d797-4c99-abd4-3b9cb323a5fd___JR_FrgE.S 8727.JPG",
+          "00e909aa-e3ae-4558-9961-336bb0f35db3___JR_FrgE.S 8593.JPG",
+          "0139bc6d-391c-4fd1-bcae-cc74dabfddd7___JR_FrgE.S 2734.JPG"
+        ],
+        "Apple___Cedar_apple_rust": [
+          "025b2b9a-0ec4-4132-96ac-7f2832d0db4a___FREC_C.Rust 3655.JPG",
+          "0321e067-d13b-47d0-b3a6-76ba6f357d02___FREC_C.Rust 3667.JPG",
+          "0340baaa-e9cc-4c04-8f9b-c204180d9ae3___FREC_C.Rust 3805.JPG"
+        ],
+        "Apple___healthy": [
+          "0055dd26-23a7-4415-ac61-e0b44ebfaf80___RS_HL 5672.JPG",
+          "00907d8b-6ae6-4306-bfd7-d54471981a86___RS_HL 5709.JPG",
+          "0098dbd9-286a-4d6a-bf4b-5459d66f88c0___RS_HL 5776.JPG"
+        ],
+        "Blueberry___healthy": [
+          "008c85d0-a954-4127-bd26-861dc8a1e6ff___RS_HL 2431.JPG",
+          "00fee259-67b7-4dd7-8b36-12503bbdba14___RS_HL 2681.JPG",
+          "011405e4-a92a-44b6-9f04-10fec28d93f5___RS_HL 2311.JPG"
+        ],
+        "Cherry_(including_sour)___healthy": [
+          "0008f3d3-2f85-4973-be9a-1b520b8b59fc___JR_HL 4092.JPG",
+          "002efba9-09b3-43de-93b7-5c2460185cde___JR_HL 9655.JPG",
+          "0048afb8-b950-4c57-9e72-7e26282327ee___JR_HL 9765.JPG"
+        ],
+        "Cherry_(including_sour)___Powdery_mildew": [
+          "00705aa7-5ea2-4419-9440-8ba65e108eb9___FREC_Pwd.M 0267.JPG",
+          "00b7df55-c789-43d6-a02e-a579ac9d07e6___FREC_Pwd.M 4748.JPG",
+          "00d12ac0-a293-47e0-a4c6-a80f37204c39___FREC_Pwd.M 4812.JPG"
+        ],
+        "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot": [
+          "00120a18-ff90-46e4-92fb-2b7a10345bd3___RS_GLSp 9357.JPG",
+          "00a20f6f-e8bd-4453-9e25-36ea70feb626___RS_GLSp 4655.JPG",
+          "0140764c-6157-4995-9ada-9c10b81af3b8___RS_GLSp 4378.JPG"
+        ],
+        "Corn_(maize)___Common_rust_": [
+          "RS_Rust 1563.JPG",
+          "RS_Rust 1564.JPG",
+          "RS_Rust 1565.JPG"
+        ],
+        "Corn_(maize)___healthy": [
+          "00031d74-076e-4aef-b040-e068cd3576eb___R.S_HL 8315 copy 2.jpg",
+          "00665f92-adb0-41eb-bba7-9eeadecfe10e___R.S_HL 8325 copy 2.jpg",
+          "01c3bf88-d315-42a3-8fa1-fc80a05c97f1___R.S_HL 8189 copy.jpg"
+        ],
+        "Corn_(maize)___Northern_Leaf_Blight": [
+          "005318c8-a5fa-4420-843b-23bdda7322c2___RS_NLB 3853 copy.jpg",
+          "0079c731-80f5-4fea-b6a2-4ff23a7ce139___RS_NLB 4121.JPG",
+          "008d9af0-7568-4a67-bb1a-0e915836ddc0___RS_NLB 4165 copy 2.jpg"
+        ],
+        "Grape___Black_rot": [
+          "00090b0f-c140-4e77-8d20-d39f67b75fcc___FAM_B.Rot 0376.JPG",
+          "003d09ef-e16c-4e8a-badf-847d46cb3dc0___FAM_B.Rot 3184.JPG",
+          "004175d8-dc74-4285-8401-3cc9565730bb___FAM_B.Rot 0626.JPG"
+        ],
+        "Grape___Esca_(Black_Measles)": [
+          "0075b632-2e34-4e4f-9697-fe2b332b7ef8___FAM_B.Msls 4399.JPG",
+          "00b65fe8-cee1-4b68-8ef4-1211814f2845___FAM_B.Msls 3990.JPG",
+          "00c247e8-48d2-4a56-a9f3-4eacfb4d85be___FAM_B.Msls 4197.JPG"
+        ],
+        "Grape___healthy": [
+          "00e00912-bf75-4cf8-8b7d-ad64b73bea5f___Mt.N.V_HL 6067.JPG",
+          "0163a6aa-fbf8-47c5-965f-59b6efe8bfe5___Mt.N.V_HL 6103.JPG",
+          "0294ca65-4c29-44be-af28-501df9f715e8___Mt.N.V_HL 6176.JPG"
+        ],
+        "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)": [
+          "0001aa74-bbd7-433b-a900-1dccab39d521___FAM_L.Blight 4508.JPG",
+          "0012e1ee-fde3-478f-ab27-18648feb2b05___FAM_L.Blight 1647.JPG",
+          "002e4d32-15cf-4350-bfba-dde7c8992392___FAM_L.Blight 4740.JPG"
+        ],
+        "Orange___Haunglongbing_(Citrus_greening)": [
+          "00045d08-898c-40df-ada6-e7579637a1f9___UF.Citrus_HLB_Lab 1690.JPG",
+          "000945ae-3cf5-48c2-86a2-a3f1e777f2c7___CREC_HLB 7640.JPG",
+          "0022b959-3cf3-4e3a-9ed2-94623183c7fb___CREC_HLB 5510.JPG"
+        ],
+        "Peach___Bacterial_spot": [
+          "00130039-8425-42e9-9dd9-15aead7271ff___Rut._Bact.S 3421.JPG",
+          "002eddd0-b6b3-474c-be08-423e53e24f82___Rutg._Bact.S 1955.JPG",
+          "00359c66-5d75-40ce-a5b7-6ef05959d2d2___Rut._Bact.S 1381.JPG"
+        ],
+        "Peach___healthy": [
+          "017d3d86-12bf-4280-8929-10dcd504ac46___Rutg._HL 3671.JPG",
+          "02070622-2fd7-40d5-9470-27e513ea8a90___Rutg._HL 3636.JPG",
+          "026aa11e-3f67-4951-9533-3c6ceb4c3d59___Rutg._HL 2494.JPG"
+        ],
+        "Pepper,_bell___Bacterial_spot": [
+          "0022d6b7-d47c-4ee2-ae9a-392a53f48647___JR_B.Spot 8964.JPG",
+          "006adb74-934f-448f-a14f-62181742127b___JR_B.Spot 3395.JPG",
+          "00f2e69a-1e56-412d-8a79-fdce794a17e4___JR_B.Spot 3132.JPG"
+        ],
+        "Pepper,_bell___healthy": [
+          "00100ffa-095e-4881-aebf-61fe5af7226e___JR_HL 7886.JPG",
+          "00208a93-7687-4e8c-b79e-3138687e0f38___JR_HL 7955.JPG",
+          "002f87b7-e1a5-49e5-a422-bb423630ded5___JR_HL 8068.JPG"
+        ],
+        "Potato___Early_blight": [
+          "001187a0-57ab-4329-baff-e7246a9edeb0___RS_Early.B 8178.JPG",
+          "002a55fb-7a3d-4a3a-aca8-ce2d5ebc6925___RS_Early.B 8170.JPG",
+          "009c8c31-f22d-4ffd-8f16-189c6f06c577___RS_Early.B 7885.JPG"
+        ],
+        "Potato___healthy": [
+          "00fc2ee5-729f-4757-8aeb-65c3355874f2___RS_HL 1864.JPG",
+          "03da9931-e514-4cc7-b04a-8f474a133ce5___RS_HL 1830.JPG",
+          "04481ca2-f94c-457e-b785-1ac05800b7ec___RS_HL 1930.JPG"
+        ],
+        "Potato___Late_blight": [
+          "0051e5e8-d1c4-4a84-bf3a-a426cdad6285___RS_LB 4640.JPG",
+          "00695906-210d-4a9d-822e-986a17384115___RS_LB 4026.JPG",
+          "006cc01a-1888-4326-9b62-a65cb55a6377___RS_LB 5207.JPG"
+        ],
+        "Raspberry___healthy": [
+          "00a3fc0e-64cc-4e35-ac2f-aef04fda9b22___Mary_HL 9177.JPG",
+          "020e14fb-6016-4d7f-b489-445e0021b58e___Mary_HL 6324.JPG",
+          "03a615df-ed85-4ae6-8b41-d5b4c980b76b___Mary_HL 6366.JPG"
+        ],
+        "Soybean___healthy": [
+          "0007ca44-b81d-475c-b8b5-c226a041f020___RS_HL 6331.JPG",
+          "0010d6a1-64f1-4997-99d8-6d86fa629014___RS_HL 6967.JPG",
+          "00247bff-26dc-445a-8d11-0b2592787ec3___RS_HL 6869.JPG"
+        ],
+        "Squash___Powdery_mildew": [
+          "0045a100-36d3-45df-b417-d487d6e07eb4___UMD_Powd.M 0003.JPG",
+          "0056878d-a244-4653-ad56-7e97080c7fd2___UMD_Powd.M 9962.JPG",
+          "0061de03-5f84-413a-b30d-1bb575cf3267___UMD_Powd.M 0415.JPG"
+        ],
+        "Strawberry___healthy": [
+          "00166615-5e7b-4318-8957-5e50df335ee8___RS_HL 1785.JPG",
+          "00532378-bfb2-4d3b-8b19-903ecc085624___RS_HL 2021.JPG",
+          "00e9a277-ca5e-4350-95ce-8b2918b69fb9___RS_HL 4667.JPG"
+        ],
+        "Strawberry___Leaf_scorch": [
+          "0024203d-6e4c-490f-b9a8-e5926df0b76e___RS_L.Scorch 0795.JPG",
+          "0112c6b2-72cd-402b-89cd-ca052983403e___RS_L.Scorch 1161.JPG",
+          "0138e78b-9802-43b5-b40e-84c38160418c___RS_L.Scorch 1289.JPG"
+        ],
+        "Tomato___Bacterial_spot": [
+          "00416648-be6e-4bd4-bc8d-82f43f8a7240___GCREC_Bact.Sp 3110.JPG",
+          "0045ba29-ed1b-43b4-afde-719cc7adefdb___GCREC_Bact.Sp 6254.JPG",
+          "00639d29-2d1a-4fcf-9bd3-a2b3109c74c4___UF.GRC_BS_Lab Leaf 1054.JPG"
+        ]
+      },
+      "annotations": {},
+      "exact_duplicates": [],
+      "near_duplicates": [],
+      "has_csv_annotations": false
+    }
+  },
+  "missing_datasets": [
+    {
+      "dataset_key": "NewPlantDiseases",
+      "name": "New Plant Diseases Dataset (Augmented)",
+      "official_url": "https://www.kaggle.com/datasets/vipoooool/new-plant-diseases-dataset",
+      "description": "87,000+ augmented and raw crop leaf images spanning 38 classes.",
+      "expected_directory": "dataset\\raw\\raw\\NewPlantDiseases",
+      "acquisition_guidance": "Download from https://www.kaggle.com/datasets/vipoooool/new-plant-diseases-dataset and extract image contents into 'dataset\\raw\\raw\\NewPlantDiseases'."
+    },
+    {
+      "dataset_key": "PlantDoc",
+      "name": "PlantDoc Dataset",
+      "official_url": "https://github.com/pratikkayal/PlantDoc-Dataset",
+      "description": "2,500+ in-situ, real-world field images across 27 classes with bounding boxes.",
+      "expected_directory": "dataset\\raw\\raw\\PlantDoc",
+      "acquisition_guidance": "Download from https://github.com/pratikkayal/PlantDoc-Dataset and extract image contents into 'dataset\\raw\\raw\\PlantDoc'."
+    },
+    {
+      "dataset_key": "PlantPathology2020",
+      "name": "Plant Pathology 2020 (FGVC7)",
+      "official_url": "https://www.kaggle.com/competitions/plant-pathology-2020-fgvc7/data",
+      "description": "Folio images of apple leaves with CSV annotations: healthy, rust, scab, multiple_diseases.",
+      "expected_directory": "dataset\\raw\\raw\\PlantPathology2020",
+      "acquisition_guidance": "Download from https://www.kaggle.com/competitions/plant-pathology-2020-fgvc7/data and extract image contents into 'dataset\\raw\\raw\\PlantPathology2020'."
+    },
+    {
+      "dataset_key": "NeemLeaf",
+      "name": "NeemLeaf Dataset",
+      "official_url": "https://data.mendeley.com/datasets/h3786mkn7t/1",
+      "description": "Images of Azadirachta indica (Neem) leaves categorized by appearance/condition.",
+      "expected_directory": "dataset\\raw\\raw\\NeemLeaf",
+      "acquisition_guidance": "Download from https://data.mendeley.com/datasets/h3786mkn7t/1 and extract image contents into 'dataset\\raw\\raw\\NeemLeaf'."
+    }
+  ],
+  "overall_summary": {
+    "total_datasets_scanned": 1,
+    "total_images_scanned": 144,
+    "total_valid_images": 144,
+    "total_corrupt_files": 0,
+    "total_exact_duplicate_groups": 0,
+    "total_classes_detected": 29
+  },
+  "consolidated_classes": {
+    "Apple___Apple_scab": 4,
+    "Apple___Black_rot": 6,
+    "Apple___Cedar_apple_rust": 4,
+    "Apple___healthy": 5,
+    "Blueberry___healthy": 5,
+    "Cherry_(including_sour)___healthy": 5,
+    "Cherry_(including_sour)___Powdery_mildew": 5,
+    "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot": 5,
+    "Corn_(maize)___Common_rust_": 5,
+    "Corn_(maize)___healthy": 5,
+    "Corn_(maize)___Northern_Leaf_Blight": 5,
+    "Grape___Black_rot": 5,
+    "Grape___Esca_(Black_Measles)": 5,
+    "Grape___healthy": 5,
+    "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)": 5,
+    "Orange___Haunglongbing_(Citrus_greening)": 5,
+    "Peach___Bacterial_spot": 5,
+    "Peach___healthy": 5,
+    "Pepper,_bell___Bacterial_spot": 5,
+    "Pepper,_bell___healthy": 5,
+    "Potato___Early_blight": 5,
+    "Potato___healthy": 5,
+    "Potato___Late_blight": 5,
+    "Raspberry___healthy": 5,
+    "Soybean___healthy": 5,
+    "Squash___Powdery_mildew": 5,
+    "Strawberry___healthy": 5,
+    "Strawberry___Leaf_scorch": 5,
+    "Tomato___Bacterial_spot": 5
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "audit_timestamp": "2026-10-23T20:00:00Z",
+  "catalogs": {
+    "ehsan_disease_info": {
+      "status": "available",
+      "file_path": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\reports\\ehsan_reference\\disease_info.csv",
+      "total_records": 39,
+      "source": "MuhammadEhsan02 / GitHub (US University Extensions: UMN, UF/IFAS)",
+      "fields": [
+        "disease_name",
+        "description",
+        "Possible Steps",
+        "image_url"
+      ],
+      "findings": [
+        "Provides good general educational descriptions of foliar symptoms and basic cultural sanitation.",
+        "Steps are non-quantitative cultural advice without specific chemical concentrations or application rates.",
+        "Lacks statutory safety warnings, pollinator protection protocols, and pre-harvest intervals (PHI)."
+      ]
+    },
+    "ehsan_supplement_info": {
+      "status": "available",
+      "file_path": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\reports\\ehsan_reference\\supplement_info.csv",
+      "total_records": 39,
+      "source": "MuhammadEhsan02 / GitHub (Pakistani agricultural retail portal kissanghar.pk)",
+      "fields": [
+        "disease_name",
+        "supplement name",
+        "supplement image",
+        "buy link"
+      ],
+      "critical_flags": [
+        "FLAGGED: Recommendations use proprietary commercial brand trade names (e.g. 'Tilt 250EC', 'Nativo 75WG') instead of generic active ingredients.",
+        "FLAGGED: Buy links point to external Pakistani commercial e-commerce vendors (kissanghar.pk) unsuitable as authoritative recommendations in Indian jurisdictions.",
+        "FLAGGED: Missing approved application concentrations (g/L or ml/L), statutory Pre-Harvest Intervals (PHI), and maximum annual spray limits.",
+        "FLAGGED: External image URLs and retailer buy links are prone to link rot and retailer stock changes."
+      ]
+    },
+    "harvestify_fertilizer": {
+      "status": "available",
+      "file_path": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\reports\\harvestify_reference\\fertilizer.csv",
+      "total_crops": 22,
+      "crops": [
+        "rice",
+        "maize",
+        "chickpea",
+        "kidneybeans",
+        "pigeonpeas",
+        "mothbeans",
+        "mungbean",
+        "blackgram",
+        "lentil",
+        "pomegranate",
+        "banana",
+        "mango",
+        "grapes",
+        "watermelon",
+        "muskmelon",
+        "apple",
+        "orange",
+        "papaya",
+        "coconut",
+        "cotton",
+        "jute",
+        "coffee"
+      ],
+      "source": "Gladiator07/Harvestify (GitHub repository, GPL-3.0)",
+      "critical_flags": [
+        "FLAGGED: Missing physical units for N, P, K in CSV header (standard agronomic practice expects kg/ha, but values are raw integers: e.g. 80, 40, 40).",
+        "FLAGGED: Values represent whole-season total baseline targets with zero growth-stage division (e.g. basal vs vegetative split vs fruiting).",
+        "FLAGGED: Applying full seasonal Nitrogen in a single dose causes seedling chemical burn and nitrogen leaching.",
+        "FLAGGED: Excludes key fruit crops like Apple, Cherry, Peach, and Blueberry."
+      ]
+    },
+    "agrisens_fertilizer": {
+      "status": "available",
+      "file_path": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\reports\\agrisens_reference\\Fertilizer_recommendation.csv",
+      "total_records": 99,
+      "recommended_compounds": [
+        "10-26-26",
+        "14-35-14",
+        "17-17-17",
+        "20-20",
+        "28-28",
+        "DAP",
+        "Urea"
+      ],
+      "source": "ravikant-diwakar/AgriSens (GitHub repository)",
+      "findings": [
+        "Recommends standard commercial mineral compounds: Urea, DAP, 14-35-14, 28-28, 17-17-17, 20-20, 10-26-26.",
+        "Useful for recommending exact NPK complex fertilizers based on specific nutrient deficits.",
+        "Must be paired with split-dosage schedules and organic manure baselines to prevent soil acidification."
+      ]
+    },
+    "verified_indian_agronomic_database": {
+      "status": "active_and_verified",
+      "file_path": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\database\\verified_indian_agronomic_treatments.json",
+      "total_classes": 38,
+      "classes_with_non_chemical_ipm": 38,
+      "classes_with_pre_harvest_intervals": 38,
+      "classes_with_explicit_viral_fallbacks": 1,
+      "authoritative_sources": [
+        "Central Insecticides Board & Registration Committee (CIBRC) Major Uses Database (ppqs.gov.in)",
+        "Indian Council of Agricultural Research (ICAR) Crop Protection Portals (icar.org.in, iihr.icar.gov.in)",
+        "Tamil Nadu Agricultural University (TNAU) Agritech Portal (agritech.tnau.ac.in)",
+        "Directorate of Plant Protection, Quarantine & Storage (DPPQS)",
+        "Punjab Agricultural University (PAU) Package of Practices"
+      ],
+      "compliance_highlights": [
+        "100% of 38 target classes cataloged with verified cultural / IPM management.",
+        "Generic active chemical ingredients specified (Mancozeb, Difenoconazole, Copper Oxychloride, Azoxystrobin, etc.) with CIBRC registered formulations.",
+        "Exact metric dosages provided (g/L or ml/L) aligned with Indian spray calibrations.",
+        "Statutory Pre-Harvest Intervals (PHI) in days explicitly specified to prevent chemical residues on harvested produce.",
+        "Strictly displays 'Verified treatment information unavailable' for untreatable viral pathogens (e.g. Tomato Mosaic Virus).",
+        "Pesticide and fertilizer schedules are strictly withheld for non-crops, weeds, and unverified specimens."
+      ]
+    }
+  }
+}

@@ -20,6 +20,8 @@ htmlcov/
 # User Uploads
 static/uploads/*
 !static/uploads/.gitkeep
+frontend/static/uploads/*
+!frontend/static/uploads/.gitkeep
 
 # Machine Learning Artifacts & Datasets (for ML phases)
 models/backups/

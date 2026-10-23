@@ -1,0 +1,2393 @@
+{
+  "timestamp": "2026-10-20T13:38:30.344470",
+  "random_seed": 42,
+  "dataset_root": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw",
+  "total_records": 144,
+  "total_classes": 38,
+  "class_indices": {
+    "0": "Apple___Apple_scab",
+    "1": "Apple___Black_rot",
+    "2": "Apple___Cedar_apple_rust",
+    "3": "Apple___healthy",
+    "4": "Blueberry___healthy",
+    "5": "Cherry_(including_sour)___Powdery_mildew",
+    "6": "Cherry_(including_sour)___healthy",
+    "7": "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot",
+    "8": "Corn_(maize)___Common_rust_",
+    "9": "Corn_(maize)___Northern_Leaf_Blight",
+    "10": "Corn_(maize)___healthy",
+    "11": "Grape___Black_rot",
+    "12": "Grape___Esca_(Black_Measles)",
+    "13": "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)",
+    "14": "Grape___healthy",
+    "15": "Orange___Haunglongbing_(Citrus_greening)",
+    "16": "Peach___Bacterial_spot",
+    "17": "Peach___healthy",
+    "18": "Pepper,_bell___Bacterial_spot",
+    "19": "Pepper,_bell___healthy",
+    "20": "Potato___Early_blight",
+    "21": "Potato___Late_blight",
+    "22": "Potato___healthy",
+    "23": "Raspberry___healthy",
+    "24": "Soybean___healthy",
+    "25": "Squash___Powdery_mildew",
+    "26": "Strawberry___Leaf_scorch",
+    "27": "Strawberry___healthy",
+    "28": "Tomato___Bacterial_spot",
+    "29": "Tomato___Early_blight",
+    "30": "Tomato___Late_blight",
+    "31": "Tomato___Leaf_Mold",
+    "32": "Tomato___Septoria_leaf_spot",
+    "33": "Tomato___Spider_mites Two-spotted_spider_mite",
+    "34": "Tomato___Target_Spot",
+    "35": "Tomato___Tomato_Yellow_Leaf_Curl_Virus",
+    "36": "Tomato___Tomato_mosaic_virus",
+    "37": "Tomato___healthy"
+  },
+  "class_to_idx": {
+    "Apple___Apple_scab": 0,
+    "Apple___Black_rot": 1,
+    "Apple___Cedar_apple_rust": 2,
+    "Apple___healthy": 3,
+    "Blueberry___healthy": 4,
+    "Cherry_(including_sour)___Powdery_mildew": 5,
+    "Cherry_(including_sour)___healthy": 6,
+    "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot": 7,
+    "Corn_(maize)___Common_rust_": 8,
+    "Corn_(maize)___Northern_Leaf_Blight": 9,
+    "Corn_(maize)___healthy": 10,
+    "Grape___Black_rot": 11,
+    "Grape___Esca_(Black_Measles)": 12,
+    "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)": 13,
+    "Grape___healthy": 14,
+    "Orange___Haunglongbing_(Citrus_greening)": 15,
+    "Peach___Bacterial_spot": 16,
+    "Peach___healthy": 17,
+    "Pepper,_bell___Bacterial_spot": 18,
+    "Pepper,_bell___healthy": 19,
+    "Potato___Early_blight": 20,
+    "Potato___Late_blight": 21,
+    "Potato___healthy": 22,
+    "Raspberry___healthy": 23,
+    "Soybean___healthy": 24,
+    "Squash___Powdery_mildew": 25,
+    "Strawberry___Leaf_scorch": 26,
+    "Strawberry___healthy": 27,
+    "Tomato___Bacterial_spot": 28,
+    "Tomato___Early_blight": 29,
+    "Tomato___Late_blight": 30,
+    "Tomato___Leaf_Mold": 31,
+    "Tomato___Septoria_leaf_spot": 32,
+    "Tomato___Spider_mites Two-spotted_spider_mite": 33,
+    "Tomato___Target_Spot": 34,
+    "Tomato___Tomato_Yellow_Leaf_Curl_Virus": 35,
+    "Tomato___Tomato_mosaic_virus": 36,
+    "Tomato___healthy": 37
+  },
+  "records": [
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Apple___Apple_scab\\01a66316-0e98-4d3b-a56f-d78752cd043f___FREC_Scab 3003.JPG",
+      "relative_path": "PlantVillage/Apple___Apple_scab/01a66316-0e98-4d3b-a56f-d78752cd043f___FREC_Scab 3003.JPG",
+      "filename": "01a66316-0e98-4d3b-a56f-d78752cd043f___FREC_Scab 3003.JPG",
+      "base_image_id": "01a66316-0e98-4d3b-a56f-d78752cd043f___FREC_Scab 3003",
+      "sha256": "653e1d01d1df46983ecfc49b171414ae9ab6030f0ba106a92fd4aa64dc41b61f",
+      "dhash": "3a1f97236747d3c3",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Apple___Apple_scab",
+      "unified_class": "Apple___Apple_scab",
+      "split": "train",
+      "class_index": 0
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Apple___Apple_scab\\01f3deaa-6143-4b6c-9c22-620a46d8be04___FREC_Scab 3112.JPG",
+      "relative_path": "PlantVillage/Apple___Apple_scab/01f3deaa-6143-4b6c-9c22-620a46d8be04___FREC_Scab 3112.JPG",
+      "filename": "01f3deaa-6143-4b6c-9c22-620a46d8be04___FREC_Scab 3112.JPG",
+      "base_image_id": "01f3deaa-6143-4b6c-9c22-620a46d8be04___FREC_Scab 3112",
+      "sha256": "c3580cb39e6cfd5ff54b95516ead2e2cab9b19b2d3ba54968a3483838ee47a81",
+      "dhash": "1c3bb199b4c2cb49",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Apple___Apple_scab",
+      "unified_class": "Apple___Apple_scab",
+      "split": "train",
+      "class_index": 0
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Apple___Black_rot\\0090d05d-d797-4c99-abd4-3b9cb323a5fd___JR_FrgE.S 8727.JPG",
+      "relative_path": "PlantVillage/Apple___Black_rot/0090d05d-d797-4c99-abd4-3b9cb323a5fd___JR_FrgE.S 8727.JPG",
+      "filename": "0090d05d-d797-4c99-abd4-3b9cb323a5fd___JR_FrgE.S 8727.JPG",
+      "base_image_id": "0090d05d-d797-4c99-abd4-3b9cb323a5fd___JR_FrgE.S 8727",
+      "sha256": "b5e88d0216fc3212facde4c2d50a60757cf325d28f50381f690c07a1cb41b444",
+      "dhash": "8700604307068739",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Apple___Black_rot",
+      "unified_class": "Apple___Black_rot",
+      "split": "train",
+      "class_index": 1
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Apple___Black_rot\\0139bc6d-391c-4fd1-bcae-cc74dabfddd7___JR_FrgE.S 2734.JPG",
+      "relative_path": "PlantVillage/Apple___Black_rot/0139bc6d-391c-4fd1-bcae-cc74dabfddd7___JR_FrgE.S 2734.JPG",
+      "filename": "0139bc6d-391c-4fd1-bcae-cc74dabfddd7___JR_FrgE.S 2734.JPG",
+      "base_image_id": "0139bc6d-391c-4fd1-bcae-cc74dabfddd7___JR_FrgE.S 2734",
+      "sha256": "d1bdcc7867de6916ef73180980f5c00b69e08f3d207ae462f92f76204c12f4f7",
+      "dhash": "06493d3c1c8dc321",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Apple___Black_rot",
+      "unified_class": "Apple___Black_rot",
+      "split": "train",
+      "class_index": 1
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Apple___Black_rot\\0199a733-6d3f-4e66-a903-2d1d34457871___JR_FrgE.S 3079.JPG",
+      "relative_path": "PlantVillage/Apple___Black_rot/0199a733-6d3f-4e66-a903-2d1d34457871___JR_FrgE.S 3079.JPG",
+      "filename": "0199a733-6d3f-4e66-a903-2d1d34457871___JR_FrgE.S 3079.JPG",
+      "base_image_id": "0199a733-6d3f-4e66-a903-2d1d34457871___JR_FrgE.S 3079",
+      "sha256": "af75ee84f1e6adcc20812e2e4b85166c36042368ebe929627423caee44ab32cc",
+      "dhash": "ce1b3b65552f1fdb",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Apple___Black_rot",
+      "unified_class": "Apple___Black_rot",
+      "split": "train",
+      "class_index": 1
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Apple___Black_rot\\01e94c43-0879-4e8c-9b61-c48cfed88dab___JR_FrgE.S 3024.JPG",
+      "relative_path": "PlantVillage/Apple___Black_rot/01e94c43-0879-4e8c-9b61-c48cfed88dab___JR_FrgE.S 3024.JPG",
+      "filename": "01e94c43-0879-4e8c-9b61-c48cfed88dab___JR_FrgE.S 3024.JPG",
+      "base_image_id": "01e94c43-0879-4e8c-9b61-c48cfed88dab___JR_FrgE.S 3024",
+      "sha256": "cb71da57deb92a4cac120652270b6d1a86bef9ba894ac16f65dc22bd80a30eba",
+      "dhash": "d6933b15492b279e",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Apple___Black_rot",
+      "unified_class": "Apple___Black_rot",
+      "split": "train",
+      "class_index": 1
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Apple___Cedar_apple_rust\\0321e067-d13b-47d0-b3a6-76ba6f357d02___FREC_C.Rust 3667.JPG",
+      "relative_path": "PlantVillage/Apple___Cedar_apple_rust/0321e067-d13b-47d0-b3a6-76ba6f357d02___FREC_C.Rust 3667.JPG",
+      "filename": "0321e067-d13b-47d0-b3a6-76ba6f357d02___FREC_C.Rust 3667.JPG",
+      "base_image_id": "0321e067-d13b-47d0-b3a6-76ba6f357d02___FREC_C.Rust 3667",
+      "sha256": "def9eca7ef40a373cb60f9f9b34ab3a040974a8ea915d0c134c69f6a0abec531",
+      "dhash": "fa6ce6e7e776bffd",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Apple___Cedar_apple_rust",
+      "unified_class": "Apple___Cedar_apple_rust",
+      "split": "train",
+      "class_index": 2
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Apple___Cedar_apple_rust\\04da297e-5238-41b1-a8a0-0c87c6c2f21f___FREC_C.Rust 4394.JPG",
+      "relative_path": "PlantVillage/Apple___Cedar_apple_rust/04da297e-5238-41b1-a8a0-0c87c6c2f21f___FREC_C.Rust 4394.JPG",
+      "filename": "04da297e-5238-41b1-a8a0-0c87c6c2f21f___FREC_C.Rust 4394.JPG",
+      "base_image_id": "04da297e-5238-41b1-a8a0-0c87c6c2f21f___FREC_C.Rust 4394",
+      "sha256": "e52c2fff5d411758f5eb9a9a9dcfdceb3ef4e135e3d1245686e097f969d2fc58",
+      "dhash": "00030b130123266d",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Apple___Cedar_apple_rust",
+      "unified_class": "Apple___Cedar_apple_rust",
+      "split": "train",
+      "class_index": 2
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Apple___healthy\\00907d8b-6ae6-4306-bfd7-d54471981a86___RS_HL 5709.JPG",
+      "relative_path": "PlantVillage/Apple___healthy/00907d8b-6ae6-4306-bfd7-d54471981a86___RS_HL 5709.JPG",
+      "filename": "00907d8b-6ae6-4306-bfd7-d54471981a86___RS_HL 5709.JPG",
+      "base_image_id": "00907d8b-6ae6-4306-bfd7-d54471981a86___RS_HL 5709",
+      "sha256": "b79fca2eb7a793443965ea74243a34246deece2f9b752a136fe3f1d18cc05e5f",
+      "dhash": "d81e337b3d59339b",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Apple___healthy",
+      "unified_class": "Apple___healthy",
+      "split": "train",
+      "class_index": 3
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Apple___healthy\\0098dbd9-286a-4d6a-bf4b-5459d66f88c0___RS_HL 5776.JPG",
+      "relative_path": "PlantVillage/Apple___healthy/0098dbd9-286a-4d6a-bf4b-5459d66f88c0___RS_HL 5776.JPG",
+      "filename": "0098dbd9-286a-4d6a-bf4b-5459d66f88c0___RS_HL 5776.JPG",
+      "base_image_id": "0098dbd9-286a-4d6a-bf4b-5459d66f88c0___RS_HL 5776",
+      "sha256": "85bc5253de01dac545391a91a99b97fe6e984a435a27d7eb34e268ffbdd34c30",
+      "dhash": "787e0643733b9f7d",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Apple___healthy",
+      "unified_class": "Apple___healthy",
+      "split": "train",
+      "class_index": 3
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Apple___healthy\\00a6039c-e425-4f7d-81b1-d6b0e668517e___RS_HL 7669.JPG",
+      "relative_path": "PlantVillage/Apple___healthy/00a6039c-e425-4f7d-81b1-d6b0e668517e___RS_HL 7669.JPG",
+      "filename": "00a6039c-e425-4f7d-81b1-d6b0e668517e___RS_HL 7669.JPG",
+      "base_image_id": "00a6039c-e425-4f7d-81b1-d6b0e668517e___RS_HL 7669",
+      "sha256": "efea9883b438a644666dc186886bf860f205b64a59543a5616b3490f64ec1013",
+      "dhash": "3e43d383a3830e8d",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Apple___healthy",
+      "unified_class": "Apple___healthy",
+      "split": "train",
+      "class_index": 3
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Blueberry___healthy\\011405e4-a92a-44b6-9f04-10fec28d93f5___RS_HL 2311.JPG",
+      "relative_path": "PlantVillage/Blueberry___healthy/011405e4-a92a-44b6-9f04-10fec28d93f5___RS_HL 2311.JPG",
+      "filename": "011405e4-a92a-44b6-9f04-10fec28d93f5___RS_HL 2311.JPG",
+      "base_image_id": "011405e4-a92a-44b6-9f04-10fec28d93f5___RS_HL 2311",
+      "sha256": "7a8bd49978a2057f7e66b1bcf542d28c93417c06559c015f7d312f8d47f894d4",
+      "dhash": "63cb93373c2e3aa2",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Blueberry___healthy",
+      "unified_class": "Blueberry___healthy",
+      "split": "train",
+      "class_index": 4
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Blueberry___healthy\\0137389a-9b78-4a94-afdb-c2b50861f89c___RS_HL 2347.JPG",
+      "relative_path": "PlantVillage/Blueberry___healthy/0137389a-9b78-4a94-afdb-c2b50861f89c___RS_HL 2347.JPG",
+      "filename": "0137389a-9b78-4a94-afdb-c2b50861f89c___RS_HL 2347.JPG",
+      "base_image_id": "0137389a-9b78-4a94-afdb-c2b50861f89c___RS_HL 2347",
+      "sha256": "944cfb27c924b42ebad519183fb1616cda4eafe1c249c2f481cf104822562389",
+      "dhash": "72634fcb969e9860",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Blueberry___healthy",
+      "unified_class": "Blueberry___healthy",
+      "split": "train",
+      "class_index": 4
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Blueberry___healthy\\013ffdc5-cbd1-4202-b0f1-8fd7c1ffc0b8___RS_HL 5120.JPG",
+      "relative_path": "PlantVillage/Blueberry___healthy/013ffdc5-cbd1-4202-b0f1-8fd7c1ffc0b8___RS_HL 5120.JPG",
+      "filename": "013ffdc5-cbd1-4202-b0f1-8fd7c1ffc0b8___RS_HL 5120.JPG",
+      "base_image_id": "013ffdc5-cbd1-4202-b0f1-8fd7c1ffc0b8___RS_HL 5120",
+      "sha256": "5fa561473f8cf8aea9e7252cbbaafc1c8360dab8f57b3b508a1e59f044e26470",
+      "dhash": "040e1b3901438e10",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Blueberry___healthy",
+      "unified_class": "Blueberry___healthy",
+      "split": "train",
+      "class_index": 4
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Cherry_(including_sour)___Powdery_mildew\\00705aa7-5ea2-4419-9440-8ba65e108eb9___FREC_Pwd.M 0267.JPG",
+      "relative_path": "PlantVillage/Cherry_(including_sour)___Powdery_mildew/00705aa7-5ea2-4419-9440-8ba65e108eb9___FREC_Pwd.M 0267.JPG",
+      "filename": "00705aa7-5ea2-4419-9440-8ba65e108eb9___FREC_Pwd.M 0267.JPG",
+      "base_image_id": "00705aa7-5ea2-4419-9440-8ba65e108eb9___FREC_Pwd.M 0267",
+      "sha256": "a44891610dd4cc1c2aed64554a04eac8fef89928d6ffeb487f385e0f9d416418",
+      "dhash": "ce1f6fcccc652f8e",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Cherry_(including_sour)___Powdery_mildew",
+      "unified_class": "Cherry_(including_sour)___Powdery_mildew",
+      "split": "train",
+      "class_index": 5
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Cherry_(including_sour)___Powdery_mildew\\00b7df55-c789-43d6-a02e-a579ac9d07e6___FREC_Pwd.M 4748.JPG",
+      "relative_path": "PlantVillage/Cherry_(including_sour)___Powdery_mildew/00b7df55-c789-43d6-a02e-a579ac9d07e6___FREC_Pwd.M 4748.JPG",
+      "filename": "00b7df55-c789-43d6-a02e-a579ac9d07e6___FREC_Pwd.M 4748.JPG",
+      "base_image_id": "00b7df55-c789-43d6-a02e-a579ac9d07e6___FREC_Pwd.M 4748",
+      "sha256": "58d1de7fff12973eb37f6d135d13e18cef08d9dce1db34c2f10584d27c8f320c",
+      "dhash": "fdf193a7cf1f7f9f",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Cherry_(including_sour)___Powdery_mildew",
+      "unified_class": "Cherry_(including_sour)___Powdery_mildew",
+      "split": "train",
+      "class_index": 5
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Cherry_(including_sour)___Powdery_mildew\\00d12ac0-a293-47e0-a4c6-a80f37204c39___FREC_Pwd.M 4812.JPG",
+      "relative_path": "PlantVillage/Cherry_(including_sour)___Powdery_mildew/00d12ac0-a293-47e0-a4c6-a80f37204c39___FREC_Pwd.M 4812.JPG",
+      "filename": "00d12ac0-a293-47e0-a4c6-a80f37204c39___FREC_Pwd.M 4812.JPG",
+      "base_image_id": "00d12ac0-a293-47e0-a4c6-a80f37204c39___FREC_Pwd.M 4812",
+      "sha256": "9988d16b24722dce3d764387712b6c7825e9c01732eb5e017ffa78593c47c890",
+      "dhash": "13250c1a24290ed8",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Cherry_(including_sour)___Powdery_mildew",
+      "unified_class": "Cherry_(including_sour)___Powdery_mildew",
+      "split": "train",
+      "class_index": 5
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Cherry_(including_sour)___healthy\\0008f3d3-2f85-4973-be9a-1b520b8b59fc___JR_HL 4092.JPG",
+      "relative_path": "PlantVillage/Cherry_(including_sour)___healthy/0008f3d3-2f85-4973-be9a-1b520b8b59fc___JR_HL 4092.JPG",
+      "filename": "0008f3d3-2f85-4973-be9a-1b520b8b59fc___JR_HL 4092.JPG",
+      "base_image_id": "0008f3d3-2f85-4973-be9a-1b520b8b59fc___JR_HL 4092",
+      "sha256": "3dd842c3fade5af436f75f7eef418a81be40f996c5934fb4ebf81d14f632d581",
+      "dhash": "c3852175bfa7de79",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Cherry_(including_sour)___healthy",
+      "unified_class": "Cherry_(including_sour)___healthy",
+      "split": "train",
+      "class_index": 6
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Cherry_(including_sour)___healthy\\002efba9-09b3-43de-93b7-5c2460185cde___JR_HL 9655.JPG",
+      "relative_path": "PlantVillage/Cherry_(including_sour)___healthy/002efba9-09b3-43de-93b7-5c2460185cde___JR_HL 9655.JPG",
+      "filename": "002efba9-09b3-43de-93b7-5c2460185cde___JR_HL 9655.JPG",
+      "base_image_id": "002efba9-09b3-43de-93b7-5c2460185cde___JR_HL 9655",
+      "sha256": "a27accd6e6e382f8c163f4b065274b780ffea4e4a67c8885cf18920222f17981",
+      "dhash": "dd014397262d3bf2",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Cherry_(including_sour)___healthy",
+      "unified_class": "Cherry_(including_sour)___healthy",
+      "split": "train",
+      "class_index": 6
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Cherry_(including_sour)___healthy\\005f183c-0a73-4738-91f7-c0a0e02cd9e3___JR_HL 9679.JPG",
+      "relative_path": "PlantVillage/Cherry_(including_sour)___healthy/005f183c-0a73-4738-91f7-c0a0e02cd9e3___JR_HL 9679.JPG",
+      "filename": "005f183c-0a73-4738-91f7-c0a0e02cd9e3___JR_HL 9679.JPG",
+      "base_image_id": "005f183c-0a73-4738-91f7-c0a0e02cd9e3___JR_HL 9679",
+      "sha256": "87585a7267b88c204a973d0a06ac9ab2a88848d3ad0730e2c5692dc50feb0a4a",
+      "dhash": "723d4e6733158b66",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Cherry_(including_sour)___healthy",
+      "unified_class": "Cherry_(including_sour)___healthy",
+      "split": "train",
+      "class_index": 6
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot\\00120a18-ff90-46e4-92fb-2b7a10345bd3___RS_GLSp 9357.JPG",
+      "relative_path": "PlantVillage/Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot/00120a18-ff90-46e4-92fb-2b7a10345bd3___RS_GLSp 9357.JPG",
+      "filename": "00120a18-ff90-46e4-92fb-2b7a10345bd3___RS_GLSp 9357.JPG",
+      "base_image_id": "00120a18-ff90-46e4-92fb-2b7a10345bd3___RS_GLSp 9357",
+      "sha256": "22733317743ff827be0f0e66036e068e8c93cf2f9779a07696cd8cb34a19bd97",
+      "dhash": "cab2b2f272f0dc7d",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot",
+      "unified_class": "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot",
+      "split": "train",
+      "class_index": 7
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot\\00a20f6f-e8bd-4453-9e25-36ea70feb626___RS_GLSp 4655.JPG",
+      "relative_path": "PlantVillage/Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot/00a20f6f-e8bd-4453-9e25-36ea70feb626___RS_GLSp 4655.JPG",
+      "filename": "00a20f6f-e8bd-4453-9e25-36ea70feb626___RS_GLSp 4655.JPG",
+      "base_image_id": "00a20f6f-e8bd-4453-9e25-36ea70feb626___RS_GLSp 4655",
+      "sha256": "28afc642a85b24ee181315cb51f010400af8193653c08042e3ec54371e52f96a",
+      "dhash": "66e7e7d3d379b98d",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot",
+      "unified_class": "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot",
+      "split": "train",
+      "class_index": 7
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot\\01a02916-5d4c-4256-936b-6b1a9ee65b11___RS_GLSp 9276.JPG",
+      "relative_path": "PlantVillage/Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot/01a02916-5d4c-4256-936b-6b1a9ee65b11___RS_GLSp 9276.JPG",
+      "filename": "01a02916-5d4c-4256-936b-6b1a9ee65b11___RS_GLSp 9276.JPG",
+      "base_image_id": "01a02916-5d4c-4256-936b-6b1a9ee65b11___RS_GLSp 9276",
+      "sha256": "e36dea10644c215b2fa26f297fb583fbef9dacabac55f2746aad0ff7a4a09296",
+      "dhash": "77071334353c1eb3",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot",
+      "unified_class": "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot",
+      "split": "train",
+      "class_index": 7
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Corn_(maize)___Common_rust_\\RS_Rust 1563.JPG",
+      "relative_path": "PlantVillage/Corn_(maize)___Common_rust_/RS_Rust 1563.JPG",
+      "filename": "RS_Rust 1563.JPG",
+      "base_image_id": "RS_Rust 1563",
+      "sha256": "c2dca189b2b49c20c92dbf38bcbae8bb4527f1e67d233e5880eb729ae2735946",
+      "dhash": "b1707c726460e0c2",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Corn_(maize)___Common_rust_",
+      "unified_class": "Corn_(maize)___Common_rust_",
+      "split": "train",
+      "class_index": 8
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Corn_(maize)___Common_rust_\\RS_Rust 1566.JPG",
+      "relative_path": "PlantVillage/Corn_(maize)___Common_rust_/RS_Rust 1566.JPG",
+      "filename": "RS_Rust 1566.JPG",
+      "base_image_id": "RS_Rust 1566",
+      "sha256": "5519f4601bd314f1dcb9a80155f90c3ca9b93b5b2de07ebc17fa8eccf5181b18",
+      "dhash": "a0e2e0a0d6e264b0",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Corn_(maize)___Common_rust_",
+      "unified_class": "Corn_(maize)___Common_rust_",
+      "split": "train",
+      "class_index": 8
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Corn_(maize)___Common_rust_\\RS_Rust 1567.JPG",
+      "relative_path": "PlantVillage/Corn_(maize)___Common_rust_/RS_Rust 1567.JPG",
+      "filename": "RS_Rust 1567.JPG",
+      "base_image_id": "RS_Rust 1567",
+      "sha256": "65b487811fdd414e961e82f899a3a884a9ba6d5fb96cc965d6ab7a7195f9cf9f",
+      "dhash": "c9f0f4f2e2d0f070",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Corn_(maize)___Common_rust_",
+      "unified_class": "Corn_(maize)___Common_rust_",
+      "split": "train",
+      "class_index": 8
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Corn_(maize)___Northern_Leaf_Blight\\0079c731-80f5-4fea-b6a2-4ff23a7ce139___RS_NLB 4121.JPG",
+      "relative_path": "PlantVillage/Corn_(maize)___Northern_Leaf_Blight/0079c731-80f5-4fea-b6a2-4ff23a7ce139___RS_NLB 4121.JPG",
+      "filename": "0079c731-80f5-4fea-b6a2-4ff23a7ce139___RS_NLB 4121.JPG",
+      "base_image_id": "0079c731-80f5-4fea-b6a2-4ff23a7ce139___RS_NLB 4121",
+      "sha256": "83603f7ebab40769cea0148d0ec2cc3d478df8e85dcd77147a624ad02c14c5ed",
+      "dhash": "393959587478f831",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Corn_(maize)___Northern_Leaf_Blight",
+      "unified_class": "Corn_(maize)___Northern_Leaf_Blight",
+      "split": "train",
+      "class_index": 9
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Corn_(maize)___Northern_Leaf_Blight\\008d9af0-7568-4a67-bb1a-0e915836ddc0___RS_NLB 4165 copy 2.jpg",
+      "relative_path": "PlantVillage/Corn_(maize)___Northern_Leaf_Blight/008d9af0-7568-4a67-bb1a-0e915836ddc0___RS_NLB 4165 copy 2.jpg",
+      "filename": "008d9af0-7568-4a67-bb1a-0e915836ddc0___RS_NLB 4165 copy 2.jpg",
+      "base_image_id": "008d9af0-7568-4a67-bb1a-0e915836ddc0___RS_NLB 4165 copy 2",
+      "sha256": "79b76ef168c0355b35d6c4628f2addaa3efc1228b4d1262421104eac7a4e7184",
+      "dhash": "eb73797c7f3ebf1d",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Corn_(maize)___Northern_Leaf_Blight",
+      "unified_class": "Corn_(maize)___Northern_Leaf_Blight",
+      "split": "train",
+      "class_index": 9
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Corn_(maize)___Northern_Leaf_Blight\\00a55069-3fa3-405b-8d87-4d3408a6ed98___RS_NLB 3645.JPG",
+      "relative_path": "PlantVillage/Corn_(maize)___Northern_Leaf_Blight/00a55069-3fa3-405b-8d87-4d3408a6ed98___RS_NLB 3645.JPG",
+      "filename": "00a55069-3fa3-405b-8d87-4d3408a6ed98___RS_NLB 3645.JPG",
+      "base_image_id": "00a55069-3fa3-405b-8d87-4d3408a6ed98___RS_NLB 3645",
+      "sha256": "883a734d87e3e21fa0c2b727426e354e5ae0b3a8ecb7e9a130566991dbbcee8f",
+      "dhash": "1b39545492969e9e",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Corn_(maize)___Northern_Leaf_Blight",
+      "unified_class": "Corn_(maize)___Northern_Leaf_Blight",
+      "split": "train",
+      "class_index": 9
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Corn_(maize)___healthy\\00031d74-076e-4aef-b040-e068cd3576eb___R.S_HL 8315 copy 2.jpg",
+      "relative_path": "PlantVillage/Corn_(maize)___healthy/00031d74-076e-4aef-b040-e068cd3576eb___R.S_HL 8315 copy 2.jpg",
+      "filename": "00031d74-076e-4aef-b040-e068cd3576eb___R.S_HL 8315 copy 2.jpg",
+      "base_image_id": "00031d74-076e-4aef-b040-e068cd3576eb___R.S_HL 8315 copy 2",
+      "sha256": "08fead265cb88ae4d4fb05bb9f8ebf4e56d1917b14a60843ed8db75f6344868f",
+      "dhash": "c7e7e1f337f2f5cc",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Corn_(maize)___healthy",
+      "unified_class": "Corn_(maize)___healthy",
+      "split": "train",
+      "class_index": 10
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Corn_(maize)___healthy\\00665f92-adb0-41eb-bba7-9eeadecfe10e___R.S_HL 8325 copy 2.jpg",
+      "relative_path": "PlantVillage/Corn_(maize)___healthy/00665f92-adb0-41eb-bba7-9eeadecfe10e___R.S_HL 8325 copy 2.jpg",
+      "filename": "00665f92-adb0-41eb-bba7-9eeadecfe10e___R.S_HL 8325 copy 2.jpg",
+      "base_image_id": "00665f92-adb0-41eb-bba7-9eeadecfe10e___R.S_HL 8325 copy 2",
+      "sha256": "e248578fd042c9ef0a445c89776dac7459d21a3aae816587e650b0c75319d08d",
+      "dhash": "9edbededf4fae8e0",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Corn_(maize)___healthy",
+      "unified_class": "Corn_(maize)___healthy",
+      "split": "train",
+      "class_index": 10
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Corn_(maize)___healthy\\026bd735-b9f4-4eab-86f3-23df15dbec95___R.S_HL 7938 copy.jpg",
+      "relative_path": "PlantVillage/Corn_(maize)___healthy/026bd735-b9f4-4eab-86f3-23df15dbec95___R.S_HL 7938 copy.jpg",
+      "filename": "026bd735-b9f4-4eab-86f3-23df15dbec95___R.S_HL 7938 copy.jpg",
+      "base_image_id": "026bd735-b9f4-4eab-86f3-23df15dbec95___R.S_HL 7938 copy",
+      "sha256": "2e13237e65d9bb1d8a2f0b4a1239967621794b4387c21f5c7f11210263357530",
+      "dhash": "46e3a934f4d091c8",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Corn_(maize)___healthy",
+      "unified_class": "Corn_(maize)___healthy",
+      "split": "train",
+      "class_index": 10
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Grape___Black_rot\\003d09ef-e16c-4e8a-badf-847d46cb3dc0___FAM_B.Rot 3184.JPG",
+      "relative_path": "PlantVillage/Grape___Black_rot/003d09ef-e16c-4e8a-badf-847d46cb3dc0___FAM_B.Rot 3184.JPG",
+      "filename": "003d09ef-e16c-4e8a-badf-847d46cb3dc0___FAM_B.Rot 3184.JPG",
+      "base_image_id": "003d09ef-e16c-4e8a-badf-847d46cb3dc0___FAM_B.Rot 3184",
+      "sha256": "e17098d2dbf7baa98db5af1f214522616b836a1a2bf9377bd914538304791826",
+      "dhash": "191e676361653333",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Grape___Black_rot",
+      "unified_class": "Grape___Black_rot",
+      "split": "train",
+      "class_index": 11
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Grape___Black_rot\\004175d8-dc74-4285-8401-3cc9565730bb___FAM_B.Rot 0626.JPG",
+      "relative_path": "PlantVillage/Grape___Black_rot/004175d8-dc74-4285-8401-3cc9565730bb___FAM_B.Rot 0626.JPG",
+      "filename": "004175d8-dc74-4285-8401-3cc9565730bb___FAM_B.Rot 0626.JPG",
+      "base_image_id": "004175d8-dc74-4285-8401-3cc9565730bb___FAM_B.Rot 0626",
+      "sha256": "966a09e5f3480ec5d595532d21eee15b58833d5a4e057369040545ebf9b2b566",
+      "dhash": "69cc0f5b19111733",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Grape___Black_rot",
+      "unified_class": "Grape___Black_rot",
+      "split": "train",
+      "class_index": 11
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Grape___Black_rot\\006efc68-9e46-4168-921c-10ef8065702c___FAM_B.Rot 3470.JPG",
+      "relative_path": "PlantVillage/Grape___Black_rot/006efc68-9e46-4168-921c-10ef8065702c___FAM_B.Rot 3470.JPG",
+      "filename": "006efc68-9e46-4168-921c-10ef8065702c___FAM_B.Rot 3470.JPG",
+      "base_image_id": "006efc68-9e46-4168-921c-10ef8065702c___FAM_B.Rot 3470",
+      "sha256": "7228695b595f5bcd62cb4fef68739897ffc00811558473818a1fc1a30175d47b",
+      "dhash": "ed0633d3c7f77737",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Grape___Black_rot",
+      "unified_class": "Grape___Black_rot",
+      "split": "train",
+      "class_index": 11
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Grape___Esca_(Black_Measles)\\0075b632-2e34-4e4f-9697-fe2b332b7ef8___FAM_B.Msls 4399.JPG",
+      "relative_path": "PlantVillage/Grape___Esca_(Black_Measles)/0075b632-2e34-4e4f-9697-fe2b332b7ef8___FAM_B.Msls 4399.JPG",
+      "filename": "0075b632-2e34-4e4f-9697-fe2b332b7ef8___FAM_B.Msls 4399.JPG",
+      "base_image_id": "0075b632-2e34-4e4f-9697-fe2b332b7ef8___FAM_B.Msls 4399",
+      "sha256": "e3e29d917deda00160466fea0a199982b57a97080730a952d5c9c8ac18c68e96",
+      "dhash": "4c86132f3771636b",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Grape___Esca_(Black_Measles)",
+      "unified_class": "Grape___Esca_(Black_Measles)",
+      "split": "train",
+      "class_index": 12
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Grape___Esca_(Black_Measles)\\00b65fe8-cee1-4b68-8ef4-1211814f2845___FAM_B.Msls 3990.JPG",
+      "relative_path": "PlantVillage/Grape___Esca_(Black_Measles)/00b65fe8-cee1-4b68-8ef4-1211814f2845___FAM_B.Msls 3990.JPG",
+      "filename": "00b65fe8-cee1-4b68-8ef4-1211814f2845___FAM_B.Msls 3990.JPG",
+      "base_image_id": "00b65fe8-cee1-4b68-8ef4-1211814f2845___FAM_B.Msls 3990",
+      "sha256": "2256ef5ffc1cd7bff8e4fc22ab9625ca28288d0f0ab8b15d6262275b0444803f",
+      "dhash": "240e0e0b09191112",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Grape___Esca_(Black_Measles)",
+      "unified_class": "Grape___Esca_(Black_Measles)",
+      "split": "train",
+      "class_index": 12
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Grape___Esca_(Black_Measles)\\01162551-b800-4df8-ac46-64d17d6ac5bf___FAM_B.Msls 1153.JPG",
+      "relative_path": "PlantVillage/Grape___Esca_(Black_Measles)/01162551-b800-4df8-ac46-64d17d6ac5bf___FAM_B.Msls 1153.JPG",
+      "filename": "01162551-b800-4df8-ac46-64d17d6ac5bf___FAM_B.Msls 1153.JPG",
+      "base_image_id": "01162551-b800-4df8-ac46-64d17d6ac5bf___FAM_B.Msls 1153",
+      "sha256": "943ea52431014aa843211017ca0b6508fd5c167240e6a962f6a51662cd784a9d",
+      "dhash": "e9cf0e3b4b453b32",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Grape___Esca_(Black_Measles)",
+      "unified_class": "Grape___Esca_(Black_Measles)",
+      "split": "train",
+      "class_index": 12
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Grape___Leaf_blight_(Isariopsis_Leaf_Spot)\\0001aa74-bbd7-433b-a900-1dccab39d521___FAM_L.Blight 4508.JPG",
+      "relative_path": "PlantVillage/Grape___Leaf_blight_(Isariopsis_Leaf_Spot)/0001aa74-bbd7-433b-a900-1dccab39d521___FAM_L.Blight 4508.JPG",
+      "filename": "0001aa74-bbd7-433b-a900-1dccab39d521___FAM_L.Blight 4508.JPG",
+      "base_image_id": "0001aa74-bbd7-433b-a900-1dccab39d521___FAM_L.Blight 4508",
+      "sha256": "8e002077d8f99d3ebedb1a4bc54d5e1db857235a3a335895cc993a8f11961374",
+      "dhash": "cc9623e7e76d4767",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)",
+      "unified_class": "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)",
+      "split": "train",
+      "class_index": 13
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Grape___Leaf_blight_(Isariopsis_Leaf_Spot)\\002e4d32-15cf-4350-bfba-dde7c8992392___FAM_L.Blight 4740.JPG",
+      "relative_path": "PlantVillage/Grape___Leaf_blight_(Isariopsis_Leaf_Spot)/002e4d32-15cf-4350-bfba-dde7c8992392___FAM_L.Blight 4740.JPG",
+      "filename": "002e4d32-15cf-4350-bfba-dde7c8992392___FAM_L.Blight 4740.JPG",
+      "base_image_id": "002e4d32-15cf-4350-bfba-dde7c8992392___FAM_L.Blight 4740",
+      "sha256": "df69631314b51bea0cf089b4224e78546ef00726209abad528f942643d82f8d7",
+      "dhash": "1d27634757733636",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)",
+      "unified_class": "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)",
+      "split": "train",
+      "class_index": 13
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Grape___Leaf_blight_(Isariopsis_Leaf_Spot)\\00a962ad-573b-44b1-97ae-912a6bd6e0b0___FAM_L.Blight 1431.JPG",
+      "relative_path": "PlantVillage/Grape___Leaf_blight_(Isariopsis_Leaf_Spot)/00a962ad-573b-44b1-97ae-912a6bd6e0b0___FAM_L.Blight 1431.JPG",
+      "filename": "00a962ad-573b-44b1-97ae-912a6bd6e0b0___FAM_L.Blight 1431.JPG",
+      "base_image_id": "00a962ad-573b-44b1-97ae-912a6bd6e0b0___FAM_L.Blight 1431",
+      "sha256": "06b40a15d68ffb3e0e8c5151fb9f734c2520f627f1687bb7e6bf160c9a37ac60",
+      "dhash": "9d2663cdc387a7a2",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)",
+      "unified_class": "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)",
+      "split": "train",
+      "class_index": 13
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Grape___healthy\\0294ca65-4c29-44be-af28-501df9f715e8___Mt.N.V_HL 6176.JPG",
+      "relative_path": "PlantVillage/Grape___healthy/0294ca65-4c29-44be-af28-501df9f715e8___Mt.N.V_HL 6176.JPG",
+      "filename": "0294ca65-4c29-44be-af28-501df9f715e8___Mt.N.V_HL 6176.JPG",
+      "base_image_id": "0294ca65-4c29-44be-af28-501df9f715e8___Mt.N.V_HL 6176",
+      "sha256": "a4f6c9f93ffffb93695dadba80cb98b388d806a0be7bcbc1b954de88d00e8491",
+      "dhash": "3b372f697931270e",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Grape___healthy",
+      "unified_class": "Grape___healthy",
+      "split": "train",
+      "class_index": 14
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Grape___healthy\\02f95acb-5d92-4f2a-b7ec-3af8709ee7c9___Mt.N.V_HL 9078.JPG",
+      "relative_path": "PlantVillage/Grape___healthy/02f95acb-5d92-4f2a-b7ec-3af8709ee7c9___Mt.N.V_HL 9078.JPG",
+      "filename": "02f95acb-5d92-4f2a-b7ec-3af8709ee7c9___Mt.N.V_HL 9078.JPG",
+      "base_image_id": "02f95acb-5d92-4f2a-b7ec-3af8709ee7c9___Mt.N.V_HL 9078",
+      "sha256": "a4db1a057b742e37207db051eb7ff57c52f61e5bf7588aa616c061e31d5b0df0",
+      "dhash": "cd0e27656f2b2784",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Grape___healthy",
+      "unified_class": "Grape___healthy",
+      "split": "train",
+      "class_index": 14
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Grape___healthy\\03027791-26bb-4c46-960e-8df76e27042c___Mt.N.V_HL 6070.JPG",
+      "relative_path": "PlantVillage/Grape___healthy/03027791-26bb-4c46-960e-8df76e27042c___Mt.N.V_HL 6070.JPG",
+      "filename": "03027791-26bb-4c46-960e-8df76e27042c___Mt.N.V_HL 6070.JPG",
+      "base_image_id": "03027791-26bb-4c46-960e-8df76e27042c___Mt.N.V_HL 6070",
+      "sha256": "3189e3d91b7de3909b2a68fdbbe4567c5904bc3c47e90ccff05f999c9151e888",
+      "dhash": "2cce173113533638",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Grape___healthy",
+      "unified_class": "Grape___healthy",
+      "split": "train",
+      "class_index": 14
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Orange___Haunglongbing_(Citrus_greening)\\0022b959-3cf3-4e3a-9ed2-94623183c7fb___CREC_HLB 5510.JPG",
+      "relative_path": "PlantVillage/Orange___Haunglongbing_(Citrus_greening)/0022b959-3cf3-4e3a-9ed2-94623183c7fb___CREC_HLB 5510.JPG",
+      "filename": "0022b959-3cf3-4e3a-9ed2-94623183c7fb___CREC_HLB 5510.JPG",
+      "base_image_id": "0022b959-3cf3-4e3a-9ed2-94623183c7fb___CREC_HLB 5510",
+      "sha256": "7ea387322019b7f7c044b04c4581e9ac8038632bd2cd6594505e96b581e7b84f",
+      "dhash": "993c6fc7e7633f4f",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Orange___Haunglongbing_(Citrus_greening)",
+      "unified_class": "Orange___Haunglongbing_(Citrus_greening)",
+      "split": "train",
+      "class_index": 15
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Orange___Haunglongbing_(Citrus_greening)\\0051c200-bffe-4fa9-8518-594cd061d435___CREC_HLB 4835.JPG",
+      "relative_path": "PlantVillage/Orange___Haunglongbing_(Citrus_greening)/0051c200-bffe-4fa9-8518-594cd061d435___CREC_HLB 4835.JPG",
+      "filename": "0051c200-bffe-4fa9-8518-594cd061d435___CREC_HLB 4835.JPG",
+      "base_image_id": "0051c200-bffe-4fa9-8518-594cd061d435___CREC_HLB 4835",
+      "sha256": "12890f177ee3aa3ef8925799d4934f5fe48d406d752df07ab1770e4bf236ee89",
+      "dhash": "4c23393d343d1b8e",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Orange___Haunglongbing_(Citrus_greening)",
+      "unified_class": "Orange___Haunglongbing_(Citrus_greening)",
+      "split": "train",
+      "class_index": 15
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Orange___Haunglongbing_(Citrus_greening)\\00543c40-4cd3-413a-a152-5ceeffea98a0___UF.Citrus_HLB_Lab 0440.JPG",
+      "relative_path": "PlantVillage/Orange___Haunglongbing_(Citrus_greening)/00543c40-4cd3-413a-a152-5ceeffea98a0___UF.Citrus_HLB_Lab 0440.JPG",
+      "filename": "00543c40-4cd3-413a-a152-5ceeffea98a0___UF.Citrus_HLB_Lab 0440.JPG",
+      "base_image_id": "00543c40-4cd3-413a-a152-5ceeffea98a0___UF.Citrus_HLB_Lab 0440",
+      "sha256": "dd7e0a5183feaee924b67d054fb4f9c37665d48f62db1d5099dbba49108f12fe",
+      "dhash": "1223585cf8dcf933",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Orange___Haunglongbing_(Citrus_greening)",
+      "unified_class": "Orange___Haunglongbing_(Citrus_greening)",
+      "split": "train",
+      "class_index": 15
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Peach___Bacterial_spot\\00130039-8425-42e9-9dd9-15aead7271ff___Rut._Bact.S 3421.JPG",
+      "relative_path": "PlantVillage/Peach___Bacterial_spot/00130039-8425-42e9-9dd9-15aead7271ff___Rut._Bact.S 3421.JPG",
+      "filename": "00130039-8425-42e9-9dd9-15aead7271ff___Rut._Bact.S 3421.JPG",
+      "base_image_id": "00130039-8425-42e9-9dd9-15aead7271ff___Rut._Bact.S 3421",
+      "sha256": "341a70994fefab41b18db1f938ed04723990877bdb395a0766b59af5fbdad506",
+      "dhash": "3038580c2cae95c5",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Peach___Bacterial_spot",
+      "unified_class": "Peach___Bacterial_spot",
+      "split": "train",
+      "class_index": 16
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Peach___Bacterial_spot\\002eddd0-b6b3-474c-be08-423e53e24f82___Rutg._Bact.S 1955.JPG",
+      "relative_path": "PlantVillage/Peach___Bacterial_spot/002eddd0-b6b3-474c-be08-423e53e24f82___Rutg._Bact.S 1955.JPG",
+      "filename": "002eddd0-b6b3-474c-be08-423e53e24f82___Rutg._Bact.S 1955.JPG",
+      "base_image_id": "002eddd0-b6b3-474c-be08-423e53e24f82___Rutg._Bact.S 1955",
+      "sha256": "ecd792bad2b25e4a12806f279a0f0c90f4ec720f0eb0a0b6680de2bb8d82788b",
+      "dhash": "0309091012060c98",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Peach___Bacterial_spot",
+      "unified_class": "Peach___Bacterial_spot",
+      "split": "train",
+      "class_index": 16
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Peach___Bacterial_spot\\005b14ab-17f0-40c3-af15-87abf7d4ac23___Rutg._Bact.S 2083.JPG",
+      "relative_path": "PlantVillage/Peach___Bacterial_spot/005b14ab-17f0-40c3-af15-87abf7d4ac23___Rutg._Bact.S 2083.JPG",
+      "filename": "005b14ab-17f0-40c3-af15-87abf7d4ac23___Rutg._Bact.S 2083.JPG",
+      "base_image_id": "005b14ab-17f0-40c3-af15-87abf7d4ac23___Rutg._Bact.S 2083",
+      "sha256": "31c3b7753ea9c76b6e19c6acc45dbc7bf71af5a090bf3a55cf614a47845e4cab",
+      "dhash": "0616220254361212",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Peach___Bacterial_spot",
+      "unified_class": "Peach___Bacterial_spot",
+      "split": "train",
+      "class_index": 16
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Peach___healthy\\017d3d86-12bf-4280-8929-10dcd504ac46___Rutg._HL 3671.JPG",
+      "relative_path": "PlantVillage/Peach___healthy/017d3d86-12bf-4280-8929-10dcd504ac46___Rutg._HL 3671.JPG",
+      "filename": "017d3d86-12bf-4280-8929-10dcd504ac46___Rutg._HL 3671.JPG",
+      "base_image_id": "017d3d86-12bf-4280-8929-10dcd504ac46___Rutg._HL 3671",
+      "sha256": "623578ae27af416046be2a34f62f5da1091a49e35066023d1ee0fc22051662f7",
+      "dhash": "f9737347932f5d33",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Peach___healthy",
+      "unified_class": "Peach___healthy",
+      "split": "train",
+      "class_index": 17
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Peach___healthy\\027b10e5-2d2e-4eb4-9457-7cb45ab2fd17___Rutg._HL 3710.JPG",
+      "relative_path": "PlantVillage/Peach___healthy/027b10e5-2d2e-4eb4-9457-7cb45ab2fd17___Rutg._HL 3710.JPG",
+      "filename": "027b10e5-2d2e-4eb4-9457-7cb45ab2fd17___Rutg._HL 3710.JPG",
+      "base_image_id": "027b10e5-2d2e-4eb4-9457-7cb45ab2fd17___Rutg._HL 3710",
+      "sha256": "9a1f62c09485755c66b78ae2f2856136347794dd6fff10893e7b516b90aff485",
+      "dhash": "f3e68c8c2d1b5b77",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Peach___healthy",
+      "unified_class": "Peach___healthy",
+      "split": "train",
+      "class_index": 17
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Peach___healthy\\02e47796-808b-449e-bbba-f6e0262fa589___Rutg._HL 3714.JPG",
+      "relative_path": "PlantVillage/Peach___healthy/02e47796-808b-449e-bbba-f6e0262fa589___Rutg._HL 3714.JPG",
+      "filename": "02e47796-808b-449e-bbba-f6e0262fa589___Rutg._HL 3714.JPG",
+      "base_image_id": "02e47796-808b-449e-bbba-f6e0262fa589___Rutg._HL 3714",
+      "sha256": "722b3ab93abb8e8b20be0eb260a55eefa85e400d922304e21708ba03df7db373",
+      "dhash": "705c26920b050101",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Peach___healthy",
+      "unified_class": "Peach___healthy",
+      "split": "train",
+      "class_index": 17
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Pepper,_bell___Bacterial_spot\\00f2e69a-1e56-412d-8a79-fdce794a17e4___JR_B.Spot 3132.JPG",
+      "relative_path": "PlantVillage/Pepper,_bell___Bacterial_spot/00f2e69a-1e56-412d-8a79-fdce794a17e4___JR_B.Spot 3132.JPG",
+      "filename": "00f2e69a-1e56-412d-8a79-fdce794a17e4___JR_B.Spot 3132.JPG",
+      "base_image_id": "00f2e69a-1e56-412d-8a79-fdce794a17e4___JR_B.Spot 3132",
+      "sha256": "d1b01e4214316f9fb31bb84258cfd2487f3d7c0558e657196f659d9ba6742b5c",
+      "dhash": "02460c0c49592e04",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Pepper,_bell___Bacterial_spot",
+      "unified_class": "Pepper,_bell___Bacterial_spot",
+      "split": "train",
+      "class_index": 18
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Pepper,_bell___Bacterial_spot\\01613cd0-d3cd-4e96-945c-a312002037bf___JR_B.Spot 3262.JPG",
+      "relative_path": "PlantVillage/Pepper,_bell___Bacterial_spot/01613cd0-d3cd-4e96-945c-a312002037bf___JR_B.Spot 3262.JPG",
+      "filename": "01613cd0-d3cd-4e96-945c-a312002037bf___JR_B.Spot 3262.JPG",
+      "base_image_id": "01613cd0-d3cd-4e96-945c-a312002037bf___JR_B.Spot 3262",
+      "sha256": "87f35bce91e6b854a292f9d2a0e290772b576c6270e2ce1cb5b544d13199208d",
+      "dhash": "3a23c396be6b673c",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Pepper,_bell___Bacterial_spot",
+      "unified_class": "Pepper,_bell___Bacterial_spot",
+      "split": "train",
+      "class_index": 18
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Pepper,_bell___Bacterial_spot\\0169b9ac-07b9-4be1-8b85-da94481f05a4___NREC_B.Spot 9169.JPG",
+      "relative_path": "PlantVillage/Pepper,_bell___Bacterial_spot/0169b9ac-07b9-4be1-8b85-da94481f05a4___NREC_B.Spot 9169.JPG",
+      "filename": "0169b9ac-07b9-4be1-8b85-da94481f05a4___NREC_B.Spot 9169.JPG",
+      "base_image_id": "0169b9ac-07b9-4be1-8b85-da94481f05a4___NREC_B.Spot 9169",
+      "sha256": "af40e0a37aa733df6f9be4976e692efc003edcc155ddcde55261508f67ea846e",
+      "dhash": "1d9b593b274f3b26",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Pepper,_bell___Bacterial_spot",
+      "unified_class": "Pepper,_bell___Bacterial_spot",
+      "split": "train",
+      "class_index": 18
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Pepper,_bell___healthy\\00100ffa-095e-4881-aebf-61fe5af7226e___JR_HL 7886.JPG",
+      "relative_path": "PlantVillage/Pepper,_bell___healthy/00100ffa-095e-4881-aebf-61fe5af7226e___JR_HL 7886.JPG",
+      "filename": "00100ffa-095e-4881-aebf-61fe5af7226e___JR_HL 7886.JPG",
+      "base_image_id": "00100ffa-095e-4881-aebf-61fe5af7226e___JR_HL 7886",
+      "sha256": "7338e5c3be02ddfb4fc37336c4d111ecb23dc33860bee59e77defaf563b621d7",
+      "dhash": "cc86b32561d1f197",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Pepper,_bell___healthy",
+      "unified_class": "Pepper,_bell___healthy",
+      "split": "train",
+      "class_index": 19
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Pepper,_bell___healthy\\002f87b7-e1a5-49e5-a422-bb423630ded5___JR_HL 8068.JPG",
+      "relative_path": "PlantVillage/Pepper,_bell___healthy/002f87b7-e1a5-49e5-a422-bb423630ded5___JR_HL 8068.JPG",
+      "filename": "002f87b7-e1a5-49e5-a422-bb423630ded5___JR_HL 8068.JPG",
+      "base_image_id": "002f87b7-e1a5-49e5-a422-bb423630ded5___JR_HL 8068",
+      "sha256": "cbbafd4449715c98e67e2d081dbe24e70ada529fa3d699314dc7dd11486fe024",
+      "dhash": "bf2d46cb49a9535e",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Pepper,_bell___healthy",
+      "unified_class": "Pepper,_bell___healthy",
+      "split": "train",
+      "class_index": 19
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Pepper,_bell___healthy\\0119205b-cfac-4322-be37-dcc401fcfa11___JR_HL 8527.JPG",
+      "relative_path": "PlantVillage/Pepper,_bell___healthy/0119205b-cfac-4322-be37-dcc401fcfa11___JR_HL 8527.JPG",
+      "filename": "0119205b-cfac-4322-be37-dcc401fcfa11___JR_HL 8527.JPG",
+      "base_image_id": "0119205b-cfac-4322-be37-dcc401fcfa11___JR_HL 8527",
+      "sha256": "00d9351d29db6033c4f2f9d11d8b16113d539e84b479149e345cd0d7dd4a6840",
+      "dhash": "e2830b1d39399bce",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Pepper,_bell___healthy",
+      "unified_class": "Pepper,_bell___healthy",
+      "split": "train",
+      "class_index": 19
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Potato___Early_blight\\001187a0-57ab-4329-baff-e7246a9edeb0___RS_Early.B 8178.JPG",
+      "relative_path": "PlantVillage/Potato___Early_blight/001187a0-57ab-4329-baff-e7246a9edeb0___RS_Early.B 8178.JPG",
+      "filename": "001187a0-57ab-4329-baff-e7246a9edeb0___RS_Early.B 8178.JPG",
+      "base_image_id": "001187a0-57ab-4329-baff-e7246a9edeb0___RS_Early.B 8178",
+      "sha256": "100079e00ccf046c761599235a1a73db03980fa4847b2a2fe8ea4092bca6bf5c",
+      "dhash": "861b22c2d3612226",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Potato___Early_blight",
+      "unified_class": "Potato___Early_blight",
+      "split": "train",
+      "class_index": 20
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Potato___Early_blight\\009c8c31-f22d-4ffd-8f16-189c6f06c577___RS_Early.B 7885.JPG",
+      "relative_path": "PlantVillage/Potato___Early_blight/009c8c31-f22d-4ffd-8f16-189c6f06c577___RS_Early.B 7885.JPG",
+      "filename": "009c8c31-f22d-4ffd-8f16-189c6f06c577___RS_Early.B 7885.JPG",
+      "base_image_id": "009c8c31-f22d-4ffd-8f16-189c6f06c577___RS_Early.B 7885",
+      "sha256": "15ac0f0ace743361f4645cbb5bc5ff7fb44f72e2dcddbd7b2a5c20268512ddc5",
+      "dhash": "c38b396561c33639",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Potato___Early_blight",
+      "unified_class": "Potato___Early_blight",
+      "split": "train",
+      "class_index": 20
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Potato___Early_blight\\00d8f10f-5038-4e0f-bb58-0b885ddc0cc5___RS_Early.B 8722.JPG",
+      "relative_path": "PlantVillage/Potato___Early_blight/00d8f10f-5038-4e0f-bb58-0b885ddc0cc5___RS_Early.B 8722.JPG",
+      "filename": "00d8f10f-5038-4e0f-bb58-0b885ddc0cc5___RS_Early.B 8722.JPG",
+      "base_image_id": "00d8f10f-5038-4e0f-bb58-0b885ddc0cc5___RS_Early.B 8722",
+      "sha256": "c4949cee5155170fc987d2080323c25b9ef7190770e7df2b4ae7d0c450e7fdb8",
+      "dhash": "00468e367a782726",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Potato___Early_blight",
+      "unified_class": "Potato___Early_blight",
+      "split": "train",
+      "class_index": 20
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Potato___Late_blight\\006cc01a-1888-4326-9b62-a65cb55a6377___RS_LB 5207.JPG",
+      "relative_path": "PlantVillage/Potato___Late_blight/006cc01a-1888-4326-9b62-a65cb55a6377___RS_LB 5207.JPG",
+      "filename": "006cc01a-1888-4326-9b62-a65cb55a6377___RS_LB 5207.JPG",
+      "base_image_id": "006cc01a-1888-4326-9b62-a65cb55a6377___RS_LB 5207",
+      "sha256": "e2736064b143d773743c06c957b00ca5c2fc6c8dc81fc750e812732eac6bd6a8",
+      "dhash": "7d9e5373b99dcbf9",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Potato___Late_blight",
+      "unified_class": "Potato___Late_blight",
+      "split": "train",
+      "class_index": 21
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Potato___Late_blight\\0085ef03-aec3-431a-99a1-de286e10c0cf___RS_LB 2949.JPG",
+      "relative_path": "PlantVillage/Potato___Late_blight/0085ef03-aec3-431a-99a1-de286e10c0cf___RS_LB 2949.JPG",
+      "filename": "0085ef03-aec3-431a-99a1-de286e10c0cf___RS_LB 2949.JPG",
+      "base_image_id": "0085ef03-aec3-431a-99a1-de286e10c0cf___RS_LB 2949",
+      "sha256": "06d5725ff2403a621774121d88376d76d819c53432797a3fb595869b706ff781",
+      "dhash": "0104008011231a88",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Potato___Late_blight",
+      "unified_class": "Potato___Late_blight",
+      "split": "train",
+      "class_index": 21
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Potato___Late_blight\\00b1f292-23dd-44d4-aad3-c1ffb6a6ad5a___RS_LB 4479.JPG",
+      "relative_path": "PlantVillage/Potato___Late_blight/00b1f292-23dd-44d4-aad3-c1ffb6a6ad5a___RS_LB 4479.JPG",
+      "filename": "00b1f292-23dd-44d4-aad3-c1ffb6a6ad5a___RS_LB 4479.JPG",
+      "base_image_id": "00b1f292-23dd-44d4-aad3-c1ffb6a6ad5a___RS_LB 4479",
+      "sha256": "42bd63cee5f086073aa0ba6ecd90892220a48c7fa3a60e03cd046aa9d6e228ac",
+      "dhash": "da9a3c1f4f2e964c",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Potato___Late_blight",
+      "unified_class": "Potato___Late_blight",
+      "split": "train",
+      "class_index": 21
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Potato___healthy\\00fc2ee5-729f-4757-8aeb-65c3355874f2___RS_HL 1864.JPG",
+      "relative_path": "PlantVillage/Potato___healthy/00fc2ee5-729f-4757-8aeb-65c3355874f2___RS_HL 1864.JPG",
+      "filename": "00fc2ee5-729f-4757-8aeb-65c3355874f2___RS_HL 1864.JPG",
+      "base_image_id": "00fc2ee5-729f-4757-8aeb-65c3355874f2___RS_HL 1864",
+      "sha256": "1c057430715c288100b64ac6136b69f23f8708f92e7e4f0410ac16b110325946",
+      "dhash": "dc9f335d5d793736",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Potato___healthy",
+      "unified_class": "Potato___healthy",
+      "split": "train",
+      "class_index": 22
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Potato___healthy\\03da9931-e514-4cc7-b04a-8f474a133ce5___RS_HL 1830.JPG",
+      "relative_path": "PlantVillage/Potato___healthy/03da9931-e514-4cc7-b04a-8f474a133ce5___RS_HL 1830.JPG",
+      "filename": "03da9931-e514-4cc7-b04a-8f474a133ce5___RS_HL 1830.JPG",
+      "base_image_id": "03da9931-e514-4cc7-b04a-8f474a133ce5___RS_HL 1830",
+      "sha256": "ca02edeb23fcea64bae292a7b20f9a4b26484df6a287b3fb5d6b4fe53b131f33",
+      "dhash": "6dcf9b395f5327a7",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Potato___healthy",
+      "unified_class": "Potato___healthy",
+      "split": "train",
+      "class_index": 22
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Potato___healthy\\07dfb451-4378-49d1-b699-33a5fc49ff07___RS_HL 5399.JPG",
+      "relative_path": "PlantVillage/Potato___healthy/07dfb451-4378-49d1-b699-33a5fc49ff07___RS_HL 5399.JPG",
+      "filename": "07dfb451-4378-49d1-b699-33a5fc49ff07___RS_HL 5399.JPG",
+      "base_image_id": "07dfb451-4378-49d1-b699-33a5fc49ff07___RS_HL 5399",
+      "sha256": "5b8d8f9041f427aa28dcb6bc36b8e4d7a8c92d7b7a60905ab62c329a1024bd13",
+      "dhash": "396f4643233b8fcc",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Potato___healthy",
+      "unified_class": "Potato___healthy",
+      "split": "train",
+      "class_index": 22
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Raspberry___healthy\\00a3fc0e-64cc-4e35-ac2f-aef04fda9b22___Mary_HL 9177.JPG",
+      "relative_path": "PlantVillage/Raspberry___healthy/00a3fc0e-64cc-4e35-ac2f-aef04fda9b22___Mary_HL 9177.JPG",
+      "filename": "00a3fc0e-64cc-4e35-ac2f-aef04fda9b22___Mary_HL 9177.JPG",
+      "base_image_id": "00a3fc0e-64cc-4e35-ac2f-aef04fda9b22___Mary_HL 9177",
+      "sha256": "49492c3785d7e41e98b05eb91057b471d5006f5a44b9400c1272d0805f3068a6",
+      "dhash": "063f032713cfb2eb",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Raspberry___healthy",
+      "unified_class": "Raspberry___healthy",
+      "split": "train",
+      "class_index": 23
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Raspberry___healthy\\020e14fb-6016-4d7f-b489-445e0021b58e___Mary_HL 6324.JPG",
+      "relative_path": "PlantVillage/Raspberry___healthy/020e14fb-6016-4d7f-b489-445e0021b58e___Mary_HL 6324.JPG",
+      "filename": "020e14fb-6016-4d7f-b489-445e0021b58e___Mary_HL 6324.JPG",
+      "base_image_id": "020e14fb-6016-4d7f-b489-445e0021b58e___Mary_HL 6324",
+      "sha256": "15d54ac31717d16da46af60896b7ed5f9267360e57f758a4f79542e2f18602f0",
+      "dhash": "61813f7161433f9e",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Raspberry___healthy",
+      "unified_class": "Raspberry___healthy",
+      "split": "train",
+      "class_index": 23
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Raspberry___healthy\\04908211-66c9-42f8-a9b1-9d29a686f131___Mary_HL 9175.JPG",
+      "relative_path": "PlantVillage/Raspberry___healthy/04908211-66c9-42f8-a9b1-9d29a686f131___Mary_HL 9175.JPG",
+      "filename": "04908211-66c9-42f8-a9b1-9d29a686f131___Mary_HL 9175.JPG",
+      "base_image_id": "04908211-66c9-42f8-a9b1-9d29a686f131___Mary_HL 9175",
+      "sha256": "fd4851df56a38b2bfce6902a5ad49edf376863a3392bf044ede00df8cb9eaf99",
+      "dhash": "040f233387420105",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Raspberry___healthy",
+      "unified_class": "Raspberry___healthy",
+      "split": "train",
+      "class_index": 23
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Soybean___healthy\\0007ca44-b81d-475c-b8b5-c226a041f020___RS_HL 6331.JPG",
+      "relative_path": "PlantVillage/Soybean___healthy/0007ca44-b81d-475c-b8b5-c226a041f020___RS_HL 6331.JPG",
+      "filename": "0007ca44-b81d-475c-b8b5-c226a041f020___RS_HL 6331.JPG",
+      "base_image_id": "0007ca44-b81d-475c-b8b5-c226a041f020___RS_HL 6331",
+      "sha256": "1d31cbb7b459852ab966e17b80c241e1fc533ae7d23d479f0a36ffd525a4d3a0",
+      "dhash": "993e674d5d991307",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Soybean___healthy",
+      "unified_class": "Soybean___healthy",
+      "split": "train",
+      "class_index": 24
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Soybean___healthy\\0010d6a1-64f1-4997-99d8-6d86fa629014___RS_HL 6967.JPG",
+      "relative_path": "PlantVillage/Soybean___healthy/0010d6a1-64f1-4997-99d8-6d86fa629014___RS_HL 6967.JPG",
+      "filename": "0010d6a1-64f1-4997-99d8-6d86fa629014___RS_HL 6967.JPG",
+      "base_image_id": "0010d6a1-64f1-4997-99d8-6d86fa629014___RS_HL 6967",
+      "sha256": "024bc95bf222b0b66470e2bb529b7ff29fb49ddf8f434c2d4004259c464de7aa",
+      "dhash": "9143853568512b0e",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Soybean___healthy",
+      "unified_class": "Soybean___healthy",
+      "split": "train",
+      "class_index": 24
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Soybean___healthy\\00247bff-26dc-445a-8d11-0b2592787ec3___RS_HL 6869.JPG",
+      "relative_path": "PlantVillage/Soybean___healthy/00247bff-26dc-445a-8d11-0b2592787ec3___RS_HL 6869.JPG",
+      "filename": "00247bff-26dc-445a-8d11-0b2592787ec3___RS_HL 6869.JPG",
+      "base_image_id": "00247bff-26dc-445a-8d11-0b2592787ec3___RS_HL 6869",
+      "sha256": "cdfadca407c79f796d4a711bd1c94be406bf4f594a58fa1972335d072ebcca47",
+      "dhash": "4c8c363b57572f87",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Soybean___healthy",
+      "unified_class": "Soybean___healthy",
+      "split": "train",
+      "class_index": 24
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Squash___Powdery_mildew\\0045a100-36d3-45df-b417-d487d6e07eb4___UMD_Powd.M 0003.JPG",
+      "relative_path": "PlantVillage/Squash___Powdery_mildew/0045a100-36d3-45df-b417-d487d6e07eb4___UMD_Powd.M 0003.JPG",
+      "filename": "0045a100-36d3-45df-b417-d487d6e07eb4___UMD_Powd.M 0003.JPG",
+      "base_image_id": "0045a100-36d3-45df-b417-d487d6e07eb4___UMD_Powd.M 0003",
+      "sha256": "4d4f618e5a0eac4a871f580abf65b8b169c82ea737744f1748c2db1e6a99b4b5",
+      "dhash": "000c1a5a5029b2b0",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Squash___Powdery_mildew",
+      "unified_class": "Squash___Powdery_mildew",
+      "split": "train",
+      "class_index": 25
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Squash___Powdery_mildew\\0061de03-5f84-413a-b30d-1bb575cf3267___UMD_Powd.M 0415.JPG",
+      "relative_path": "PlantVillage/Squash___Powdery_mildew/0061de03-5f84-413a-b30d-1bb575cf3267___UMD_Powd.M 0415.JPG",
+      "filename": "0061de03-5f84-413a-b30d-1bb575cf3267___UMD_Powd.M 0415.JPG",
+      "base_image_id": "0061de03-5f84-413a-b30d-1bb575cf3267___UMD_Powd.M 0415",
+      "sha256": "7b64003d49b8f54300402ce38ffd92a316b7fd3c6e63ad438d3280336961d79f",
+      "dhash": "dc9c5fbf86cf6f6f",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Squash___Powdery_mildew",
+      "unified_class": "Squash___Powdery_mildew",
+      "split": "train",
+      "class_index": 25
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Squash___Powdery_mildew\\007f0b62-a0f0-4c4a-9b1b-119616dd87c2___UMD_Powd.M 0279.JPG",
+      "relative_path": "PlantVillage/Squash___Powdery_mildew/007f0b62-a0f0-4c4a-9b1b-119616dd87c2___UMD_Powd.M 0279.JPG",
+      "filename": "007f0b62-a0f0-4c4a-9b1b-119616dd87c2___UMD_Powd.M 0279.JPG",
+      "base_image_id": "007f0b62-a0f0-4c4a-9b1b-119616dd87c2___UMD_Powd.M 0279",
+      "sha256": "9c20cfcb58957c34965391774022818bd318acce055b27f9f166a7a8b87d275c",
+      "dhash": "e0c4c6e421391894",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Squash___Powdery_mildew",
+      "unified_class": "Squash___Powdery_mildew",
+      "split": "train",
+      "class_index": 25
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Strawberry___Leaf_scorch\\0024203d-6e4c-490f-b9a8-e5926df0b76e___RS_L.Scorch 0795.JPG",
+      "relative_path": "PlantVillage/Strawberry___Leaf_scorch/0024203d-6e4c-490f-b9a8-e5926df0b76e___RS_L.Scorch 0795.JPG",
+      "filename": "0024203d-6e4c-490f-b9a8-e5926df0b76e___RS_L.Scorch 0795.JPG",
+      "base_image_id": "0024203d-6e4c-490f-b9a8-e5926df0b76e___RS_L.Scorch 0795",
+      "sha256": "ced7b1a3b8dea109af205706c92ad984e461780c4400f8eb3856f0a646435bd7",
+      "dhash": "6c9b4b9706c917a3",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Strawberry___Leaf_scorch",
+      "unified_class": "Strawberry___Leaf_scorch",
+      "split": "train",
+      "class_index": 26
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Strawberry___Leaf_scorch\\0112c6b2-72cd-402b-89cd-ca052983403e___RS_L.Scorch 1161.JPG",
+      "relative_path": "PlantVillage/Strawberry___Leaf_scorch/0112c6b2-72cd-402b-89cd-ca052983403e___RS_L.Scorch 1161.JPG",
+      "filename": "0112c6b2-72cd-402b-89cd-ca052983403e___RS_L.Scorch 1161.JPG",
+      "base_image_id": "0112c6b2-72cd-402b-89cd-ca052983403e___RS_L.Scorch 1161",
+      "sha256": "e24ec4d33dd3e8ffe561575524c37c21894540726c124b051f7105492e5f54d1",
+      "dhash": "00011c1404050100",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Strawberry___Leaf_scorch",
+      "unified_class": "Strawberry___Leaf_scorch",
+      "split": "train",
+      "class_index": 26
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Strawberry___Leaf_scorch\\0138e78b-9802-43b5-b40e-84c38160418c___RS_L.Scorch 1289.JPG",
+      "relative_path": "PlantVillage/Strawberry___Leaf_scorch/0138e78b-9802-43b5-b40e-84c38160418c___RS_L.Scorch 1289.JPG",
+      "filename": "0138e78b-9802-43b5-b40e-84c38160418c___RS_L.Scorch 1289.JPG",
+      "base_image_id": "0138e78b-9802-43b5-b40e-84c38160418c___RS_L.Scorch 1289",
+      "sha256": "ce1769b2463917d970b44838c2579f022450fda30ae95270879435920dcd654a",
+      "dhash": "9c1e173d63670cdc",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Strawberry___Leaf_scorch",
+      "unified_class": "Strawberry___Leaf_scorch",
+      "split": "train",
+      "class_index": 26
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Strawberry___healthy\\00166615-5e7b-4318-8957-5e50df335ee8___RS_HL 1785.JPG",
+      "relative_path": "PlantVillage/Strawberry___healthy/00166615-5e7b-4318-8957-5e50df335ee8___RS_HL 1785.JPG",
+      "filename": "00166615-5e7b-4318-8957-5e50df335ee8___RS_HL 1785.JPG",
+      "base_image_id": "00166615-5e7b-4318-8957-5e50df335ee8___RS_HL 1785",
+      "sha256": "8819f3ed96555346077514d7c24b77c7e28f444312e4b774d38aaea0789cc674",
+      "dhash": "4c1b1b0b09232e88",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Strawberry___healthy",
+      "unified_class": "Strawberry___healthy",
+      "split": "train",
+      "class_index": 27
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Strawberry___healthy\\01e591c9-e3e7-4edc-8211-13081f4d5e7a___RS_HL 1979.JPG",
+      "relative_path": "PlantVillage/Strawberry___healthy/01e591c9-e3e7-4edc-8211-13081f4d5e7a___RS_HL 1979.JPG",
+      "filename": "01e591c9-e3e7-4edc-8211-13081f4d5e7a___RS_HL 1979.JPG",
+      "base_image_id": "01e591c9-e3e7-4edc-8211-13081f4d5e7a___RS_HL 1979",
+      "sha256": "efb2c442e82128a117ef56fa6b7653205fb0f141d05c524fb9e12b5acc052ef6",
+      "dhash": "6687133351633ed8",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Strawberry___healthy",
+      "unified_class": "Strawberry___healthy",
+      "split": "train",
+      "class_index": 27
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Strawberry___healthy\\02808b3e-ae88-4259-9b2c-f9096db336e4___RS_HL 1827.JPG",
+      "relative_path": "PlantVillage/Strawberry___healthy/02808b3e-ae88-4259-9b2c-f9096db336e4___RS_HL 1827.JPG",
+      "filename": "02808b3e-ae88-4259-9b2c-f9096db336e4___RS_HL 1827.JPG",
+      "base_image_id": "02808b3e-ae88-4259-9b2c-f9096db336e4___RS_HL 1827",
+      "sha256": "3bb9cacb8b367d2604040297e7a2aa1cdbf99f1ed863bb4d5130d89e9623693b",
+      "dhash": "ce1f1f3f6727168c",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Strawberry___healthy",
+      "unified_class": "Strawberry___healthy",
+      "split": "train",
+      "class_index": 27
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Tomato___Bacterial_spot\\0045ba29-ed1b-43b4-afde-719cc7adefdb___GCREC_Bact.Sp 6254.JPG",
+      "relative_path": "PlantVillage/Tomato___Bacterial_spot/0045ba29-ed1b-43b4-afde-719cc7adefdb___GCREC_Bact.Sp 6254.JPG",
+      "filename": "0045ba29-ed1b-43b4-afde-719cc7adefdb___GCREC_Bact.Sp 6254.JPG",
+      "base_image_id": "0045ba29-ed1b-43b4-afde-719cc7adefdb___GCREC_Bact.Sp 6254",
+      "sha256": "88555cac183d27f4efd1972bc672e1178661f2db68753efbaacd73eb3c43cb45",
+      "dhash": "030309181d353717",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Tomato___Bacterial_spot",
+      "unified_class": "Tomato___Bacterial_spot",
+      "split": "train",
+      "class_index": 28
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Tomato___Bacterial_spot\\00639d29-2d1a-4fcf-9bd3-a2b3109c74c4___UF.GRC_BS_Lab Leaf 1054.JPG",
+      "relative_path": "PlantVillage/Tomato___Bacterial_spot/00639d29-2d1a-4fcf-9bd3-a2b3109c74c4___UF.GRC_BS_Lab Leaf 1054.JPG",
+      "filename": "00639d29-2d1a-4fcf-9bd3-a2b3109c74c4___UF.GRC_BS_Lab Leaf 1054.JPG",
+      "base_image_id": "00639d29-2d1a-4fcf-9bd3-a2b3109c74c4___UF.GRC_BS_Lab Leaf 1054",
+      "sha256": "1c1dde85185153d24bc79fb343681aed009737513c1c5c5864f4952026ef1b93",
+      "dhash": "4e0e4e4012520a48",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Tomato___Bacterial_spot",
+      "unified_class": "Tomato___Bacterial_spot",
+      "split": "train",
+      "class_index": 28
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Tomato___Bacterial_spot\\00728f4d-83a0-49f1-87f8-374646fcda05___GCREC_Bact.Sp 6326.JPG",
+      "relative_path": "PlantVillage/Tomato___Bacterial_spot/00728f4d-83a0-49f1-87f8-374646fcda05___GCREC_Bact.Sp 6326.JPG",
+      "filename": "00728f4d-83a0-49f1-87f8-374646fcda05___GCREC_Bact.Sp 6326.JPG",
+      "base_image_id": "00728f4d-83a0-49f1-87f8-374646fcda05___GCREC_Bact.Sp 6326",
+      "sha256": "2d8ad318e540cf910e365877efa083c6b6d99c5e6f96a7b215104130237100a9",
+      "dhash": "c6862767cfc7cfdf",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Tomato___Bacterial_spot",
+      "unified_class": "Tomato___Bacterial_spot",
+      "split": "train",
+      "class_index": 28
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Apple___Apple_scab\\0208f4eb-45a4-4399-904e-989ac2c6257c___FREC_Scab 3037.JPG",
+      "relative_path": "PlantVillage/Apple___Apple_scab/0208f4eb-45a4-4399-904e-989ac2c6257c___FREC_Scab 3037.JPG",
+      "filename": "0208f4eb-45a4-4399-904e-989ac2c6257c___FREC_Scab 3037.JPG",
+      "base_image_id": "0208f4eb-45a4-4399-904e-989ac2c6257c___FREC_Scab 3037",
+      "sha256": "131db5601b6b9bc4246a2f4fe3c9080c59f26d5fba1ea6c5f92eaa5b61e5075f",
+      "dhash": "f3c79b376bab9c90",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Apple___Apple_scab",
+      "unified_class": "Apple___Apple_scab",
+      "split": "val",
+      "class_index": 0
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Apple___Black_rot\\02168189-aa75-4284-a7f0-8ca5901ea783___JR_FrgE.S 2948.JPG",
+      "relative_path": "PlantVillage/Apple___Black_rot/02168189-aa75-4284-a7f0-8ca5901ea783___JR_FrgE.S 2948.JPG",
+      "filename": "02168189-aa75-4284-a7f0-8ca5901ea783___JR_FrgE.S 2948.JPG",
+      "base_image_id": "02168189-aa75-4284-a7f0-8ca5901ea783___JR_FrgE.S 2948",
+      "sha256": "f6e8aebdb576a3222e911e13f84a88426d16b4103de40c14a049be81a104bb14",
+      "dhash": "9c1e4b6341633393",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Apple___Black_rot",
+      "unified_class": "Apple___Black_rot",
+      "split": "val",
+      "class_index": 1
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Apple___Cedar_apple_rust\\0340baaa-e9cc-4c04-8f9b-c204180d9ae3___FREC_C.Rust 3805.JPG",
+      "relative_path": "PlantVillage/Apple___Cedar_apple_rust/0340baaa-e9cc-4c04-8f9b-c204180d9ae3___FREC_C.Rust 3805.JPG",
+      "filename": "0340baaa-e9cc-4c04-8f9b-c204180d9ae3___FREC_C.Rust 3805.JPG",
+      "base_image_id": "0340baaa-e9cc-4c04-8f9b-c204180d9ae3___FREC_C.Rust 3805",
+      "sha256": "00b8861569edd42595dd0d598876257a0768d20cc3f22edcbbd4c10456826c15",
+      "dhash": "cc96d66f0f071703",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Apple___Cedar_apple_rust",
+      "unified_class": "Apple___Cedar_apple_rust",
+      "split": "val",
+      "class_index": 2
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Apple___healthy\\00fca0da-2db3-481b-b98a-9b67bb7b105c___RS_HL 7708.JPG",
+      "relative_path": "PlantVillage/Apple___healthy/00fca0da-2db3-481b-b98a-9b67bb7b105c___RS_HL 7708.JPG",
+      "filename": "00fca0da-2db3-481b-b98a-9b67bb7b105c___RS_HL 7708.JPG",
+      "base_image_id": "00fca0da-2db3-481b-b98a-9b67bb7b105c___RS_HL 7708",
+      "sha256": "b07c3849eebcd095729ccc002cdc4f90fe90dd37dbcf32622db473d62fd605b7",
+      "dhash": "600d4e67039b0123",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Apple___healthy",
+      "unified_class": "Apple___healthy",
+      "split": "val",
+      "class_index": 3
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Blueberry___healthy\\008c85d0-a954-4127-bd26-861dc8a1e6ff___RS_HL 2431.JPG",
+      "relative_path": "PlantVillage/Blueberry___healthy/008c85d0-a954-4127-bd26-861dc8a1e6ff___RS_HL 2431.JPG",
+      "filename": "008c85d0-a954-4127-bd26-861dc8a1e6ff___RS_HL 2431.JPG",
+      "base_image_id": "008c85d0-a954-4127-bd26-861dc8a1e6ff___RS_HL 2431",
+      "sha256": "8a75d6003172077aef3402529aed2cd68b8a1b9d92d655e54299a632a088a190",
+      "dhash": "e5cdc696b6ac5af0",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Blueberry___healthy",
+      "unified_class": "Blueberry___healthy",
+      "split": "val",
+      "class_index": 4
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Cherry_(including_sour)___Powdery_mildew\\00e0a4ab-ecbd-4560-a71c-b19d86bb087c___FREC_Pwd.M 4917.JPG",
+      "relative_path": "PlantVillage/Cherry_(including_sour)___Powdery_mildew/00e0a4ab-ecbd-4560-a71c-b19d86bb087c___FREC_Pwd.M 4917.JPG",
+      "filename": "00e0a4ab-ecbd-4560-a71c-b19d86bb087c___FREC_Pwd.M 4917.JPG",
+      "base_image_id": "00e0a4ab-ecbd-4560-a71c-b19d86bb087c___FREC_Pwd.M 4917",
+      "sha256": "c4424d6e3ecda512e7d93295cb06f6ff01ee3dbf911d260c963bf639ed460cdf",
+      "dhash": "f9c1316143e7de3d",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Cherry_(including_sour)___Powdery_mildew",
+      "unified_class": "Cherry_(including_sour)___Powdery_mildew",
+      "split": "val",
+      "class_index": 5
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Cherry_(including_sour)___healthy\\0048afb8-b950-4c57-9e72-7e26282327ee___JR_HL 9765.JPG",
+      "relative_path": "PlantVillage/Cherry_(including_sour)___healthy/0048afb8-b950-4c57-9e72-7e26282327ee___JR_HL 9765.JPG",
+      "filename": "0048afb8-b950-4c57-9e72-7e26282327ee___JR_HL 9765.JPG",
+      "base_image_id": "0048afb8-b950-4c57-9e72-7e26282327ee___JR_HL 9765",
+      "sha256": "7f8287bbe6b104528a3f9f698b673e56344fb8c4a99d8f397a2f7c6987a17ca5",
+      "dhash": "31438b930e3d3ac0",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Cherry_(including_sour)___healthy",
+      "unified_class": "Cherry_(including_sour)___healthy",
+      "split": "val",
+      "class_index": 6
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot\\0140764c-6157-4995-9ada-9c10b81af3b8___RS_GLSp 4378.JPG",
+      "relative_path": "PlantVillage/Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot/0140764c-6157-4995-9ada-9c10b81af3b8___RS_GLSp 4378.JPG",
+      "filename": "0140764c-6157-4995-9ada-9c10b81af3b8___RS_GLSp 4378.JPG",
+      "base_image_id": "0140764c-6157-4995-9ada-9c10b81af3b8___RS_GLSp 4378",
+      "sha256": "9c0e29744ac972c8901db9111c559b277e30754944c592b7b3e0f77343be4499",
+      "dhash": "71f3f938b8f8bd5c",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot",
+      "unified_class": "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot",
+      "split": "val",
+      "class_index": 7
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Corn_(maize)___Common_rust_\\RS_Rust 1565.JPG",
+      "relative_path": "PlantVillage/Corn_(maize)___Common_rust_/RS_Rust 1565.JPG",
+      "filename": "RS_Rust 1565.JPG",
+      "base_image_id": "RS_Rust 1565",
+      "sha256": "eb08987f40eba74ce61e5e0751dda5f0758fbe1d3da9b50d274b3b58afaacfcc",
+      "dhash": "f4f6b6e2e2c4c0d1",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Corn_(maize)___Common_rust_",
+      "unified_class": "Corn_(maize)___Common_rust_",
+      "split": "val",
+      "class_index": 8
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Corn_(maize)___Northern_Leaf_Blight\\005318c8-a5fa-4420-843b-23bdda7322c2___RS_NLB 3853 copy.jpg",
+      "relative_path": "PlantVillage/Corn_(maize)___Northern_Leaf_Blight/005318c8-a5fa-4420-843b-23bdda7322c2___RS_NLB 3853 copy.jpg",
+      "filename": "005318c8-a5fa-4420-843b-23bdda7322c2___RS_NLB 3853 copy.jpg",
+      "base_image_id": "005318c8-a5fa-4420-843b-23bdda7322c2___RS_NLB 3853 copy",
+      "sha256": "314ccd5ea9e83c1589f020ee1be6130bdf9a52b1f70a06250b0bcf79f2c22887",
+      "dhash": "47477371359189ce",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Corn_(maize)___Northern_Leaf_Blight",
+      "unified_class": "Corn_(maize)___Northern_Leaf_Blight",
+      "split": "val",
+      "class_index": 9
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Corn_(maize)___healthy\\01c3bf88-d315-42a3-8fa1-fc80a05c97f1___R.S_HL 8189 copy.jpg",
+      "relative_path": "PlantVillage/Corn_(maize)___healthy/01c3bf88-d315-42a3-8fa1-fc80a05c97f1___R.S_HL 8189 copy.jpg",
+      "filename": "01c3bf88-d315-42a3-8fa1-fc80a05c97f1___R.S_HL 8189 copy.jpg",
+      "base_image_id": "01c3bf88-d315-42a3-8fa1-fc80a05c97f1___R.S_HL 8189 copy",
+      "sha256": "4ef4ef9e5e8056959578408401c8a9b65b4333a31659ace12aea6cfaa7a0295b",
+      "dhash": "f87d7dec75e5b5f4",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Corn_(maize)___healthy",
+      "unified_class": "Corn_(maize)___healthy",
+      "split": "val",
+      "class_index": 10
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Grape___Black_rot\\00090b0f-c140-4e77-8d20-d39f67b75fcc___FAM_B.Rot 0376.JPG",
+      "relative_path": "PlantVillage/Grape___Black_rot/00090b0f-c140-4e77-8d20-d39f67b75fcc___FAM_B.Rot 0376.JPG",
+      "filename": "00090b0f-c140-4e77-8d20-d39f67b75fcc___FAM_B.Rot 0376.JPG",
+      "base_image_id": "00090b0f-c140-4e77-8d20-d39f67b75fcc___FAM_B.Rot 0376",
+      "sha256": "1137e31cadf613ae388e40c7d71450df5af579be3ce3acf41605df5ff5283717",
+      "dhash": "088c1f1911112302",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Grape___Black_rot",
+      "unified_class": "Grape___Black_rot",
+      "split": "val",
+      "class_index": 11
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Grape___Esca_(Black_Measles)\\00c247e8-48d2-4a56-a9f3-4eacfb4d85be___FAM_B.Msls 4197.JPG",
+      "relative_path": "PlantVillage/Grape___Esca_(Black_Measles)/00c247e8-48d2-4a56-a9f3-4eacfb4d85be___FAM_B.Msls 4197.JPG",
+      "filename": "00c247e8-48d2-4a56-a9f3-4eacfb4d85be___FAM_B.Msls 4197.JPG",
+      "base_image_id": "00c247e8-48d2-4a56-a9f3-4eacfb4d85be___FAM_B.Msls 4197",
+      "sha256": "4ce28c1b032b278bdf3428b28c51b342589ba3ce496313766cbf42b98750d02f",
+      "dhash": "8c0723115d1d3322",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Grape___Esca_(Black_Measles)",
+      "unified_class": "Grape___Esca_(Black_Measles)",
+      "split": "val",
+      "class_index": 12
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Grape___Leaf_blight_(Isariopsis_Leaf_Spot)\\0012e1ee-fde3-478f-ab27-18648feb2b05___FAM_L.Blight 1647.JPG",
+      "relative_path": "PlantVillage/Grape___Leaf_blight_(Isariopsis_Leaf_Spot)/0012e1ee-fde3-478f-ab27-18648feb2b05___FAM_L.Blight 1647.JPG",
+      "filename": "0012e1ee-fde3-478f-ab27-18648feb2b05___FAM_L.Blight 1647.JPG",
+      "base_image_id": "0012e1ee-fde3-478f-ab27-18648feb2b05___FAM_L.Blight 1647",
+      "sha256": "56a7902ec3781d0e99c7d2db040c17ee727633f0319359bea97b076fcc27bbb1",
+      "dhash": "e7072367e7e3b3b3",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)",
+      "unified_class": "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)",
+      "split": "val",
+      "class_index": 13
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Grape___healthy\\0163a6aa-fbf8-47c5-965f-59b6efe8bfe5___Mt.N.V_HL 6103.JPG",
+      "relative_path": "PlantVillage/Grape___healthy/0163a6aa-fbf8-47c5-965f-59b6efe8bfe5___Mt.N.V_HL 6103.JPG",
+      "filename": "0163a6aa-fbf8-47c5-965f-59b6efe8bfe5___Mt.N.V_HL 6103.JPG",
+      "base_image_id": "0163a6aa-fbf8-47c5-965f-59b6efe8bfe5___Mt.N.V_HL 6103",
+      "sha256": "7186473746d1362111efac82a546d4793698635e49fcf7c2e6eabcd4eb6f9272",
+      "dhash": "ec8e1b4965612f9e",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Grape___healthy",
+      "unified_class": "Grape___healthy",
+      "split": "val",
+      "class_index": 14
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Orange___Haunglongbing_(Citrus_greening)\\00045d08-898c-40df-ada6-e7579637a1f9___UF.Citrus_HLB_Lab 1690.JPG",
+      "relative_path": "PlantVillage/Orange___Haunglongbing_(Citrus_greening)/00045d08-898c-40df-ada6-e7579637a1f9___UF.Citrus_HLB_Lab 1690.JPG",
+      "filename": "00045d08-898c-40df-ada6-e7579637a1f9___UF.Citrus_HLB_Lab 1690.JPG",
+      "base_image_id": "00045d08-898c-40df-ada6-e7579637a1f9___UF.Citrus_HLB_Lab 1690",
+      "sha256": "9ad662d062f6ac5b0f58e6ba58a11dd0a0ea44100e093447af4b89f29fdb4fe4",
+      "dhash": "62c8acaefcfc7133",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Orange___Haunglongbing_(Citrus_greening)",
+      "unified_class": "Orange___Haunglongbing_(Citrus_greening)",
+      "split": "val",
+      "class_index": 15
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Peach___Bacterial_spot\\00359c66-5d75-40ce-a5b7-6ef05959d2d2___Rut._Bact.S 1381.JPG",
+      "relative_path": "PlantVillage/Peach___Bacterial_spot/00359c66-5d75-40ce-a5b7-6ef05959d2d2___Rut._Bact.S 1381.JPG",
+      "filename": "00359c66-5d75-40ce-a5b7-6ef05959d2d2___Rut._Bact.S 1381.JPG",
+      "base_image_id": "00359c66-5d75-40ce-a5b7-6ef05959d2d2___Rut._Bact.S 1381",
+      "sha256": "0efb4d0a04352b77b6e1e6a9a225716f27a159e8727a2b32ea9c14c88122d1f3",
+      "dhash": "bbf17d371bc9e5f0",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Peach___Bacterial_spot",
+      "unified_class": "Peach___Bacterial_spot",
+      "split": "val",
+      "class_index": 16
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Peach___healthy\\02070622-2fd7-40d5-9470-27e513ea8a90___Rutg._HL 3636.JPG",
+      "relative_path": "PlantVillage/Peach___healthy/02070622-2fd7-40d5-9470-27e513ea8a90___Rutg._HL 3636.JPG",
+      "filename": "02070622-2fd7-40d5-9470-27e513ea8a90___Rutg._HL 3636.JPG",
+      "base_image_id": "02070622-2fd7-40d5-9470-27e513ea8a90___Rutg._HL 3636",
+      "sha256": "2e86ce28031529ceef5a4cf17f7cb5046cf18e3cc61aa66392cbe0639cf8fba6",
+      "dhash": "5301891307061c18",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Peach___healthy",
+      "unified_class": "Peach___healthy",
+      "split": "val",
+      "class_index": 17
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Pepper,_bell___Bacterial_spot\\006adb74-934f-448f-a14f-62181742127b___JR_B.Spot 3395.JPG",
+      "relative_path": "PlantVillage/Pepper,_bell___Bacterial_spot/006adb74-934f-448f-a14f-62181742127b___JR_B.Spot 3395.JPG",
+      "filename": "006adb74-934f-448f-a14f-62181742127b___JR_B.Spot 3395.JPG",
+      "base_image_id": "006adb74-934f-448f-a14f-62181742127b___JR_B.Spot 3395",
+      "sha256": "84a7cceea14c879fcfea25b52b90bfc0e8a13f1fbceb0fb3ccd21045cb54a102",
+      "dhash": "602c26f44c491905",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Pepper,_bell___Bacterial_spot",
+      "unified_class": "Pepper,_bell___Bacterial_spot",
+      "split": "val",
+      "class_index": 18
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Pepper,_bell___healthy\\00726ad4-2569-46ce-9d4e-dbf82b14bd94___JR_HL 8686.JPG",
+      "relative_path": "PlantVillage/Pepper,_bell___healthy/00726ad4-2569-46ce-9d4e-dbf82b14bd94___JR_HL 8686.JPG",
+      "filename": "00726ad4-2569-46ce-9d4e-dbf82b14bd94___JR_HL 8686.JPG",
+      "base_image_id": "00726ad4-2569-46ce-9d4e-dbf82b14bd94___JR_HL 8686",
+      "sha256": "1355a8e47574e83913d3f393dd34bfa577f160ba5dda6efcaad6bba73675ff45",
+      "dhash": "4c0c175313591b8b",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Pepper,_bell___healthy",
+      "unified_class": "Pepper,_bell___healthy",
+      "split": "val",
+      "class_index": 19
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Potato___Early_blight\\002a55fb-7a3d-4a3a-aca8-ce2d5ebc6925___RS_Early.B 8170.JPG",
+      "relative_path": "PlantVillage/Potato___Early_blight/002a55fb-7a3d-4a3a-aca8-ce2d5ebc6925___RS_Early.B 8170.JPG",
+      "filename": "002a55fb-7a3d-4a3a-aca8-ce2d5ebc6925___RS_Early.B 8170.JPG",
+      "base_image_id": "002a55fb-7a3d-4a3a-aca8-ce2d5ebc6925___RS_Early.B 8170",
+      "sha256": "f82d5fed95db82eb2863eb2b236c3d4f0285a20966bd2048fdf12f97d3f4aa5a",
+      "dhash": "31429a3229213336",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Potato___Early_blight",
+      "unified_class": "Potato___Early_blight",
+      "split": "val",
+      "class_index": 20
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Potato___Late_blight\\00695906-210d-4a9d-822e-986a17384115___RS_LB 4026.JPG",
+      "relative_path": "PlantVillage/Potato___Late_blight/00695906-210d-4a9d-822e-986a17384115___RS_LB 4026.JPG",
+      "filename": "00695906-210d-4a9d-822e-986a17384115___RS_LB 4026.JPG",
+      "base_image_id": "00695906-210d-4a9d-822e-986a17384115___RS_LB 4026",
+      "sha256": "19c795b1ef3b8b915d7a166fb1075c79017f24989361ad6620606d07c6b94b13",
+      "dhash": "407e7e2f1707031b",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Potato___Late_blight",
+      "unified_class": "Potato___Late_blight",
+      "split": "val",
+      "class_index": 21
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Potato___healthy\\04481ca2-f94c-457e-b785-1ac05800b7ec___RS_HL 1930.JPG",
+      "relative_path": "PlantVillage/Potato___healthy/04481ca2-f94c-457e-b785-1ac05800b7ec___RS_HL 1930.JPG",
+      "filename": "04481ca2-f94c-457e-b785-1ac05800b7ec___RS_HL 1930.JPG",
+      "base_image_id": "04481ca2-f94c-457e-b785-1ac05800b7ec___RS_HL 1930",
+      "sha256": "aed52452d81d81597b1bac54981bcae6952906110f7aa47be945a6a28f4a7e60",
+      "dhash": "da7f1f5365398d67",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Potato___healthy",
+      "unified_class": "Potato___healthy",
+      "split": "val",
+      "class_index": 22
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Raspberry___healthy\\03a615df-ed85-4ae6-8b41-d5b4c980b76b___Mary_HL 6366.JPG",
+      "relative_path": "PlantVillage/Raspberry___healthy/03a615df-ed85-4ae6-8b41-d5b4c980b76b___Mary_HL 6366.JPG",
+      "filename": "03a615df-ed85-4ae6-8b41-d5b4c980b76b___Mary_HL 6366.JPG",
+      "base_image_id": "03a615df-ed85-4ae6-8b41-d5b4c980b76b___Mary_HL 6366",
+      "sha256": "786441413b34d59d5ef38d30f68da3c8e2c44f05f49b5851850bb943ec8f1ce3",
+      "dhash": "468f2b0d49630b8e",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Raspberry___healthy",
+      "unified_class": "Raspberry___healthy",
+      "split": "val",
+      "class_index": 23
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Soybean___healthy\\0029bef1-201b-4dcc-9f84-d01dfc24785d___RS_HL 6484.JPG",
+      "relative_path": "PlantVillage/Soybean___healthy/0029bef1-201b-4dcc-9f84-d01dfc24785d___RS_HL 6484.JPG",
+      "filename": "0029bef1-201b-4dcc-9f84-d01dfc24785d___RS_HL 6484.JPG",
+      "base_image_id": "0029bef1-201b-4dcc-9f84-d01dfc24785d___RS_HL 6484",
+      "sha256": "a82007f8caa432a6497cb3f1e5a9c2bd62fb6be338e32ac2b66a46547e6d53bd",
+      "dhash": "cd8e331b3d9cc933",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Soybean___healthy",
+      "unified_class": "Soybean___healthy",
+      "split": "val",
+      "class_index": 24
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Squash___Powdery_mildew\\009996d9-797e-4450-afad-e8346f7ede04___UMD_Powd.M 0216.JPG",
+      "relative_path": "PlantVillage/Squash___Powdery_mildew/009996d9-797e-4450-afad-e8346f7ede04___UMD_Powd.M 0216.JPG",
+      "filename": "009996d9-797e-4450-afad-e8346f7ede04___UMD_Powd.M 0216.JPG",
+      "base_image_id": "009996d9-797e-4450-afad-e8346f7ede04___UMD_Powd.M 0216",
+      "sha256": "98ca3af1f6cbcf28ea64d8c62a058072f958ea0d381483f131233d9dce2ff57c",
+      "dhash": "060341743c527430",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Squash___Powdery_mildew",
+      "unified_class": "Squash___Powdery_mildew",
+      "split": "val",
+      "class_index": 25
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Strawberry___Leaf_scorch\\01647a51-6ee5-4686-8f60-26ebed68fe21___RS_L.Scorch 0130.JPG",
+      "relative_path": "PlantVillage/Strawberry___Leaf_scorch/01647a51-6ee5-4686-8f60-26ebed68fe21___RS_L.Scorch 0130.JPG",
+      "filename": "01647a51-6ee5-4686-8f60-26ebed68fe21___RS_L.Scorch 0130.JPG",
+      "base_image_id": "01647a51-6ee5-4686-8f60-26ebed68fe21___RS_L.Scorch 0130",
+      "sha256": "e7b719beb1670497b7fbf0096c19d4b24580035dbcfa64ed5b4b5cd4c13e4000",
+      "dhash": "0346060343066c22",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Strawberry___Leaf_scorch",
+      "unified_class": "Strawberry___Leaf_scorch",
+      "split": "val",
+      "class_index": 26
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Strawberry___healthy\\00532378-bfb2-4d3b-8b19-903ecc085624___RS_HL 2021.JPG",
+      "relative_path": "PlantVillage/Strawberry___healthy/00532378-bfb2-4d3b-8b19-903ecc085624___RS_HL 2021.JPG",
+      "filename": "00532378-bfb2-4d3b-8b19-903ecc085624___RS_HL 2021.JPG",
+      "base_image_id": "00532378-bfb2-4d3b-8b19-903ecc085624___RS_HL 2021",
+      "sha256": "127b7d76cb6fe1ecb780f1dc96fee23c7a41b0c25cb90e6f6e797b69d6937d91",
+      "dhash": "381e4763053119cf",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Strawberry___healthy",
+      "unified_class": "Strawberry___healthy",
+      "split": "val",
+      "class_index": 27
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Tomato___Bacterial_spot\\00a7c269-3476-4d25-b744-44d6353cd921___GCREC_Bact.Sp 5807.JPG",
+      "relative_path": "PlantVillage/Tomato___Bacterial_spot/00a7c269-3476-4d25-b744-44d6353cd921___GCREC_Bact.Sp 5807.JPG",
+      "filename": "00a7c269-3476-4d25-b744-44d6353cd921___GCREC_Bact.Sp 5807.JPG",
+      "base_image_id": "00a7c269-3476-4d25-b744-44d6353cd921___GCREC_Bact.Sp 5807",
+      "sha256": "8be78a42b29e35f0521cb85ca1c5729b58a51795f1fbf1dfd44d594c99e2d3ee",
+      "dhash": "c6861b1b9bf1735a",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Tomato___Bacterial_spot",
+      "unified_class": "Tomato___Bacterial_spot",
+      "split": "val",
+      "class_index": 28
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Apple___Apple_scab\\00075aa8-d81a-4184-8541-b692b78d398a___FREC_Scab 3335.JPG",
+      "relative_path": "PlantVillage/Apple___Apple_scab/00075aa8-d81a-4184-8541-b692b78d398a___FREC_Scab 3335.JPG",
+      "filename": "00075aa8-d81a-4184-8541-b692b78d398a___FREC_Scab 3335.JPG",
+      "base_image_id": "00075aa8-d81a-4184-8541-b692b78d398a___FREC_Scab 3335",
+      "sha256": "cc34c72a9d19c74ab2fe86204143856e370d0c981a90382535811b262bb15dda",
+      "dhash": "468f1b4d415e7913",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Apple___Apple_scab",
+      "unified_class": "Apple___Apple_scab",
+      "split": "test",
+      "class_index": 0
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Apple___Black_rot\\00e909aa-e3ae-4558-9961-336bb0f35db3___JR_FrgE.S 8593.JPG",
+      "relative_path": "PlantVillage/Apple___Black_rot/00e909aa-e3ae-4558-9961-336bb0f35db3___JR_FrgE.S 8593.JPG",
+      "filename": "00e909aa-e3ae-4558-9961-336bb0f35db3___JR_FrgE.S 8593.JPG",
+      "base_image_id": "00e909aa-e3ae-4558-9961-336bb0f35db3___JR_FrgE.S 8593",
+      "sha256": "0010504cde43d088b7bff1aa6fd5625db218776662c264ef1497f2f528ab31e7",
+      "dhash": "0b395953278e515a",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Apple___Black_rot",
+      "unified_class": "Apple___Black_rot",
+      "split": "test",
+      "class_index": 1
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Apple___Cedar_apple_rust\\025b2b9a-0ec4-4132-96ac-7f2832d0db4a___FREC_C.Rust 3655.JPG",
+      "relative_path": "PlantVillage/Apple___Cedar_apple_rust/025b2b9a-0ec4-4132-96ac-7f2832d0db4a___FREC_C.Rust 3655.JPG",
+      "filename": "025b2b9a-0ec4-4132-96ac-7f2832d0db4a___FREC_C.Rust 3655.JPG",
+      "base_image_id": "025b2b9a-0ec4-4132-96ac-7f2832d0db4a___FREC_C.Rust 3655",
+      "sha256": "f457678638005152406198e087c6c79769e547bc7783371417f385337d4c0a35",
+      "dhash": "ff7bfbff6e2fdfdf",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Apple___Cedar_apple_rust",
+      "unified_class": "Apple___Cedar_apple_rust",
+      "split": "test",
+      "class_index": 2
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Apple___healthy\\0055dd26-23a7-4415-ac61-e0b44ebfaf80___RS_HL 5672.JPG",
+      "relative_path": "PlantVillage/Apple___healthy/0055dd26-23a7-4415-ac61-e0b44ebfaf80___RS_HL 5672.JPG",
+      "filename": "0055dd26-23a7-4415-ac61-e0b44ebfaf80___RS_HL 5672.JPG",
+      "base_image_id": "0055dd26-23a7-4415-ac61-e0b44ebfaf80___RS_HL 5672",
+      "sha256": "23eff20e99a15cc76627faffb0a16caa451047a2e060e787fa2ec7131df4f5f9",
+      "dhash": "e6860b130387c4b4",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Apple___healthy",
+      "unified_class": "Apple___healthy",
+      "split": "test",
+      "class_index": 3
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Blueberry___healthy\\00fee259-67b7-4dd7-8b36-12503bbdba14___RS_HL 2681.JPG",
+      "relative_path": "PlantVillage/Blueberry___healthy/00fee259-67b7-4dd7-8b36-12503bbdba14___RS_HL 2681.JPG",
+      "filename": "00fee259-67b7-4dd7-8b36-12503bbdba14___RS_HL 2681.JPG",
+      "base_image_id": "00fee259-67b7-4dd7-8b36-12503bbdba14___RS_HL 2681",
+      "sha256": "ab4329115c93b4d3f79dace59880c3ce93fa2c9223cad61baf7a09a73a8529ce",
+      "dhash": "fbe78f27676d7eee",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Blueberry___healthy",
+      "unified_class": "Blueberry___healthy",
+      "split": "test",
+      "class_index": 4
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Cherry_(including_sour)___Powdery_mildew\\00f8611c-0f2c-4f24-8241-d1748c8bb48f___FREC_Pwd.M 0479.JPG",
+      "relative_path": "PlantVillage/Cherry_(including_sour)___Powdery_mildew/00f8611c-0f2c-4f24-8241-d1748c8bb48f___FREC_Pwd.M 0479.JPG",
+      "filename": "00f8611c-0f2c-4f24-8241-d1748c8bb48f___FREC_Pwd.M 0479.JPG",
+      "base_image_id": "00f8611c-0f2c-4f24-8241-d1748c8bb48f___FREC_Pwd.M 0479",
+      "sha256": "93e10e12a36f5436d1464943e6f68bca67ba01f6a95634e894396dec941fd605",
+      "dhash": "5a1f274c6c2dae68",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Cherry_(including_sour)___Powdery_mildew",
+      "unified_class": "Cherry_(including_sour)___Powdery_mildew",
+      "split": "test",
+      "class_index": 5
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Cherry_(including_sour)___healthy\\0086a8c7-1440-423e-939d-d0567b1fc4e4___JR_HL 4277.JPG",
+      "relative_path": "PlantVillage/Cherry_(including_sour)___healthy/0086a8c7-1440-423e-939d-d0567b1fc4e4___JR_HL 4277.JPG",
+      "filename": "0086a8c7-1440-423e-939d-d0567b1fc4e4___JR_HL 4277.JPG",
+      "base_image_id": "0086a8c7-1440-423e-939d-d0567b1fc4e4___JR_HL 4277",
+      "sha256": "4aa91ae18312da3cec4bf9959e4efe553d9bfcd8d1ab40304a435ad655ea56cf",
+      "dhash": "86131d1e7e391b87",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Cherry_(including_sour)___healthy",
+      "unified_class": "Cherry_(including_sour)___healthy",
+      "split": "test",
+      "class_index": 6
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot\\0157de0c-5b81-44a1-abe8-eecaa6f1261a___RS_GLSp 4287.JPG",
+      "relative_path": "PlantVillage/Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot/0157de0c-5b81-44a1-abe8-eecaa6f1261a___RS_GLSp 4287.JPG",
+      "filename": "0157de0c-5b81-44a1-abe8-eecaa6f1261a___RS_GLSp 4287.JPG",
+      "base_image_id": "0157de0c-5b81-44a1-abe8-eecaa6f1261a___RS_GLSp 4287",
+      "sha256": "ea72e988e679d402ef4434999923e39cbc78b3d8d3a86c1a287855dc48f9d83d",
+      "dhash": "6b4b4959d9d19999",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot",
+      "unified_class": "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot",
+      "split": "test",
+      "class_index": 7
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Corn_(maize)___Common_rust_\\RS_Rust 1564.JPG",
+      "relative_path": "PlantVillage/Corn_(maize)___Common_rust_/RS_Rust 1564.JPG",
+      "filename": "RS_Rust 1564.JPG",
+      "base_image_id": "RS_Rust 1564",
+      "sha256": "33c7e87f3e7c5e2e8c1e2b63b186542b1fbcde598f4fe086ee796a4c1d95be3a",
+      "dhash": "3e5cb8727468d102",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Corn_(maize)___Common_rust_",
+      "unified_class": "Corn_(maize)___Common_rust_",
+      "split": "test",
+      "class_index": 8
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Corn_(maize)___Northern_Leaf_Blight\\00a14441-7a62-4034-bc40-b196aeab2785___RS_NLB 3932.JPG",
+      "relative_path": "PlantVillage/Corn_(maize)___Northern_Leaf_Blight/00a14441-7a62-4034-bc40-b196aeab2785___RS_NLB 3932.JPG",
+      "filename": "00a14441-7a62-4034-bc40-b196aeab2785___RS_NLB 3932.JPG",
+      "base_image_id": "00a14441-7a62-4034-bc40-b196aeab2785___RS_NLB 3932",
+      "sha256": "aa69fca37d03be783f209e75187460dccd454283c48a8a7af693be418470989e",
+      "dhash": "171613931311193b",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Corn_(maize)___Northern_Leaf_Blight",
+      "unified_class": "Corn_(maize)___Northern_Leaf_Blight",
+      "split": "test",
+      "class_index": 9
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Corn_(maize)___healthy\\028ed539-32f5-4540-a6af-466179837de9___R.S_HL 8212 copy.jpg",
+      "relative_path": "PlantVillage/Corn_(maize)___healthy/028ed539-32f5-4540-a6af-466179837de9___R.S_HL 8212 copy.jpg",
+      "filename": "028ed539-32f5-4540-a6af-466179837de9___R.S_HL 8212 copy.jpg",
+      "base_image_id": "028ed539-32f5-4540-a6af-466179837de9___R.S_HL 8212 copy",
+      "sha256": "84904b423236bad8edddd412cea1ac4e657b74b60171afbfc144633c62e378f2",
+      "dhash": "cc4f272111918a85",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Corn_(maize)___healthy",
+      "unified_class": "Corn_(maize)___healthy",
+      "split": "test",
+      "class_index": 10
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Grape___Black_rot\\00905d40-bddf-460e-b348-1dbb6a34653b___FAM_B.Rot 0664.JPG",
+      "relative_path": "PlantVillage/Grape___Black_rot/00905d40-bddf-460e-b348-1dbb6a34653b___FAM_B.Rot 0664.JPG",
+      "filename": "00905d40-bddf-460e-b348-1dbb6a34653b___FAM_B.Rot 0664.JPG",
+      "base_image_id": "00905d40-bddf-460e-b348-1dbb6a34653b___FAM_B.Rot 0664",
+      "sha256": "4955b74dda65b9c5d58e733f75f758b2c8cf5d16852ec75e750e1e318ed1a15f",
+      "dhash": "efce276757576626",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Grape___Black_rot",
+      "unified_class": "Grape___Black_rot",
+      "split": "test",
+      "class_index": 11
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Grape___Esca_(Black_Measles)\\011bb69d-fb9c-4fb9-b8cc-031e91270ec2___FAM_B.Msls 4288.JPG",
+      "relative_path": "PlantVillage/Grape___Esca_(Black_Measles)/011bb69d-fb9c-4fb9-b8cc-031e91270ec2___FAM_B.Msls 4288.JPG",
+      "filename": "011bb69d-fb9c-4fb9-b8cc-031e91270ec2___FAM_B.Msls 4288.JPG",
+      "base_image_id": "011bb69d-fb9c-4fb9-b8cc-031e91270ec2___FAM_B.Msls 4288",
+      "sha256": "2c780c92b2c03640f4b3a21c9bae067d9f5d7916e8e9f629df87363a67c5442e",
+      "dhash": "2406133351525323",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Grape___Esca_(Black_Measles)",
+      "unified_class": "Grape___Esca_(Black_Measles)",
+      "split": "test",
+      "class_index": 12
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Grape___Leaf_blight_(Isariopsis_Leaf_Spot)\\00ed3cc2-020b-499f-a951-d772dea3b154___FAM_L.Blight 4653.JPG",
+      "relative_path": "PlantVillage/Grape___Leaf_blight_(Isariopsis_Leaf_Spot)/00ed3cc2-020b-499f-a951-d772dea3b154___FAM_L.Blight 4653.JPG",
+      "filename": "00ed3cc2-020b-499f-a951-d772dea3b154___FAM_L.Blight 4653.JPG",
+      "base_image_id": "00ed3cc2-020b-499f-a951-d772dea3b154___FAM_L.Blight 4653",
+      "sha256": "8ac0cb16862378bcccadaab1c71175ec220b807ff0840b75fc7fccb44c845661",
+      "dhash": "ef86339393f37b3b",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)",
+      "unified_class": "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)",
+      "split": "test",
+      "class_index": 13
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Grape___healthy\\00e00912-bf75-4cf8-8b7d-ad64b73bea5f___Mt.N.V_HL 6067.JPG",
+      "relative_path": "PlantVillage/Grape___healthy/00e00912-bf75-4cf8-8b7d-ad64b73bea5f___Mt.N.V_HL 6067.JPG",
+      "filename": "00e00912-bf75-4cf8-8b7d-ad64b73bea5f___Mt.N.V_HL 6067.JPG",
+      "base_image_id": "00e00912-bf75-4cf8-8b7d-ad64b73bea5f___Mt.N.V_HL 6067",
+      "sha256": "44c142553a462047547fac252e8c343e6f1374d4822a09c859c59d02a8bc88f3",
+      "dhash": "76733775733b0b8e",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Grape___healthy",
+      "unified_class": "Grape___healthy",
+      "split": "test",
+      "class_index": 14
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Orange___Haunglongbing_(Citrus_greening)\\000945ae-3cf5-48c2-86a2-a3f1e777f2c7___CREC_HLB 7640.JPG",
+      "relative_path": "PlantVillage/Orange___Haunglongbing_(Citrus_greening)/000945ae-3cf5-48c2-86a2-a3f1e777f2c7___CREC_HLB 7640.JPG",
+      "filename": "000945ae-3cf5-48c2-86a2-a3f1e777f2c7___CREC_HLB 7640.JPG",
+      "base_image_id": "000945ae-3cf5-48c2-86a2-a3f1e777f2c7___CREC_HLB 7640",
+      "sha256": "c005140d9cd523d1ef3508d7a350b0cabf7d9955ea1fa7dfbe26b992fe5dd34a",
+      "dhash": "0f3f1bc919330745",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Orange___Haunglongbing_(Citrus_greening)",
+      "unified_class": "Orange___Haunglongbing_(Citrus_greening)",
+      "split": "test",
+      "class_index": 15
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Peach___Bacterial_spot\\004118fe-b351-4cad-83ca-280c77f82eaa___Rutg._Bact.S 1818.JPG",
+      "relative_path": "PlantVillage/Peach___Bacterial_spot/004118fe-b351-4cad-83ca-280c77f82eaa___Rutg._Bact.S 1818.JPG",
+      "filename": "004118fe-b351-4cad-83ca-280c77f82eaa___Rutg._Bact.S 1818.JPG",
+      "base_image_id": "004118fe-b351-4cad-83ca-280c77f82eaa___Rutg._Bact.S 1818",
+      "sha256": "ea507afc4f2f41477b881883b9d9ef6d411bb92216dc391d53bab4f25372b6af",
+      "dhash": "d8988c8c9ccac9e9",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Peach___Bacterial_spot",
+      "unified_class": "Peach___Bacterial_spot",
+      "split": "test",
+      "class_index": 16
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Peach___healthy\\026aa11e-3f67-4951-9533-3c6ceb4c3d59___Rutg._HL 2494.JPG",
+      "relative_path": "PlantVillage/Peach___healthy/026aa11e-3f67-4951-9533-3c6ceb4c3d59___Rutg._HL 2494.JPG",
+      "filename": "026aa11e-3f67-4951-9533-3c6ceb4c3d59___Rutg._HL 2494.JPG",
+      "base_image_id": "026aa11e-3f67-4951-9533-3c6ceb4c3d59___Rutg._HL 2494",
+      "sha256": "b939bc5a0292eebfaf94a7879d7638d7d86238ead098e1115497620e48219539",
+      "dhash": "a6cc2c2c271b8f06",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Peach___healthy",
+      "unified_class": "Peach___healthy",
+      "split": "test",
+      "class_index": 17
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Pepper,_bell___Bacterial_spot\\0022d6b7-d47c-4ee2-ae9a-392a53f48647___JR_B.Spot 8964.JPG",
+      "relative_path": "PlantVillage/Pepper,_bell___Bacterial_spot/0022d6b7-d47c-4ee2-ae9a-392a53f48647___JR_B.Spot 8964.JPG",
+      "filename": "0022d6b7-d47c-4ee2-ae9a-392a53f48647___JR_B.Spot 8964.JPG",
+      "base_image_id": "0022d6b7-d47c-4ee2-ae9a-392a53f48647___JR_B.Spot 8964",
+      "sha256": "a3ff41a119c785e4e37683880c47456ae2a4c27f37538072a08f2103dde2108d",
+      "dhash": "9c0e4b591c11833b",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Pepper,_bell___Bacterial_spot",
+      "unified_class": "Pepper,_bell___Bacterial_spot",
+      "split": "test",
+      "class_index": 18
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Pepper,_bell___healthy\\00208a93-7687-4e8c-b79e-3138687e0f38___JR_HL 7955.JPG",
+      "relative_path": "PlantVillage/Pepper,_bell___healthy/00208a93-7687-4e8c-b79e-3138687e0f38___JR_HL 7955.JPG",
+      "filename": "00208a93-7687-4e8c-b79e-3138687e0f38___JR_HL 7955.JPG",
+      "base_image_id": "00208a93-7687-4e8c-b79e-3138687e0f38___JR_HL 7955",
+      "sha256": "8bd46db0bd8af57272d0d5721df025cbc4856c3b5d11164bc2eb093909183340",
+      "dhash": "cadc9e3f3d75714f",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Pepper,_bell___healthy",
+      "unified_class": "Pepper,_bell___healthy",
+      "split": "test",
+      "class_index": 19
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Potato___Early_blight\\0182e991-97f0-4805-a1f7-6e1b4306d518___RS_Early.B 7015.JPG",
+      "relative_path": "PlantVillage/Potato___Early_blight/0182e991-97f0-4805-a1f7-6e1b4306d518___RS_Early.B 7015.JPG",
+      "filename": "0182e991-97f0-4805-a1f7-6e1b4306d518___RS_Early.B 7015.JPG",
+      "base_image_id": "0182e991-97f0-4805-a1f7-6e1b4306d518___RS_Early.B 7015",
+      "sha256": "cc5b1868b8acb1e0f0c140e37a1fedf61c96fd4303d8259f90ce7563ca17f845",
+      "dhash": "301c6e737971138b",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Potato___Early_blight",
+      "unified_class": "Potato___Early_blight",
+      "split": "test",
+      "class_index": 20
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Potato___Late_blight\\0051e5e8-d1c4-4a84-bf3a-a426cdad6285___RS_LB 4640.JPG",
+      "relative_path": "PlantVillage/Potato___Late_blight/0051e5e8-d1c4-4a84-bf3a-a426cdad6285___RS_LB 4640.JPG",
+      "filename": "0051e5e8-d1c4-4a84-bf3a-a426cdad6285___RS_LB 4640.JPG",
+      "base_image_id": "0051e5e8-d1c4-4a84-bf3a-a426cdad6285___RS_LB 4640",
+      "sha256": "96baa8bba4a2397887e94753a8908e35108a88a1c4715c7eab259a3bfae00b27",
+      "dhash": "e0982e1e939b8bc1",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Potato___Late_blight",
+      "unified_class": "Potato___Late_blight",
+      "split": "test",
+      "class_index": 21
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Potato___healthy\\046641c1-f837-49eb-b5f2-4109910a027c___RS_HL 1878.JPG",
+      "relative_path": "PlantVillage/Potato___healthy/046641c1-f837-49eb-b5f2-4109910a027c___RS_HL 1878.JPG",
+      "filename": "046641c1-f837-49eb-b5f2-4109910a027c___RS_HL 1878.JPG",
+      "base_image_id": "046641c1-f837-49eb-b5f2-4109910a027c___RS_HL 1878",
+      "sha256": "19e47ed531b27e96708e33447d17075a20c7a28c5e4fea4212ecac0a65c0abcd",
+      "dhash": "c6090d4c7a593386",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Potato___healthy",
+      "unified_class": "Potato___healthy",
+      "split": "test",
+      "class_index": 22
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Raspberry___healthy\\05a9ae7e-468f-4cb6-add5-860ace895d3a___Mary_HL 6359.JPG",
+      "relative_path": "PlantVillage/Raspberry___healthy/05a9ae7e-468f-4cb6-add5-860ace895d3a___Mary_HL 6359.JPG",
+      "filename": "05a9ae7e-468f-4cb6-add5-860ace895d3a___Mary_HL 6359.JPG",
+      "base_image_id": "05a9ae7e-468f-4cb6-add5-860ace895d3a___Mary_HL 6359",
+      "sha256": "b0d3ddd5af278017fafe3c54c119054830d054ea954f4d05541f7eed90b00911",
+      "dhash": "26381e0f6b693f8e",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Raspberry___healthy",
+      "unified_class": "Raspberry___healthy",
+      "split": "test",
+      "class_index": 23
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Soybean___healthy\\0027f9ae-818b-41d1-95c8-9e296bd0fdae___RS_HL 6902.JPG",
+      "relative_path": "PlantVillage/Soybean___healthy/0027f9ae-818b-41d1-95c8-9e296bd0fdae___RS_HL 6902.JPG",
+      "filename": "0027f9ae-818b-41d1-95c8-9e296bd0fdae___RS_HL 6902.JPG",
+      "base_image_id": "0027f9ae-818b-41d1-95c8-9e296bd0fdae___RS_HL 6902",
+      "sha256": "e9c0d3a7b36863cb2470266a1467513e258fd8a4e9b4e47c7b610a542a13fd21",
+      "dhash": "e68f1b71d1552396",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Soybean___healthy",
+      "unified_class": "Soybean___healthy",
+      "split": "test",
+      "class_index": 24
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Squash___Powdery_mildew\\0056878d-a244-4653-ad56-7e97080c7fd2___UMD_Powd.M 9962.JPG",
+      "relative_path": "PlantVillage/Squash___Powdery_mildew/0056878d-a244-4653-ad56-7e97080c7fd2___UMD_Powd.M 9962.JPG",
+      "filename": "0056878d-a244-4653-ad56-7e97080c7fd2___UMD_Powd.M 9962.JPG",
+      "base_image_id": "0056878d-a244-4653-ad56-7e97080c7fd2___UMD_Powd.M 9962",
+      "sha256": "06765f2b1bb9e5358f3b8ee86a9cf7c2d75f29b05ff438e4f68afd8bb141ac0b",
+      "dhash": "0c373725332b1ace",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Squash___Powdery_mildew",
+      "unified_class": "Squash___Powdery_mildew",
+      "split": "test",
+      "class_index": 25
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Strawberry___Leaf_scorch\\018eaeaf-82a5-407c-87f2-fc7edfc89ecc___RS_L.Scorch 0951.JPG",
+      "relative_path": "PlantVillage/Strawberry___Leaf_scorch/018eaeaf-82a5-407c-87f2-fc7edfc89ecc___RS_L.Scorch 0951.JPG",
+      "filename": "018eaeaf-82a5-407c-87f2-fc7edfc89ecc___RS_L.Scorch 0951.JPG",
+      "base_image_id": "018eaeaf-82a5-407c-87f2-fc7edfc89ecc___RS_L.Scorch 0951",
+      "sha256": "19cfaae2b4215cf9ebbc4342ea6a5796c7afeba8f223b99d6da29ff916efe9d3",
+      "dhash": "ce1f393311733e9d",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Strawberry___Leaf_scorch",
+      "unified_class": "Strawberry___Leaf_scorch",
+      "split": "test",
+      "class_index": 26
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Strawberry___healthy\\00e9a277-ca5e-4350-95ce-8b2918b69fb9___RS_HL 4667.JPG",
+      "relative_path": "PlantVillage/Strawberry___healthy/00e9a277-ca5e-4350-95ce-8b2918b69fb9___RS_HL 4667.JPG",
+      "filename": "00e9a277-ca5e-4350-95ce-8b2918b69fb9___RS_HL 4667.JPG",
+      "base_image_id": "00e9a277-ca5e-4350-95ce-8b2918b69fb9___RS_HL 4667",
+      "sha256": "9d97c8c1563c7e83cfc54cba680a85ffe11e120ba4a016aeb7c997621d9e9ac1",
+      "dhash": "b6337161735e26bf",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Strawberry___healthy",
+      "unified_class": "Strawberry___healthy",
+      "split": "test",
+      "class_index": 27
+    },
+    {
+      "filepath": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\dataset\\raw\\PlantVillage\\Tomato___Bacterial_spot\\00416648-be6e-4bd4-bc8d-82f43f8a7240___GCREC_Bact.Sp 3110.JPG",
+      "relative_path": "PlantVillage/Tomato___Bacterial_spot/00416648-be6e-4bd4-bc8d-82f43f8a7240___GCREC_Bact.Sp 3110.JPG",
+      "filename": "00416648-be6e-4bd4-bc8d-82f43f8a7240___GCREC_Bact.Sp 3110.JPG",
+      "base_image_id": "00416648-be6e-4bd4-bc8d-82f43f8a7240___GCREC_Bact.Sp 3110",
+      "sha256": "3320c46706d434c028aa93fde868140c48604a328844f2b1c553d020bdc9db06",
+      "dhash": "244697133795137f",
+      "source": "PlantVillage",
+      "sources": [
+        "PlantVillage"
+      ],
+      "raw_class": "Tomato___Bacterial_spot",
+      "unified_class": "Tomato___Bacterial_spot",
+      "split": "test",
+      "class_index": 28
+    }
+  ]
+}

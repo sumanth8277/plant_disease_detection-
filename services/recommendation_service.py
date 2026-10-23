@@ -30,9 +30,13 @@ def _load_commercial_supplement_catalog() -> None:
     if _COMMERCIAL_SUPPLEMENT_CATALOG is not None:
         return
 
-    catalog_path = Path("model/comprehensive_crop_recovery_and_fertilizer_catalog.json")
-    if not catalog_path.exists():
-        catalog_path = Path("reports/candidates/comprehensive_crop_recovery_and_fertilizer_catalog.json")
+    candidate_paths = [
+        Path("models/comprehensive_crop_recovery_and_fertilizer_catalog.json"),
+        Path("model/comprehensive_crop_recovery_and_fertilizer_catalog.json"),
+        Path("docs/candidates/comprehensive_crop_recovery_and_fertilizer_catalog.json"),
+        Path("reports/candidates/comprehensive_crop_recovery_and_fertilizer_catalog.json"),
+    ]
+    catalog_path = next((p for p in candidate_paths if p.exists()), candidate_paths[0])
 
     if catalog_path.exists():
         try:
@@ -50,7 +54,11 @@ def _load_commercial_supplement_catalog() -> None:
         _COMMERCIAL_SUPPLEMENT_BY_CLASS = {}
 
     _COMMERCIAL_SUPPLEMENT_BY_CODE = {}
-    mapping_path = Path("model/disease_class_mapping.json")
+    mapping_candidates = [
+        Path("models/disease_class_mapping.json"),
+        Path("model/disease_class_mapping.json"),
+    ]
+    mapping_path = next((p for p in mapping_candidates if p.exists()), mapping_candidates[0])
     if mapping_path.exists() and _COMMERCIAL_SUPPLEMENT_BY_CLASS:
         try:
             with open(mapping_path, "r", encoding="utf-8") as mf:
@@ -111,8 +119,10 @@ def _load_verified_indian_agronomic_database() -> None:
         return
 
     paths = [
+        Path("models/verified_indian_agronomic_treatments.json"),
         Path("database/verified_indian_agronomic_treatments.json"),
         Path("model/verified_indian_agronomic_treatments.json"),
+        Path("docs/candidates/verified_indian_agronomic_treatments.json"),
         Path("reports/candidates/verified_indian_agronomic_treatments.json"),
     ]
     db_path = next((p for p in paths if p.exists()), None)
@@ -128,7 +138,11 @@ def _load_verified_indian_agronomic_database() -> None:
         _VERIFIED_INDIAN_TREATMENTS = {}
 
     _VERIFIED_INDIAN_BY_CODE = {}
-    mapping_path = Path("model/disease_class_mapping.json")
+    mapping_candidates = [
+        Path("models/disease_class_mapping.json"),
+        Path("model/disease_class_mapping.json"),
+    ]
+    mapping_path = next((p for p in mapping_candidates if p.exists()), mapping_candidates[0])
     if mapping_path.exists() and _VERIFIED_INDIAN_TREATMENTS:
         try:
             with open(mapping_path, "r", encoding="utf-8") as mf:

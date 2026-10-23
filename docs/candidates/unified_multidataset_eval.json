@@ -1,0 +1,31 @@
+{
+  "evaluation_timestamp": "2026-10-23T18:24:13Z",
+  "candidate_model_path": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\models\\candidates\\unified_multidataset_model.keras",
+  "candidate_sha256": "72549be6abbf757c681924f8b4a1ef3bfb6f4fa8936dc2e7f2620be155916792",
+  "benchmarks": [
+    {
+      "benchmark_name": "PlantVillage (Laboratory Controlled)",
+      "samples": 405,
+      "candidate_accuracy": 86.67,
+      "candidate_macro_f1": 0.866,
+      "production_accuracy": 54.57,
+      "production_macro_f1": 0.4908
+    },
+    {
+      "benchmark_name": "PlantDoc (Natural Field Conditions)",
+      "samples": 236,
+      "candidate_accuracy": 49.15,
+      "candidate_macro_f1": 0.3377,
+      "production_accuracy": 14.83,
+      "production_macro_f1": 0.1017
+    },
+    {
+      "benchmark_name": "Combined Multi-Domain Test Set",
+      "samples": 641,
+      "candidate_accuracy": 72.85,
+      "candidate_macro_f1": 0.7519,
+      "production_accuracy": 39.94,
+      "production_macro_f1": 0.3826
+    }
+  ]
+}

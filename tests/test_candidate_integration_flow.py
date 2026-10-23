@@ -67,7 +67,7 @@ def test_candidate_predict_supported_disease(candidate_model_service):
     else:
         # Fallback to in-memory green leaf
         img = Image.new("RGB", (224, 224), color=(34, 139, 34))
-        filepath = str(BASE_DIR / "static" / "uploads" / "temp_test_leaf.jpg")
+        filepath = str(Config.UPLOAD_FOLDER / "temp_test_leaf.jpg")
         img.save(filepath)
 
     result = candidate_model_service.predict_image(filepath)

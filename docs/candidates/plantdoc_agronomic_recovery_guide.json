@@ -1,0 +1,536 @@
+{
+  "Apple___Apple_scab": {
+    "disease_name": "Apple Scab (Venturia inaequalis)",
+    "symptoms": "Olive-green to black velvety spots on leaf surface, leading to leaf distortion and premature yellowing.",
+    "chemical_pesticides": [
+      {
+        "name": "Difenoconazole (Score 25 EC)",
+        "dosage": "0.5 ml/L",
+        "phi_days": 14,
+        "action": "Systemic curative fungicide"
+      },
+      {
+        "name": "Mancozeb (Dithane M-45)",
+        "dosage": "2.5 g/L",
+        "phi_days": 21,
+        "action": "Broad-spectrum contact protectant"
+      }
+    ],
+    "organic_pesticides": [
+      {
+        "name": "Copper Hydroxide (Kocide)",
+        "dosage": "2.0 g/L",
+        "phi_days": 7,
+        "action": "Bactericide/Fungicide protectant"
+      },
+      {
+        "name": "Potassium Bicarbonate",
+        "dosage": "3.0 g/L",
+        "phi_days": 1,
+        "action": "pH disruption of fungal spores"
+      }
+    ],
+    "fertilizer_recovery": "Avoid excessive early-season Nitrogen (N) which produces soft, susceptible foliage. Apply Potassium Sulfate (0:0:50) at 5 g/L to strengthen epidermal cell walls. Supplement with zinc and boron foliar sprays.",
+    "ipm_recovery_practices": "Rake and compost or destroy fallen overwintered leaves. Prune tree canopy to maximize air movement and sunlight penetration."
+  },
+  "Apple___Cedar_apple_rust": {
+    "disease_name": "Cedar Apple Rust (Gymnosporangium juniperi-virginianae)",
+    "symptoms": "Bright yellow-orange or reddish spots on upper leaf surface, later forming cylindrical tube structures on leaf undersides.",
+    "chemical_pesticides": [
+      {
+        "name": "Myclobutanil (Systhane 20 EW)",
+        "dosage": "0.4 ml/L",
+        "phi_days": 14,
+        "action": "Sterol inhibitor systemic fungicide"
+      },
+      {
+        "name": "Mancozeb (75% WP)",
+        "dosage": "2.0 g/L",
+        "phi_days": 21,
+        "action": "Foliar protectant before rain events"
+      }
+    ],
+    "organic_pesticides": [
+      {
+        "name": "Sulfur Wettable Powder",
+        "dosage": "3.0 g/L",
+        "phi_days": 3,
+        "action": "Multi-site fungal spore inhibitor"
+      }
+    ],
+    "fertilizer_recovery": "Apply balanced 10-10-10 with humic acid to relieve metabolic rust stress. Avoid foliage-wetting irrigation.",
+    "ipm_recovery_practices": "Eradicate nearby eastern red cedar / juniper trees within a 500m radius if possible to break the alternating spore cycle."
+  },
+  "Pepper,_bell___Bacterial_spot": {
+    "disease_name": "Bell Pepper Bacterial Spot (Xanthomonas campestris)",
+    "symptoms": "Small, water-soaked dark lesions becoming circular with pale brown centers and yellow chlorotic margins.",
+    "chemical_pesticides": [
+      {
+        "name": "Copper Oxychloride + Streptomycin Sulfate (Plantomycin)",
+        "dosage": "2.5 g + 0.1 g/L",
+        "phi_days": 7,
+        "action": "Contact bactericidal spray"
+      }
+    ],
+    "organic_pesticides": [
+      {
+        "name": "Bacillus subtilis (Bio-fungicide/bactericide)",
+        "dosage": "5.0 ml/L",
+        "phi_days": 0,
+        "action": "Competitive exclusion of pathogen"
+      },
+      {
+        "name": "Copper Octanoate (Copper Soap)",
+        "dosage": "3.0 ml/L",
+        "phi_days": 1,
+        "action": "Gentle organic copper barrier"
+      }
+    ],
+    "fertilizer_recovery": "Foliar spray Calcium Chloride (2 g/L) + Magnesium Sulfate (3 g/L) to prevent blossom-end rot and fortify leaf tissue.",
+    "ipm_recovery_practices": "Do not enter fields when plants are wet. Sanitize pruning tools with 10% sodium hypochlorite between rows."
+  },
+  "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot": {
+    "disease_name": "Corn Gray Leaf Spot (Cercospora zeae-maydis)",
+    "symptoms": "Narrow, rectangular lesions restricted by leaf veins; lesions turn grayish-tan with distinct parallel borders.",
+    "chemical_pesticides": [
+      {
+        "name": "Azoxystrobin + Difenoconazole (Amistar Top)",
+        "dosage": "1.0 ml/L",
+        "phi_days": 14,
+        "action": "QoI and DMI dual-action systemic"
+      },
+      {
+        "name": "Pyraclostrobin (Headline)",
+        "dosage": "0.8 ml/L",
+        "phi_days": 21,
+        "action": "Strobilurin broad-spectrum fungicide"
+      }
+    ],
+    "organic_pesticides": [
+      {
+        "name": "Trichoderma viride Bio-formulation",
+        "dosage": "5.0 g/L",
+        "phi_days": 0,
+        "action": "Microbial bio-antagonist"
+      }
+    ],
+    "fertilizer_recovery": "Ensure adequate soil Potassium (K). Low potassium increases susceptibility to stalk and leaf blights.",
+    "ipm_recovery_practices": "Incorporate crop residues into soil post-harvest. Practice 2-year rotation with non-host crops such as soybean."
+  },
+  "Corn_(maize)___Northern_Leaf_Blight": {
+    "disease_name": "Corn Northern Leaf Blight (Exserohilum turcicum)",
+    "symptoms": "Long, elliptical cigar-shaped grayish-green lesions (2.5 to 15 cm long) on lower leaves progressing upwards.",
+    "chemical_pesticides": [
+      {
+        "name": "Propiconazole (Tilt 25 EC)",
+        "dosage": "1.0 ml/L",
+        "phi_days": 14,
+        "action": "Systemic triazole protectant/curative"
+      },
+      {
+        "name": "Mancozeb (75% WP)",
+        "dosage": "2.5 g/L",
+        "phi_days": 21,
+        "action": "Contact foliar protectant"
+      }
+    ],
+    "organic_pesticides": [
+      {
+        "name": "Neem Seed Kernel Extract (NSKE 5%)",
+        "dosage": "50 ml/L",
+        "phi_days": 1,
+        "action": "Botanical antifungal extract"
+      }
+    ],
+    "fertilizer_recovery": "Apply balanced N-P-K (120:60:40 kg/ha). Split nitrogen applications to avoid excessive lush vegetative growth.",
+    "ipm_recovery_practices": "Plant blight-resistant hybrids with Ht genes. Plow under infected crop debris after harvest."
+  },
+  "Corn_(maize)___Common_rust_": {
+    "disease_name": "Corn Common Rust (Puccinia sorghi)",
+    "symptoms": "Small, circular to elongate golden-brown to cinnamon pustules rupturing both upper and lower leaf surfaces.",
+    "chemical_pesticides": [
+      {
+        "name": "Tebuconazole (Folicur 250 EC)",
+        "dosage": "1.0 ml/L",
+        "phi_days": 14,
+        "action": "Curative systemic fungicide"
+      },
+      {
+        "name": "Mancozeb (75% WP)",
+        "dosage": "2.0 g/L",
+        "phi_days": 14,
+        "action": "Preventive contact protectant"
+      }
+    ],
+    "organic_pesticides": [
+      {
+        "name": "Wettable Sulfur (80% WDG)",
+        "dosage": "2.5 g/L",
+        "phi_days": 3,
+        "action": "Contact protective fungicide"
+      }
+    ],
+    "fertilizer_recovery": "Boost Potassium (MOP or SOP @ 50 kg/ha) to accelerate tissue healing. Maintain balanced soil fertility.",
+    "ipm_recovery_practices": "Early planting helps crops mature before high rust spore densities arrive from southern regions."
+  },
+  "Potato___Early_blight": {
+    "disease_name": "Potato Early Blight (Alternaria solani)",
+    "symptoms": "Target-like circular brown lesions with concentric rings, surrounded by yellow chlorotic margins on older leaves.",
+    "chemical_pesticides": [
+      {
+        "name": "Chlorothalonil (Kavach 75 WP)",
+        "dosage": "2.0 g/L",
+        "phi_days": 7,
+        "action": "Broad-spectrum contact protectant"
+      },
+      {
+        "name": "Azoxystrobin (Amistar 25 SC)",
+        "dosage": "0.5 ml/L",
+        "phi_days": 14,
+        "action": "Preventive and curative systemic"
+      }
+    ],
+    "organic_pesticides": [
+      {
+        "name": "Copper Oxychloride (50% WP)",
+        "dosage": "2.5 g/L",
+        "phi_days": 5,
+        "action": "Protective copper barrier"
+      },
+      {
+        "name": "Neem Oil Extract (1500 ppm)",
+        "dosage": "5.0 ml/L",
+        "phi_days": 0,
+        "action": "Botanical fungal spore suppressant"
+      }
+    ],
+    "fertilizer_recovery": "Maintain adequate Nitrogen and Potassium. Stressed or under-fertilized potato vines are significantly more prone to early blight.",
+    "ipm_recovery_practices": "Ensure minimum 3-year crop rotation. Use drip irrigation to prevent free moisture on leaves."
+  },
+  "Potato___Late_blight": {
+    "disease_name": "Potato Late Blight (Phytophthora infestans)",
+    "symptoms": "Dark, water-soaked necrotic lesions on leaf margins with white fungal mildew visible on leaf undersides in humid conditions.",
+    "chemical_pesticides": [
+      {
+        "name": "Metalaxyl + Mancozeb (Ridomil Gold 68 WG)",
+        "dosage": "2.5 g/L",
+        "phi_days": 14,
+        "action": "Systemic and contact oomycete killer"
+      },
+      {
+        "name": "Dimethomorph (Acrobat 50 WP)",
+        "dosage": "1.0 g/L",
+        "phi_days": 7,
+        "action": "Cell wall disruptor systemic"
+      }
+    ],
+    "organic_pesticides": [
+      {
+        "name": "Bordeaux Mixture (1%)",
+        "dosage": "10 g/L",
+        "phi_days": 7,
+        "action": "Classic copper sulfate + lime protective wash"
+      }
+    ],
+    "fertilizer_recovery": "Do not apply late-season nitrogen. Apply Potassium Phosphite (3 ml/L) as a systemic defense elicitor.",
+    "ipm_recovery_practices": "Destroy cull piles. Harvest tubers only after vines have been dead for 2 weeks to prevent tuber infection."
+  },
+  "Squash___Powdery_mildew": {
+    "disease_name": "Squash Powdery Mildew (Podosphaera xanthii)",
+    "symptoms": "White, talcum powder-like fungal patches on both upper and lower leaf surfaces, causing leaves to yellow and brown.",
+    "chemical_pesticides": [
+      {
+        "name": "Penconazole (Topas 100 EC)",
+        "dosage": "0.5 ml/L",
+        "phi_days": 7,
+        "action": "Systemic sterol demethylation inhibitor"
+      },
+      {
+        "name": "Hexaconazole (Contaf 5 EC)",
+        "dosage": "1.0 ml/L",
+        "phi_days": 14,
+        "action": "Broad-spectrum triazole fungicide"
+      }
+    ],
+    "organic_pesticides": [
+      {
+        "name": "Potassium Bicarbonate (MilStop)",
+        "dosage": "3.0 g/L",
+        "phi_days": 0,
+        "action": "Cell wall dehydrator and spore killer"
+      },
+      {
+        "name": "Horticultural Mineral Oil",
+        "dosage": "5.0 ml/L",
+        "phi_days": 1,
+        "action": "Smothers fungal mycelium and prevents spore germination"
+      }
+    ],
+    "fertilizer_recovery": "Apply Silicon fertilizer (Potassium Silicate @ 2 ml/L) to reinforce leaf cuticle against fungal penetration.",
+    "ipm_recovery_practices": "Provide ample row spacing for airflow. Remove severely infected older leaves from bottom of vines."
+  },
+  "Tomato___Early_blight": {
+    "disease_name": "Tomato Early Blight (Alternaria solani)",
+    "symptoms": "Dark brown target-spot concentric rings on lower leaves, causing progressive yellowing and defoliation from ground up.",
+    "chemical_pesticides": [
+      {
+        "name": "Mancozeb (Dithane M-45)",
+        "dosage": "2.5 g/L",
+        "phi_days": 7,
+        "action": "Contact multi-site protectant"
+      },
+      {
+        "name": "Difenoconazole (Score 25 EC)",
+        "dosage": "0.5 ml/L",
+        "phi_days": 7,
+        "action": "Systemic curative triazole"
+      }
+    ],
+    "organic_pesticides": [
+      {
+        "name": "Cold-pressed Neem Oil (10000 ppm)",
+        "dosage": "4.0 ml/L",
+        "phi_days": 0,
+        "action": "Bio-fungicide and insect repellent"
+      },
+      {
+        "name": "Trichoderma harzianum",
+        "dosage": "5.0 g/L",
+        "phi_days": 0,
+        "action": "Beneficial microbial antagonist"
+      }
+    ],
+    "fertilizer_recovery": "Apply Calcium Nitrate (3 g/L) foliar spray to strengthen leaf cell membranes against enzymatic fungal breakdown.",
+    "ipm_recovery_practices": "Mulch soil with clean straw to prevent soil-splash onto lower leaves. Prune lower 30cm of foliage."
+  },
+  "Tomato___Late_blight": {
+    "disease_name": "Tomato Late Blight (Phytophthora infestans)",
+    "symptoms": "Greasy, dark water-soaked patches on leaves rapidly expanding under wet weather, with white mildew under leaves.",
+    "chemical_pesticides": [
+      {
+        "name": "Cymoxanil + Mancozeb (Curzate M8)",
+        "dosage": "2.0 g/L",
+        "phi_days": 7,
+        "action": "Penetrating curative and protective mix"
+      },
+      {
+        "name": "Famoxadone + Cymoxanil (Equation Pro)",
+        "dosage": "0.8 g/L",
+        "phi_days": 3,
+        "action": "High-potency sporulation inhibitor"
+      }
+    ],
+    "organic_pesticides": [
+      {
+        "name": "Copper Hydroxide (Kocide 3000)",
+        "dosage": "2.0 g/L",
+        "phi_days": 1,
+        "action": "Bio-protective copper wash"
+      }
+    ],
+    "fertilizer_recovery": "Stop overhead watering immediately. Spray Mono-Potassium Phosphate (0:52:34 @ 4 g/L) to induce systemic acquired resistance (SAR).",
+    "ipm_recovery_practices": "Rogue out infected plants immediately and bag them to prevent airborne spore dissemination."
+  },
+  "Tomato___Septoria_leaf_spot": {
+    "disease_name": "Tomato Septoria Leaf Spot (Septoria lycopersici)",
+    "symptoms": "Numerous small circular spots (2-3 mm) with dark brown borders and pale gray or tan centers speckled with tiny black dots (pycnidia).",
+    "chemical_pesticides": [
+      {
+        "name": "Chlorothalonil (Bravo 720)",
+        "dosage": "2.0 ml/L",
+        "phi_days": 7,
+        "action": "Multi-site broad-spectrum barrier"
+      },
+      {
+        "name": "Azoxystrobin (Heritage)",
+        "dosage": "0.5 g/L",
+        "phi_days": 1,
+        "action": "Preventive strobilurin"
+      }
+    ],
+    "organic_pesticides": [
+      {
+        "name": "Bio-Copper Soap",
+        "dosage": "3.0 ml/L",
+        "phi_days": 0,
+        "action": "Gentle non-phytotoxic organic protectant"
+      }
+    ],
+    "fertilizer_recovery": "Maintain balanced micronutrient feeding (Iron, Manganese, Boron) to stimulate vigor without forcing soft succulent stems.",
+    "ipm_recovery_practices": "Eliminate solanaceous weeds (such as horsenettle and nightshade) surrounding the plot."
+  },
+  "Tomato___Bacterial_spot": {
+    "disease_name": "Tomato Bacterial Spot (Xanthomonas spp.)",
+    "symptoms": "Small greasy water-soaked circular spots becoming angular, dark brown, and scabby on leaves and fruits.",
+    "chemical_pesticides": [
+      {
+        "name": "Copper Oxychloride + Kasugamycin",
+        "dosage": "2.0 g/L",
+        "phi_days": 7,
+        "action": "Antibiotic-copper synergy"
+      }
+    ],
+    "organic_pesticides": [
+      {
+        "name": "Bacillus amyloliquefaciens",
+        "dosage": "3.0 ml/L",
+        "phi_days": 0,
+        "action": "Colonizing bio-bactericide"
+      }
+    ],
+    "fertilizer_recovery": "Avoid high ammonium nitrogen. Ensure high calcium nutrition to strengthen pectins in the cell middle lamella.",
+    "ipm_recovery_practices": "Use certified pathogen-free seeds. Never work in wet tomato fields."
+  },
+  "Tomato___Leaf_Mold": {
+    "disease_name": "Tomato Leaf Mold (Passalora fulva / Cladosporium fulvum)",
+    "symptoms": "Pale green or yellowish spots on upper leaf surfaces matching olive-green to brown velvety fungal patches on lower surface.",
+    "chemical_pesticides": [
+      {
+        "name": "Difenoconazole",
+        "dosage": "0.5 ml/L",
+        "phi_days": 7,
+        "action": "Triazole systemic curative"
+      }
+    ],
+    "organic_pesticides": [
+      {
+        "name": "Potassium Bicarbonate",
+        "dosage": "3.0 g/L",
+        "phi_days": 0,
+        "action": "Spore desiccant"
+      },
+      {
+        "name": "Sulfur Dust",
+        "dosage": "2.0 g/L",
+        "phi_days": 1,
+        "action": "Protective multi-site"
+      }
+    ],
+    "fertilizer_recovery": "Apply Potassium Sulfate (0:0:50 @ 4 g/L). Maintain soil moisture consistency with drip irrigation.",
+    "ipm_recovery_practices": "Heavily ventilate greenhouse / polyhouse structures. Keep relative humidity below 85%."
+  },
+  "Tomato___Tomato_mosaic_virus": {
+    "disease_name": "Tomato Mosaic Virus (ToMV)",
+    "symptoms": "Mottling of leaves with alternating light and dark green areas, leaf curling, blistering, and 'fern-leaf' distortion.",
+    "chemical_pesticides": [
+      {
+        "name": "No chemical viricide exists",
+        "dosage": "N/A",
+        "phi_days": 0,
+        "action": "Viruses cannot be cured chemically"
+      }
+    ],
+    "organic_pesticides": [
+      {
+        "name": "Skim Milk spray (20% solution)",
+        "dosage": "200 ml/L",
+        "phi_days": 0,
+        "action": "Milk proteins inactivate virus particles during handling"
+      }
+    ],
+    "fertilizer_recovery": "Apply Zinc-EDTA (1 g/L) + Seaweed Extract (2 ml/L) to support plant immune vitality and metabolic resilience.",
+    "ipm_recovery_practices": "Wash hands with soap and water after handling tobacco. Disinfect all stakes and trellises with 20% trisodium phosphate (TSP)."
+  },
+  "Tomato___Tomato_Yellow_Leaf_Curl_Virus": {
+    "disease_name": "Tomato Yellow Leaf Curl Virus (TYLCV)",
+    "symptoms": "Severe plant stunting, upward cupping of leaf margins, prominent interveinal chlorosis (yellowing), and blossom drop.",
+    "chemical_pesticides": [
+      {
+        "name": "Imidacloprid 17.8 SL (Targets vector Whiteflies)",
+        "dosage": "0.5 ml/L",
+        "phi_days": 14,
+        "action": "Systemic neonicotinoid vector control"
+      },
+      {
+        "name": "Spiromesifen (Oberon 240 SC)",
+        "dosage": "1.0 ml/L",
+        "phi_days": 7,
+        "action": "Lipid biosynthesis inhibitor vector control"
+      }
+    ],
+    "organic_pesticides": [
+      {
+        "name": "Yellow Sticky Traps",
+        "dosage": "1 trap per 100 sq ft",
+        "phi_days": 0,
+        "action": "Mechanical vector capture"
+      },
+      {
+        "name": "Beauveria bassiana (Entomopathogenic fungus)",
+        "dosage": "5.0 g/L",
+        "phi_days": 0,
+        "action": "Bio-control of whiteflies"
+      },
+      {
+        "name": "Neem Oil 10,000 ppm",
+        "dosage": "4.0 ml/L",
+        "phi_days": 0,
+        "action": "Whitefly oviposition deterrent"
+      }
+    ],
+    "fertilizer_recovery": "Apply balanced foliar feed with Magnesium Sulfate (2 g/L) and Potassium Nitrate (3 g/L) to support remaining foliage.",
+    "ipm_recovery_practices": "Install 50-mesh insect-proof netting in greenhouses. Destroy infected plants immediately upon early symptom detection."
+  },
+  "Tomato___Spider_mites Two-spotted_spider_mite": {
+    "disease_name": "Two-Spotted Spider Mite (Tetranychus urticae)",
+    "symptoms": "Fine white/yellow stippling on leaf surface, leading to bronzing, drying, and characteristic fine silken webbing under leaves.",
+    "chemical_pesticides": [
+      {
+        "name": "Abamectin (Vertimec 1.8 EC)",
+        "dosage": "0.5 ml/L",
+        "phi_days": 7,
+        "action": "Translaminar avermectin miticide"
+      },
+      {
+        "name": "Fenazaquin (Magister 10 EC)",
+        "dosage": "1.5 ml/L",
+        "phi_days": 14,
+        "action": "Mitochondrial electron transport inhibitor"
+      }
+    ],
+    "organic_pesticides": [
+      {
+        "name": "Insecticidal Soap (Potassium salts of fatty acids)",
+        "dosage": "10 ml/L",
+        "phi_days": 0,
+        "action": "Dissolves mite cuticles on contact"
+      },
+      {
+        "name": "Predatory Mites (Phytoseiulus persimilis)",
+        "dosage": "2-5 mites per plant",
+        "phi_days": 0,
+        "action": "Biological predation"
+      }
+    ],
+    "fertilizer_recovery": "Avoid water stress. Dusty, dry conditions with high nitrogen encourage explosive spider mite reproduction.",
+    "ipm_recovery_practices": "Wash foliage with strong water jets to disrupt webs and dislodge mite colonies."
+  },
+  "Grape___Black_rot": {
+    "disease_name": "Grape Black Rot (Guignardia bidwellii)",
+    "symptoms": "Reddish-brown circular spots on leaves with tiny black fruiting bodies (pycnidia) arranged in rings inside lesions.",
+    "chemical_pesticides": [
+      {
+        "name": "Mancozeb (75 WP)",
+        "dosage": "2.5 g/L",
+        "phi_days": 28,
+        "action": "Early season protectant"
+      },
+      {
+        "name": "Tebuconazole (Folicur)",
+        "dosage": "0.75 ml/L",
+        "phi_days": 14,
+        "action": "Curative triazole"
+      }
+    ],
+    "organic_pesticides": [
+      {
+        "name": "Copper Sulfate + Lime (Bordeaux Mixture)",
+        "dosage": "10 g/L",
+        "phi_days": 14,
+        "action": "Traditional protective wash"
+      }
+    ],
+    "fertilizer_recovery": "Foliar spray Boron (1 g/L) and Zinc (2 g/L) during cluster pre-bloom. Avoid lush overgrown canopies.",
+    "ipm_recovery_practices": "Remove and burn mummified fruit clusters hanging on vines or fallen on soil."
+  }
+}

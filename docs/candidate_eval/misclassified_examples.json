@@ -1,0 +1,37 @@
+[
+  {
+    "file": "PlantVillage/Apple___Apple_scab/00075aa8-d81a-4184-8541-b692b78d398a___FREC_Scab 3335.JPG",
+    "source": "PlantVillage",
+    "true_class": "Apple___Apple_scab",
+    "predicted_class": "Apple___Black_rot",
+    "confidence": 0.1873
+  },
+  {
+    "file": "PlantVillage/Blueberry___healthy/00fee259-67b7-4dd7-8b36-12503bbdba14___RS_HL 2681.JPG",
+    "source": "PlantVillage",
+    "true_class": "Blueberry___healthy",
+    "predicted_class": "Pepper,_bell___Bacterial_spot",
+    "confidence": 0.2532
+  },
+  {
+    "file": "PlantVillage/Cherry_(including_sour)___Powdery_mildew/00f8611c-0f2c-4f24-8241-d1748c8bb48f___FREC_Pwd.M 0479.JPG",
+    "source": "PlantVillage",
+    "true_class": "Cherry_(including_sour)___Powdery_mildew",
+    "predicted_class": "Apple___Cedar_apple_rust",
+    "confidence": 0.2808
+  },
+  {
+    "file": "PlantVillage/Corn_(maize)___Northern_Leaf_Blight/00a14441-7a62-4034-bc40-b196aeab2785___RS_NLB 3932.JPG",
+    "source": "PlantVillage",
+    "true_class": "Corn_(maize)___Northern_Leaf_Blight",
+    "predicted_class": "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot",
+    "confidence": 0.4786
+  },
+  {
+    "file": "PlantVillage/Peach___healthy/026aa11e-3f67-4951-9533-3c6ceb4c3d59___Rutg._HL 2494.JPG",
+    "source": "PlantVillage",
+    "true_class": "Peach___healthy",
+    "predicted_class": "Blueberry___healthy",
+    "confidence": 0.684
+  }
+]
