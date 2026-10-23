@@ -24,6 +24,7 @@ static/uploads/*
 # Machine Learning Artifacts & Datasets (for ML phases)
 models/backups/
 models/final_candidate.keras
+models/candidates/*.keras
 model/*.h5
 model/*.keras
 model/*.onnx

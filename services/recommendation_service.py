@@ -5,12 +5,198 @@ and growth-stage fertilizer recommendations from MySQL using parameterized queri
 with comprehensive agronomic fallback guidance when the database is offline or unseeded.
 """
 
+import json
 import logging
+from pathlib import Path
 from typing import Any, Dict, List, Optional
 
 from database.db import check_db_connection, execute_query
 
 logger = logging.getLogger(__name__)
+
+# ==============================================================================
+# Commercial Treatment & Fertilizer Supplement Knowledge Base (Multi-Dataset Catalog)
+# Sourced from MuhammadEhsan02 & PlantDoc integration
+# ==============================================================================
+
+_COMMERCIAL_SUPPLEMENT_CATALOG: Optional[List[Dict[str, Any]]] = None
+_COMMERCIAL_SUPPLEMENT_BY_CLASS: Optional[Dict[str, Dict[str, Any]]] = None
+_COMMERCIAL_SUPPLEMENT_BY_CODE: Optional[Dict[str, Dict[str, Any]]] = None
+
+
+def _load_commercial_supplement_catalog() -> None:
+    """Loads and indexes commercial fertilizer and treatment supplement data."""
+    global _COMMERCIAL_SUPPLEMENT_CATALOG, _COMMERCIAL_SUPPLEMENT_BY_CLASS, _COMMERCIAL_SUPPLEMENT_BY_CODE
+    if _COMMERCIAL_SUPPLEMENT_CATALOG is not None:
+        return
+
+    catalog_path = Path("model/comprehensive_crop_recovery_and_fertilizer_catalog.json")
+    if not catalog_path.exists():
+        catalog_path = Path("reports/candidates/comprehensive_crop_recovery_and_fertilizer_catalog.json")
+
+    if catalog_path.exists():
+        try:
+            with open(catalog_path, "r", encoding="utf-8") as f:
+                _COMMERCIAL_SUPPLEMENT_CATALOG = json.load(f)
+                _COMMERCIAL_SUPPLEMENT_BY_CLASS = {
+                    item["class_name"]: item for item in _COMMERCIAL_SUPPLEMENT_CATALOG if "class_name" in item
+                }
+        except Exception as err:
+            logger.warning("Failed to load commercial supplement catalog: %s", err)
+            _COMMERCIAL_SUPPLEMENT_CATALOG = []
+            _COMMERCIAL_SUPPLEMENT_BY_CLASS = {}
+    else:
+        _COMMERCIAL_SUPPLEMENT_CATALOG = []
+        _COMMERCIAL_SUPPLEMENT_BY_CLASS = {}
+
+    _COMMERCIAL_SUPPLEMENT_BY_CODE = {}
+    mapping_path = Path("model/disease_class_mapping.json")
+    if mapping_path.exists() and _COMMERCIAL_SUPPLEMENT_BY_CLASS:
+        try:
+            with open(mapping_path, "r", encoding="utf-8") as mf:
+                m_data = json.load(mf).get("mappings", {})
+                for cname, meta in m_data.items():
+                    code = meta.get("disease_code")
+                    if code and cname in _COMMERCIAL_SUPPLEMENT_BY_CLASS:
+                        _COMMERCIAL_SUPPLEMENT_BY_CODE[code] = _COMMERCIAL_SUPPLEMENT_BY_CLASS[cname]
+        except Exception as map_err:
+            logger.warning("Failed to map disease_code to supplements: %s", map_err)
+
+
+def get_commercial_supplement_recommendation(prediction_data: Dict[str, Any]) -> Optional[Dict[str, Any]]:
+    """
+    Retrieves targeted commercial fertilizers, fungicides, bactericides, and pesticides
+    sourced from the multi-dataset agronomic catalog (MuhammadEhsan02 & PlantDoc integration).
+    """
+    _load_commercial_supplement_catalog()
+    if not _COMMERCIAL_SUPPLEMENT_BY_CLASS:
+        return None
+
+    # Check 1: Direct raw class match (e.g. Tomato___Early_blight)
+    raw_class = prediction_data.get("raw_class") or prediction_data.get("class_name")
+    if raw_class and raw_class in _COMMERCIAL_SUPPLEMENT_BY_CLASS:
+        return _COMMERCIAL_SUPPLEMENT_BY_CLASS[raw_class]
+
+    # Check 2: Disease code match (e.g. TOMATO_EARLY_BLIGHT)
+    disease_code = prediction_data.get("disease_code")
+    if disease_code and disease_code in _COMMERCIAL_SUPPLEMENT_BY_CODE:
+        return _COMMERCIAL_SUPPLEMENT_BY_CODE[disease_code]
+
+    # Check 3: Normalized crop and condition substring match
+    crop = str(prediction_data.get("crop_name", "")).strip().lower()
+    disease = str(prediction_data.get("disease_name", "")).strip().lower()
+    for cname, item in _COMMERCIAL_SUPPLEMENT_BY_CLASS.items():
+        item_crop = str(item.get("crop", "")).strip().lower()
+        item_cond = str(item.get("condition", "")).strip().lower()
+        if crop and (crop in item_crop or item_crop in crop):
+            if ("healthy" in disease and item.get("is_healthy")) or (item_cond and (item_cond in disease or disease in item_cond)):
+                return item
+
+    return None
+
+
+# ==============================================================================
+# Verified Indian Agronomic & Pesticide Treatment Database
+# Sourced from CIBRC, ICAR, TNAU Agritech, DPPQS, and PAU official advisories
+# ==============================================================================
+
+_VERIFIED_INDIAN_TREATMENTS: Optional[Dict[str, Any]] = None
+_VERIFIED_INDIAN_BY_CODE: Optional[Dict[str, Any]] = None
+
+
+def _load_verified_indian_agronomic_database() -> None:
+    """Loads and indexes verified Indian agricultural treatment & pesticide data."""
+    global _VERIFIED_INDIAN_TREATMENTS, _VERIFIED_INDIAN_BY_CODE
+    if _VERIFIED_INDIAN_TREATMENTS is not None:
+        return
+
+    paths = [
+        Path("database/verified_indian_agronomic_treatments.json"),
+        Path("model/verified_indian_agronomic_treatments.json"),
+        Path("reports/candidates/verified_indian_agronomic_treatments.json"),
+    ]
+    db_path = next((p for p in paths if p.exists()), None)
+
+    if db_path:
+        try:
+            with open(db_path, "r", encoding="utf-8") as f:
+                _VERIFIED_INDIAN_TREATMENTS = json.load(f)
+        except Exception as err:
+            logger.warning("Failed to load verified Indian treatments database: %s", err)
+            _VERIFIED_INDIAN_TREATMENTS = {}
+    else:
+        _VERIFIED_INDIAN_TREATMENTS = {}
+
+    _VERIFIED_INDIAN_BY_CODE = {}
+    mapping_path = Path("model/disease_class_mapping.json")
+    if mapping_path.exists() and _VERIFIED_INDIAN_TREATMENTS:
+        try:
+            with open(mapping_path, "r", encoding="utf-8") as mf:
+                m_data = json.load(mf).get("mappings", {})
+                for cname, meta in m_data.items():
+                    code = meta.get("disease_code")
+                    if code and cname in _VERIFIED_INDIAN_TREATMENTS:
+                        _VERIFIED_INDIAN_BY_CODE[code] = _VERIFIED_INDIAN_TREATMENTS[cname]
+        except Exception as map_err:
+            logger.warning("Failed to map disease_code to Indian treatments: %s", map_err)
+
+
+def get_verified_indian_agronomic_treatment(prediction_data: Dict[str, Any]) -> Optional[Dict[str, Any]]:
+    """
+    Retrieves verified CIBRC, ICAR, and TNAU agronomic treatments, non-chemical IPM,
+    pesticide dosages, PHI, and fertilizer guidance.
+    If no reliable treatment is found, ensures 'Verified treatment information unavailable' is returned.
+    """
+    # Guard: Strictly withhold for Neem or unsupported / inconclusive specimens
+    disease_code = prediction_data.get("disease_code") or ""
+    if (
+        disease_code in ("NEEM_DISEASE_UNSUPPORTED", "UNSUPPORTED_SPECIMEN")
+        or prediction_data.get("is_neem")
+        or not prediction_data.get("is_supported", True)
+        or prediction_data.get("is_inconclusive")
+    ):
+        return None
+
+    _load_verified_indian_agronomic_database()
+    if not _VERIFIED_INDIAN_TREATMENTS:
+        return None
+
+    # Check 1: Direct raw class match (e.g. Tomato___Early_blight)
+    raw_class = prediction_data.get("raw_class") or prediction_data.get("class_name")
+    if raw_class and raw_class in _VERIFIED_INDIAN_TREATMENTS:
+        return _VERIFIED_INDIAN_TREATMENTS[raw_class]
+
+    # Check 2: Disease code match (e.g. TOMATO_EARLY_BLIGHT)
+    if disease_code and disease_code in _VERIFIED_INDIAN_BY_CODE:
+        return _VERIFIED_INDIAN_BY_CODE[disease_code]
+
+    # Check 3: Normalized crop and disease name substring match
+    crop = str(prediction_data.get("crop_name", "")).strip().lower()
+    disease = str(prediction_data.get("disease_name", "")).strip().lower()
+    for cname, item in _VERIFIED_INDIAN_TREATMENTS.items():
+        item_crop = str(item.get("crop", "")).strip().lower()
+        item_disease = str(item.get("disease", "")).strip().lower()
+        if crop and (crop in item_crop or item_crop in crop):
+            if ("healthy" in disease and item.get("is_healthy")) or (item_disease and (item_disease in disease or disease in item_disease)):
+                return item
+
+    # Fallback when crop is recognized but specific condition has no verified chemical registration
+    return {
+        "crop": prediction_data.get("crop_name", "Unknown Crop"),
+        "disease": prediction_data.get("disease_name", "Uncataloged Condition"),
+        "is_healthy": bool(prediction_data.get("is_healthy", False)),
+        "non_chemical_management": "Maintain general orchard/field sanitation, remove affected foliage, and ensure optimal soil aeration.",
+        "verified_pesticide_information": {
+            "approved_active_ingredient": "Verified treatment information unavailable",
+            "cibrc_registered_formulation": "Verified treatment information unavailable",
+            "recommended_dosage": "Verified treatment information unavailable",
+            "pre_harvest_interval_phi": "N/A",
+            "application_timing": "N/A",
+        },
+        "fertilizer_guidance": "Follow standard baseline balanced NPK application based on regional soil testing.",
+        "source_url": "http://ppqs.gov.in/cibrc-major-uses-of-pesticides",
+        "safety_notes": "Do NOT apply unverified chemicals or unapproved spray mixtures without consulting a local agricultural extension specialist.",
+    }
 
 
 # ==============================================================================
@@ -757,8 +943,12 @@ def get_recommendations_for_prediction(prediction_data: Dict[str, Any]) -> Dict[
             "is_inconclusive": False,
             "disease_recommendation": None,
             "fertilizer_recommendations": [],
+            "commercial_supplement": None,
+            "verified_indian_treatment": None,
             "has_disease_guidance": False,
             "has_fertilizer_guidance": False,
+            "has_commercial_supplement": False,
+            "has_verified_indian_treatment": False,
             "guidance_status": "neem_identified_disease_unsupported",
             "guidance_notice": (
                 "Neem (Azadirachta indica) was successfully identified by the plant recognition stage. "
@@ -781,8 +971,12 @@ def get_recommendations_for_prediction(prediction_data: Dict[str, Any]) -> Dict[
             "is_inconclusive": True,
             "disease_recommendation": None,
             "fertilizer_recommendations": [],
+            "commercial_supplement": None,
+            "verified_indian_treatment": None,
             "has_disease_guidance": False,
             "has_fertilizer_guidance": False,
+            "has_commercial_supplement": False,
+            "has_verified_indian_treatment": False,
             "guidance_status": "unsupported",
             "guidance_notice": (
                 "The uploaded specimen could not be verified as one of the 14 supported agricultural crops "
@@ -861,5 +1055,15 @@ def get_recommendations_for_prediction(prediction_data: Dict[str, Any]) -> Dict[
         else:
             response["fertilizer_recommendations"] = _generate_generic_fallback_fertilizer(crop_name)
             response["has_fertilizer_guidance"] = True
+
+    # Fetch targeted commercial treatment / fertilizer supplement
+    commercial_supp = get_commercial_supplement_recommendation(prediction_data)
+    response["commercial_supplement"] = commercial_supp
+    response["has_commercial_supplement"] = bool(commercial_supp)
+
+    # Fetch authoritative Indian agricultural & pesticide treatment protocol (CIBRC, ICAR, TNAU, DPPQS)
+    verified_indian = get_verified_indian_agronomic_treatment(prediction_data)
+    response["verified_indian_treatment"] = verified_indian
+    response["has_verified_indian_treatment"] = bool(verified_indian)
 
     return response

@@ -1,0 +1,16 @@
+{
+  "model_name": "plantvillage_candidate.keras",
+  "batch_size": 32,
+  "image_size": [
+    224,
+    224
+  ],
+  "stage1_epochs": 5,
+  "stage1_lr": 0.001,
+  "stage2_epochs": 3,
+  "stage2_lr": 1e-05,
+  "unfreeze_layers": 30,
+  "dropout_rate": 0.3,
+  "storage_cap_mb": 500,
+  "actual_dataset_mb": 41.45
+}

@@ -1,224 +1,535 @@
 {% extends "base.html" %}
 
+{% block title %}PlantCare AI — Plant Disease Detection & Smart Advisory Dashboard{% endblock %}
+
 {% block content %}
-<!-- Hero Section -->
-<section class="hero-section">
-    <div class="hero-container">
-        <div class="hero-content">
-            <span class="badge category-badge">🌱 Intelligent Agronomic Advisory</span>
-            <h1 class="hero-title">Agrotech</h1>
-            <h2 class="hero-tagline">Plant Disease Detection and Smart Pesticide &amp; Fertilizer</h2>
-            <p class="hero-subtitle">
-                Upload a plant leaf photograph to receive real-time deep-learning foliar disease diagnosis, paired with targeted pest management and growth-stage fertilizer recommendations.
-            </p>
-            <div class="hero-buttons">
-                <a href="#upload" class="btn btn-primary">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                        <polyline points="17 8 12 3 7 8"/>
-                        <line x1="12" y1="3" x2="12" y2="15"/>
-                    </svg>
-                    Upload Leaf Image
-                </a>
-                <a href="#how-it-works" class="btn btn-outline">
-                    How It Works ↓
-                </a>
-            </div>
-        </div>
-        <div class="hero-graphic">
-            <div class="leaf-card-preview">
-                <div class="agrotech-hero-badge-logo">
-                    <svg class="agrotech-hero-svg" width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Shield Outer Ring -->
-                        <rect x="6" y="6" width="84" height="84" rx="24" fill="url(#hero-bg-grad)" stroke="#34d399" stroke-width="2" stroke-dasharray="6 4"/>
-                        <!-- Botanical Leaf Geometry -->
-                        <path d="M48 18C48 18 69 28 71 50C73 71 48 80 48 80C48 80 23 71 25 50C27 28 48 18 48 18Z" fill="url(#leaf-main-grad)" stroke="#10b981" stroke-width="2.5" stroke-linejoin="round"/>
-                        <!-- Central Spine -->
-                        <path d="M48 24V74" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round"/>
-                        <!-- Digital Circuit Veins -->
-                        <path d="M48 36L61 30" stroke="#a7f3d0" stroke-width="2" stroke-linecap="round"/>
-                        <circle cx="61" cy="30" r="3" fill="#34d399" stroke="#ffffff" stroke-width="1"/>
-                        <path d="M48 45L34 39" stroke="#a7f3d0" stroke-width="2" stroke-linecap="round"/>
-                        <circle cx="34" cy="39" r="3" fill="#34d399" stroke="#ffffff" stroke-width="1"/>
-                        <path d="M48 54L62 49" stroke="#a7f3d0" stroke-width="2" stroke-linecap="round"/>
-                        <circle cx="62" cy="49" r="3" fill="#34d399" stroke="#ffffff" stroke-width="1"/>
-                        <path d="M48 63L36 59" stroke="#a7f3d0" stroke-width="2" stroke-linecap="round"/>
-                        <circle cx="36" cy="59" r="3" fill="#34d399" stroke="#ffffff" stroke-width="1"/>
-                        <!-- Gradients -->
-                        <defs>
-                            <linearGradient id="hero-bg-grad" x1="6" y1="6" x2="90" y2="90" gradientUnits="userSpaceOnUse">
-                                <stop stop-color="#064e3b" stop-opacity="0.9"/>
-                                <stop offset="1" stop-color="#022c22" stop-opacity="0.98"/>
-                            </linearGradient>
-                            <linearGradient id="leaf-main-grad" x1="28" y1="20" x2="68" y2="78" gradientUnits="userSpaceOnUse">
-                                <stop stop-color="#10b981"/>
-                                <stop offset="0.6" stop-color="#059669"/>
-                                <stop offset="1" stop-color="#047857"/>
-                            </linearGradient>
-                        </defs>
-                    </svg>
-                </div>
-                <div class="leaf-card-caption">
-                    <strong class="agrotech-card-brand-title">Agrotech</strong>
-                    <span class="agrotech-card-brand-sub">Smart Disease Detection &amp; Crop Care</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<div class="container">
-    <!-- Notice Banner -->
-    <div class="notice-card">
-        <div class="notice-icon">🌱</div>
-        <div class="notice-body">
-            <h3>Agrotech AI Diagnosis &amp; Recommendation Pipeline</h3>
-            <p>
-                The image upload, deep-learning computer vision, and agronomic advisory systems are fully integrated.
-                Select or drag &amp; drop an affected leaf image below to run diagnosis and generate crop-care recommendations.
-            </p>
-        </div>
-    </div>
-
-    <!-- Upload Section -->
-    <section id="upload" class="upload-section">
-        <div class="card upload-card">
-            <div class="card-header">
-                <div>
-                    <h2>📤 Upload Plant Leaf Image</h2>
-                    <p class="section-desc">Select or drag &amp; drop a clear photo of an affected plant leaf for automated analysis.</p>
-                </div>
-                <span class="tag tag-active">Analysis Ready</span>
+<!-- Agricultural Dashboard Hero Section (Plantix-Style Mobile & Desktop Experience) -->
+<section class="agri-dashboard-hero" id="diagnose">
+    <div class="agri-hero-wrapper">
+        
+        <!-- Top Weather & Plant Health Alerts Row -->
+        <div class="weather-alerts-row">
+            <!-- Current Weather Pill -->
+            <div class="weather-pill" onclick="openAgriModal('weather-modal')" title="Click for agronomic weather forecast" role="button" tabindex="0">
+                <span class="weather-icon">⛅</span>
+                <span class="weather-date">Current Weather</span>
+                <span class="weather-temp">24°C | Clear</span>
             </div>
 
-            <div class="card-body">
+            <!-- Plant Health Alert Pill -->
+            <div class="alert-pill" onclick="openAgriModal('weather-modal')" title="Click for plant health alerts" role="button" tabindex="0">
+                <div class="alert-pill-content">
+                    <span class="alert-pill-title">Plant Health Alerts</span>
+                    <span class="alert-pill-status">Spraying: Favorable (until 9 PM)</span>
+                </div>
+                <div class="alert-pill-icon">⚠️</div>
+            </div>
+        </div>
+
+        <!-- Main Disease Detection Card -->
+        <div class="main-detect-card">
+            <div class="detect-card-header">
+                <h2>Detect Plant Disease</h2>
+                <p>Upload a leaf image to identify the plant and detect supported diseases.</p>
+                <div class="guide-caption-header" style="margin-bottom: 0.5rem; text-align: center;">
+                    <span style="font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700; color: #0860D9;">
+                        How the Diagnostic System Works • Plant Disease Detection
+                    </span>
+                </div>
+            </div>
+
+            <!-- Three-Step Visual Guide (As Requested & Shown in Reference UI) -->
+            <div class="three-step-guide">
+                <!-- Step 1 -->
+                <div class="guide-step">
+                    <div class="step-icon-box">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0860D9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                            <circle cx="12" cy="13" r="4"></circle>
+                        </svg>
+                    </div>
+                    <span class="step-label">1. Upload a Leaf Photo</span>
+                </div>
+
+                <div class="step-arrow">→</div>
+
+                <!-- Step 2 -->
+                <div class="guide-step">
+                    <div class="step-icon-box">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0860D9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M6 18h8"></path>
+                            <path d="M3 22h18"></path>
+                            <path d="M14 22a7 7 0 1 0-7-7"></path>
+                            <path d="M9 14h2"></path>
+                            <path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"></path>
+                            <path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"></path>
+                        </svg>
+                    </div>
+                    <span class="step-label">2. Detect Plant Disease</span>
+                </div>
+
+                <div class="step-arrow">→</div>
+
+                <!-- Step 3 -->
+                <div class="guide-step">
+                    <div class="step-icon-box">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            <path d="M12 8v4"></path>
+                            <path d="M12 16h.01"></path>
+                        </svg>
+                    </div>
+                    <span class="step-label">3. Get Treatment Guidance</span>
+                </div>
+            </div>
+
+            <!-- Upload Leaf Image Primary Action Button -->
+            <button type="button" class="btn-detect-action" id="trigger-upload-btn" onclick="document.getElementById('leaf-image-input').click()">
+                📷 Upload Leaf Image
+            </button>
+
+            <!-- Leaf Image Upload & Dropzone Form -->
+            <div class="detect-upload-container">
                 <form id="upload-form" action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
                     <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
-                    <div id="dropzone" class="dropzone">
-                        <input type="file" id="leaf-image-input" name="leaf_image" accept=".jpg,.jpeg,.png,image/jpeg,image/png" class="file-input" required>
+
+                    <div id="dropzone" class="detect-dropzone">
+                        <input type="file" id="leaf-image-input" name="leaf_image" accept=".jpg,.jpeg,.png,image/jpeg,image/png" class="file-input" required style="display: none;">
+                        
+                        <!-- Initial Prompt Area -->
                         <div class="dropzone-prompt" id="dropzone-prompt">
-                            <div class="dropzone-icon">
-                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                            <div class="dropzone-icon" style="color: #0860D9; margin-bottom: 0.5rem;">
+                                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
                                     <polyline points="17 8 12 3 7 8"/>
                                     <line x1="12" y1="3" x2="12" y2="15"/>
                                 </svg>
                             </div>
-                            <h3>Drag & Drop Leaf Photo Here</h3>
-                            <p>or <span class="dropzone-browse">browse from your computer</span></p>
-                            <div class="upload-specs">
-                                <span>Formats: <strong>JPG, JPEG, PNG</strong></span>
-                                <span>•</span>
-                                <span>Max Size: <strong>5 MB</strong></span>
-                            </div>
+                            <h4 style="margin: 0 0 0.25rem 0; font-size: 0.95rem; font-weight: 700; color: #0F172A;">
+                                Drag &amp; Drop leaf photo or <span style="color: #0860D9; text-decoration: underline;">click to browse</span>
+                            </h4>
+                            <p style="margin: 0; font-size: 0.78rem; color: #64748B;">
+                                Formats: JPG, JPEG, PNG • Max size: 5 MB
+                            </p>
                         </div>
 
                         <!-- Image Preview Area -->
-                        <div id="preview-container" class="preview-container" style="display: none;">
-                            <img id="image-preview" src="" alt="Selected plant leaf preview" class="preview-image">
-                            <div class="preview-details">
-                                <span id="preview-filename" class="preview-filename">filename.jpg</span>
-                                <span id="preview-filesize" class="preview-filesize">0 KB</span>
+                        <div id="preview-container" class="preview-container" style="display: none; padding: 0.5rem;">
+                            <img id="image-preview" src="" alt="Selected plant leaf preview" class="preview-image" style="max-height: 180px; border-radius: 12px; margin: 0 auto; display: block; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                            <div class="preview-details" style="margin-top: 0.75rem;">
+                                <span id="preview-filename" class="preview-filename" style="font-weight: 700; color: #0F172A;">leaf_sample.jpg</span>
+                                <span id="preview-filesize" class="preview-filesize" style="color: #64748B; font-size: 0.82rem;">(0 KB)</span>
                             </div>
-                            <button type="button" id="remove-image-btn" class="btn btn-sm btn-danger">
-                                ✕ Remove & Select Another
+                            <button type="button" id="remove-image-btn" class="btn btn-sm btn-danger" style="margin-top: 0.5rem; font-size: 0.8rem; padding: 0.35rem 0.75rem; border-radius: 999px;">
+                                ✕ Remove &amp; Choose Different Photo
                             </button>
                         </div>
                     </div>
 
                     <!-- Client-Side Validation Feedback -->
-                    <div id="client-error-box" class="client-feedback error-feedback" style="display: none;" role="alert"></div>
+                    <div id="client-error-box" class="client-feedback error-feedback" style="display: none; margin-top: 0.75rem;" role="alert"></div>
 
-                    <!-- Submission Controls -->
-                    <div class="upload-actions">
-                        <button type="submit" id="submit-btn" class="btn btn-primary btn-lg" disabled>
-                            <span class="btn-text">Analyze Leaf Health</span>
+                    <!-- Submission Button -->
+                    <div class="upload-actions" style="margin-top: 1rem;">
+                        <button type="submit" id="submit-btn" class="btn btn-primary btn-lg" style="width: 100%; border-radius: 999px; background: #0860D9; font-weight: 700;" disabled>
+                            <span class="btn-text">🔬 Analyze Image</span>
                             <span class="btn-spinner" style="display: none;">
-                                <span class="spinner"></span> Processing...
+                                <span class="spinner"></span> Analyzing Folia with CNN...
                             </span>
                         </button>
                     </div>
                 </form>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- How It Works Section -->
-    <section id="how-it-works" class="section-block">
-        <div class="section-header">
-            <h2 class="section-title">How the Diagnostic System Works</h2>
-            <p class="section-subtitle">A seamless 4-step workflow bridging foliar photography with agronomic advisory</p>
-        </div>
-        <div class="steps-grid">
-            <div class="step-card active-step">
-                <div class="step-badge">Step 1</div>
-                <div class="step-icon">📸</div>
-                <h3>1. Leaf Image Upload</h3>
-                <p>Upload a clear photo of an infected or suspect crop leaf (Tomato, Potato, Corn, Apple, etc.).</p>
-                <span class="step-tag tag-active">Operational</span>
-            </div>
-            <div class="step-card active-step">
-                <div class="step-badge">Step 2</div>
-                <div class="step-icon">🛡️</div>
-                <h3>2. Server Validation</h3>
-                <p>Pillow checks file integrity, sanitizes filenames, and verifies image quality.</p>
-                <span class="step-tag tag-active">Operational</span>
-            </div>
-            <div class="step-card active-step">
-                <div class="step-badge">Step 3</div>
-                <div class="step-icon">🧠</div>
-                <h3>3. AI Model Inference</h3>
-                <p>Deep Learning MobileNetV2 classifies crop disease and calculates prediction confidence.</p>
-                <span class="step-tag tag-active">Operational</span>
-            </div>
-            <div class="step-card active-step">
-                <div class="step-badge">Step 4</div>
-                <div class="step-icon">💊</div>
-                <h3>4. Smart Advisory</h3>
-                <p>Retrieve tailored pesticide treatment, organic prevention guidelines, and fertilizer schedules.</p>
-                <span class="step-tag tag-active">Operational</span>
-            </div>
-        </div>
-    </section>
+<!-- Feature Cards Section (As Shown in Reference Screenshot) -->
+<section class="agri-section" id="tools">
+    <div class="agri-section-title">
+        <span>Agricultural Tools</span>
+        <span style="font-size: 0.8rem; font-weight: 600; color: #0860D9; cursor: pointer;" onclick="openAgriModal('fertilizer-calc-modal')">View All Tools &rsaquo;</span>
+    </div>
 
-    <!-- Features Section -->
-    <section id="features" class="section-block">
-        <div class="section-header">
-            <h2 class="section-title">System Capabilities</h2>
-            <p class="section-subtitle">Engineered features designed for agricultural disease mitigation</p>
+    <div class="tools-grid">
+        <!-- Feature Card 1: Organic Fertilizer Calculator -->
+        <div class="tool-card" onclick="openAgriModal('fertilizer-calc-modal')" role="button" tabindex="0">
+            <div class="tool-icon-circle">🌱</div>
+            <h4>Organic Fertilizer Calculator</h4>
+            <p>Determine compost, FYM, and bio-fertilizer dosage for your acreage</p>
         </div>
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">📁</div>
-                <h3>Secure Image Upload</h3>
-                <p>Cryptographically secure UUID file naming, decompression bomb prevention, and path traversal protection.</p>
+
+        <!-- Feature Card 2: Pesticide Recommendation -->
+        <div class="tool-card" onclick="openAgriModal('pesticide-modal')" role="button" tabindex="0">
+            <div class="tool-icon-circle">🛡️</div>
+            <h4>Pesticide Recommendation</h4>
+            <p>Certified Indian CIBRC &amp; ICAR pest and disease control standards</p>
+        </div>
+
+        <!-- Feature Card 3: Crop & Fertilizer Advisor -->
+        <div class="tool-card" onclick="openAgriModal('crop-advisor-modal')" role="button" tabindex="0">
+            <div class="tool-icon-circle">🌾</div>
+            <h4>Crop &amp; Fertilizer Advisor</h4>
+            <p>Vegetative and reproductive N-P-K growth stage guidance</p>
+        </div>
+    </div>
+</section>
+
+<!-- Plant Health Tips Section -->
+<section class="agri-section" id="tips">
+    <div class="agri-section-title">
+        <span>Plant Health Tips</span>
+        <span style="font-size: 0.8rem; font-weight: 600; color: #64748B;">Agronomic Best Practices</span>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem;">
+        <div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 18px; padding: 1.15rem; box-shadow: 0 2px 6px rgba(0,0,0,0.02);">
+            <div style="display: flex; align-items: center; gap: 0.65rem; margin-bottom: 0.5rem;">
+                <span style="font-size: 1.35rem;">🔍</span>
+                <strong style="font-size: 0.95rem; color: #0F172A;">Early Morning Inspection</strong>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">🗄️</div>
-                <h3>Diagnostic Audit History</h3>
-                <p>Reliable tracking for user accounts, scan history logs, disease guidelines, and fertilizer plans.</p>
+            <p style="font-size: 0.82rem; color: #64748B; margin: 0; line-height: 1.45;">
+                Inspect lower canopy leaves during early daylight. Fungal spores and early lesions first appear on shaded, humid leaf undersides.
+            </p>
+        </div>
+
+        <div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 18px; padding: 1.15rem; box-shadow: 0 2px 6px rgba(0,0,0,0.02);">
+            <div style="display: flex; align-items: center; gap: 0.65rem; margin-bottom: 0.5rem;">
+                <span style="font-size: 1.35rem;">💧</span>
+                <strong style="font-size: 0.95rem; color: #0F172A;">Drip &amp; Base Irrigation</strong>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">🔬</div>
-                <h3>Botanical Disease Library</h3>
-                <p>Comprehensive pathology mapping across 38 foliar conditions including blights, spots, rusts, and viruses.</p>
+            <p style="font-size: 0.82rem; color: #64748B; margin: 0; line-height: 1.45;">
+                Water at the root zone rather than overhead sprinkling. Prolonged foliar wetness exceeding 6 hours is the primary trigger for bacterial blight and rust.
+            </p>
+        </div>
+
+        <div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 18px; padding: 1.15rem; box-shadow: 0 2px 6px rgba(0,0,0,0.02);">
+            <div style="display: flex; align-items: center; gap: 0.65rem; margin-bottom: 0.5rem;">
+                <span style="font-size: 1.35rem;">✂️</span>
+                <strong style="font-size: 0.95rem; color: #0F172A;">Sanitation &amp; Tool Sterilization</strong>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">🤖</div>
-                <h3>MobileNetV2 Deep Learning</h3>
-                <p>Multi-class transfer learning architecture providing high-precision, low-latency foliar disease diagnosis.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🧪</div>
-                <h3>Targeted Pesticide Advisory</h3>
-                <p>Vetted disease management measures to mitigate crop loss while avoiding excessive chemical application.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🌱</div>
-                <h3>Fertilizer Schedules</h3>
-                <p>Stage-specific crop nutrition advice tailored to plant growth stages and soil nutrient context.</p>
+            <p style="font-size: 0.82rem; color: #64748B; margin: 0; line-height: 1.45;">
+                Prune diseased foliage and safely dispose away from compost. Disinfect pruners with 70% isopropyl alcohol between plants to halt cross-contamination.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ========================================================================= -->
+<!-- MODALS FOR FEATURES & BOTTOM NAVIGATION                                   -->
+<!-- ========================================================================= -->
+
+<!-- 1. Organic Fertilizer Calculator Modal -->
+<div class="agri-modal-backdrop" id="fertilizer-calc-modal" onclick="if(event.target === this) closeAgriModal('fertilizer-calc-modal')">
+    <div class="agri-modal-dialog">
+        <button type="button" class="modal-close-btn" onclick="closeAgriModal('fertilizer-calc-modal')">&times;</button>
+        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+            <div style="width: 44px; height: 44px; border-radius: 50%; background: #DCFCE7; display: flex; align-items: center; justify-content: center; font-size: 1.4rem;">🌱</div>
+            <div>
+                <h3 style="margin: 0; font-size: 1.25rem; font-weight: 800; color: #0F172A;">Organic Fertilizer Calculator</h3>
+                <span style="font-size: 0.78rem; color: #64748B;">Calculate Farm Yard Manure (FYM) &amp; Vermicompost</span>
             </div>
         </div>
-    </section>
+
+        <form id="organic-calc-form" onsubmit="event.preventDefault(); calculateOrganicDosage();">
+            <div style="margin-bottom: 1rem;">
+                <label style="display: block; font-size: 0.85rem; font-weight: 700; color: #334155; margin-bottom: 0.35rem;">Select Crop</label>
+                <select id="calc-crop-select" style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid #CBD5E1; border-radius: 12px; font-size: 0.9rem;">
+                    <option value="tomato">Tomato (Solanaceae)</option>
+                    <option value="potato">Potato (Solanaceae)</option>
+                    <option value="corn">Corn / Maize (Cereal)</option>
+                    <option value="pepper">Bell Pepper (Chilli)</option>
+                    <option value="apple">Apple (Horticulture Orchard)</option>
+                    <option value="grape">Grape (Viticulture)</option>
+                    <option value="citrus">Orange / Citrus (Fruit Orchard)</option>
+                </select>
+            </div>
+
+            <div style="margin-bottom: 1rem;">
+                <label style="display: block; font-size: 0.85rem; font-weight: 700; color: #334155; margin-bottom: 0.35rem;">Field Area (in Acres)</label>
+                <input type="number" id="calc-acre-input" min="0.1" step="0.1" value="1.0" required style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid #CBD5E1; border-radius: 12px; font-size: 0.9rem;">
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%; border-radius: 999px; background: #0860D9; padding: 0.75rem; font-weight: 700;">
+                Calculate Organic Recommendations
+            </button>
+        </form>
+
+        <div id="calc-result-box" style="display: none; margin-top: 1.25rem; background: #F8FAFC; border: 1.5px solid #E2E8F0; border-radius: 14px; padding: 1rem;">
+            <h4 style="margin: 0 0 0.5rem 0; font-size: 0.95rem; color: #0F172A; font-weight: 700;">Recommended Organic Application:</h4>
+            <ul style="margin: 0; padding-left: 1.25rem; font-size: 0.85rem; color: #334155; line-height: 1.6;">
+                <li><strong>Well-Decomposed FYM / Compost:</strong> <span id="res-fym" style="color: #0860D9; font-weight: 700;">8.0 tonnes</span></li>
+                <li><strong>Vermicompost:</strong> <span id="res-vermi" style="color: #10B981; font-weight: 700;">1.5 tonnes</span></li>
+                <li><strong>Neem Cake (Soil Conditioning &amp; Nematode Control):</strong> <span id="res-neem" style="color: #D97706; font-weight: 700;">200 kg</span></li>
+                <li><strong>Bio-Fertilizers (Azotobacter / PSB):</strong> <span id="res-bio">2 kg/acre mixed with 100 kg moist compost</span></li>
+            </ul>
+            <p style="margin: 0.75rem 0 0 0; font-size: 0.75rem; color: #64748B;">
+                *Incorporate FYM and neem cake during basal field ploughing 2 to 3 weeks before transplanting/sowing.
+            </p>
+        </div>
+    </div>
 </div>
+
+<!-- 2. Pesticide Recommendation Directory Modal -->
+<div class="agri-modal-backdrop" id="pesticide-modal" onclick="if(event.target === this) closeAgriModal('pesticide-modal')">
+    <div class="agri-modal-dialog">
+        <button type="button" class="modal-close-btn" onclick="closeAgriModal('pesticide-modal')">&times;</button>
+        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+            <div style="width: 44px; height: 44px; border-radius: 50%; background: #EFF6FF; display: flex; align-items: center; justify-content: center; font-size: 1.4rem;">🛡️</div>
+            <div>
+                <h3 style="margin: 0; font-size: 1.25rem; font-weight: 800; color: #0F172A;">Pesticide Recommendation Guide</h3>
+                <span style="font-size: 0.78rem; color: #64748B;">Indian CIBRC &amp; ICAR Agronomic Standards</span>
+            </div>
+        </div>
+
+        <p style="font-size: 0.82rem; color: #475569; line-height: 1.45; margin-bottom: 1rem;">
+            PlantCare AI references registered active ingredients approved by the <strong>Central Insecticides Board &amp; Registration Committee (CIBRC)</strong> and <strong>ICAR</strong> extension packages. Chemical dosages are only recommended for supported foliar diseases:
+        </p>
+
+        <div style="max-height: 280px; overflow-y: auto; display: flex; flex-direction: column; gap: 0.65rem;">
+            <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 0.75rem 0.85rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem;">
+                    <strong style="font-size: 0.88rem; color: #0F172A;">Tomato &amp; Potato Early Blight</strong>
+                    <span style="font-size: 0.72rem; background: #DBEAFE; color: #0860D9; padding: 2px 6px; border-radius: 4px; font-weight: 700;">Fungal</span>
+                </div>
+                <div style="font-size: 0.8rem; color: #334155;"><strong>Active:</strong> Mancozeb 75% WP @ 2.0 g/L or Azoxystrobin 23% SC @ 1.0 ml/L</div>
+                <div style="font-size: 0.74rem; color: #64748B; margin-top: 2px;">Waiting Period (PHI): 7 days. Spray at onset of lower leaf concentric rings.</div>
+            </div>
+
+            <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 0.75rem 0.85rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem;">
+                    <strong style="font-size: 0.88rem; color: #0F172A;">Tomato &amp; Potato Late Blight</strong>
+                    <span style="font-size: 0.72rem; background: #FEE2E2; color: #B91C1C; padding: 2px 6px; border-radius: 4px; font-weight: 700;">Oomycete</span>
+                </div>
+                <div style="font-size: 0.8rem; color: #334155;"><strong>Active:</strong> Cymoxanil 8% + Mancozeb 64% WP @ 1.5–2.0 g/L</div>
+                <div style="font-size: 0.74rem; color: #64748B; margin-top: 2px;">Ensure complete canopy coverage; apply prophylactically before humid rainy spells.</div>
+            </div>
+
+            <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 0.75rem 0.85rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem;">
+                    <strong style="font-size: 0.88rem; color: #0F172A;">Apple Scab (Venturia inaequalis)</strong>
+                    <span style="font-size: 0.72rem; background: #DBEAFE; color: #0860D9; padding: 2px 6px; border-radius: 4px; font-weight: 700;">Orchard</span>
+                </div>
+                <div style="font-size: 0.8rem; color: #334155;"><strong>Active:</strong> Difenoconazole 25% EC @ 0.3 ml/L or Captan 50% WP @ 2.5 g/L</div>
+                <div style="font-size: 0.74rem; color: #64748B; margin-top: 2px;">Strictly respect pre-harvest intervals and rotate chemical groups to prevent resistance.</div>
+            </div>
+        </div>
+
+        <div style="margin-top: 1rem; text-align: center;">
+            <button type="button" class="btn btn-secondary btn-sm" onclick="closeAgriModal('pesticide-modal')" style="border-radius: 999px;">
+                Close Guide
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- 3. Crop & Fertilizer Advisor Modal -->
+<div class="agri-modal-backdrop" id="crop-advisor-modal" onclick="if(event.target === this) closeAgriModal('crop-advisor-modal')">
+    <div class="agri-modal-dialog">
+        <button type="button" class="modal-close-btn" onclick="closeAgriModal('crop-advisor-modal')">&times;</button>
+        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+            <div style="width: 44px; height: 44px; border-radius: 50%; background: #FEF3C7; display: flex; align-items: center; justify-content: center; font-size: 1.4rem;">🌾</div>
+            <div>
+                <h3 style="margin: 0; font-size: 1.25rem; font-weight: 800; color: #0F172A;">Crop &amp; Fertilizer Advisor</h3>
+                <span style="font-size: 0.78rem; color: #64748B;">Growth Stage N-P-K Principles</span>
+            </div>
+        </div>
+
+        <div style="background: #F0FDF4; border: 1px solid #BBF7D0; border-radius: 12px; padding: 0.85rem; margin-bottom: 1rem;">
+            <h5 style="color: #166534; margin: 0 0 0.35rem 0; font-size: 0.9rem; font-weight: 700;">
+                🌱 Primary Nutrient Functions:
+            </h5>
+            <ul style="margin: 0; padding-left: 1.25rem; font-size: 0.8rem; color: #15803D; line-height: 1.5;">
+                <li><strong>Nitrogen (N):</strong> Stimulates chlorophyll production and vegetative foliage. Avoid over-application during flowering.</li>
+                <li><strong>Phosphorus (P):</strong> Drives deep root establishment and cellular energy transfer during early crop establishment.</li>
+                <li><strong>Potassium (K):</strong> Strengthens vascular xylem walls, regulates stomatal water loss, and boosts immune defense against leaf pathogens.</li>
+            </ul>
+        </div>
+
+        <p style="font-size: 0.82rem; color: #64748B; margin-bottom: 1.25rem; line-height: 1.4;">
+            To receive customized fertilizer schedules, upload your affected crop leaf on the homepage. Our CNN classifier pairs the exact plant variety with stage-specific nutrition protocols.
+        </p>
+
+        <button type="button" class="btn btn-primary" onclick="closeAgriModal('crop-advisor-modal'); document.getElementById('trigger-upload-btn').scrollIntoView({behavior: 'smooth'});" style="width: 100%; border-radius: 999px; background: #0860D9;">
+            Diagnose My Crop Now
+        </button>
+    </div>
+</div>
+
+<!-- 4. Weather & Health Alerts Modal -->
+<div class="agri-modal-backdrop" id="weather-modal" onclick="if(event.target === this) closeAgriModal('weather-modal')">
+    <div class="agri-modal-dialog">
+        <button type="button" class="modal-close-btn" onclick="closeAgriModal('weather-modal')">&times;</button>
+        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+            <div style="width: 44px; height: 44px; border-radius: 50%; background: #E0F2FE; display: flex; align-items: center; justify-content: center; font-size: 1.4rem;">⛅</div>
+            <div>
+                <h3 style="margin: 0; font-size: 1.25rem; font-weight: 800; color: #0F172A;">Agricultural Weather &amp; Spray Advisory</h3>
+                <span style="font-size: 0.78rem; color: #64748B;">Microclimate Conditions &amp; Foliar Windows</span>
+            </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1rem;">
+            <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 0.75rem; text-align: center;">
+                <span style="font-size: 0.75rem; color: #64748B; display: block;">Temperature</span>
+                <strong style="font-size: 1.15rem; color: #0F172A;">24°C</strong>
+                <span style="font-size: 0.72rem; color: #10B981; display: block;">Optimal Foliar Range</span>
+            </div>
+            <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 0.75rem; text-align: center;">
+                <span style="font-size: 0.75rem; color: #64748B; display: block;">Relative Humidity</span>
+                <strong style="font-size: 1.15rem; color: #0F172A;">62%</strong>
+                <span style="font-size: 0.72rem; color: #D97706; display: block;">Moderate Fungal Risk</span>
+            </div>
+            <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 0.75rem; text-align: center;">
+                <span style="font-size: 0.75rem; color: #64748B; display: block;">Wind Velocity</span>
+                <strong style="font-size: 1.15rem; color: #0F172A;">6.2 km/h</strong>
+                <span style="font-size: 0.72rem; color: #10B981; display: block;">Safe Spray Drift</span>
+            </div>
+            <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 0.75rem; text-align: center;">
+                <span style="font-size: 0.75rem; color: #64748B; display: block;">Precipitation Chance</span>
+                <strong style="font-size: 1.15rem; color: #0F172A;">10%</strong>
+                <span style="font-size: 0.72rem; color: #10B981; display: block;">Washoff Unlikely</span>
+            </div>
+        </div>
+
+        <div style="background: #FFFBEB; border: 1px solid #FDE68A; border-radius: 12px; padding: 0.85rem; margin-bottom: 1rem;">
+            <strong style="color: #92400E; font-size: 0.85rem;">⚠️ Agronomic Spray Recommendation:</strong>
+            <p style="font-size: 0.78rem; color: #B45309; margin: 0.25rem 0 0 0; line-height: 1.4;">
+                Atmospheric conditions are currently favorable for foliar bio-fungicide and micronutrient application. Avoid spraying if wind gusts exceed 15 km/h or during direct noon sunlight.
+            </p>
+        </div>
+
+        <button type="button" class="btn btn-secondary" onclick="closeAgriModal('weather-modal')" style="width: 100%; border-radius: 999px;">
+            Done
+        </button>
+    </div>
+</div>
+
+<!-- 5. Marketplace Modal -->
+<div class="agri-modal-backdrop" id="marketplace-modal" onclick="if(event.target === this) closeAgriModal('marketplace-modal')">
+    <div class="agri-modal-dialog">
+        <button type="button" class="modal-close-btn" onclick="closeAgriModal('marketplace-modal')">&times;</button>
+        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+            <div style="width: 44px; height: 44px; border-radius: 50%; background: #EFF6FF; display: flex; align-items: center; justify-content: center; font-size: 1.4rem;">🛍️</div>
+            <div>
+                <h3 style="margin: 0; font-size: 1.25rem; font-weight: 800; color: #0F172A;">Agricultural Marketplace</h3>
+                <span style="font-size: 0.78rem; color: #64748B;">Verified Bio-Inputs &amp; Agricultural Supplies</span>
+            </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1rem;">
+            <div style="display: flex; align-items: center; justify-content: space-between; background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 0.75rem 1rem;">
+                <div>
+                    <strong style="font-size: 0.9rem; color: #0F172A; display: block;">Organic Neem Oil 10,000 PPM</strong>
+                    <span style="font-size: 0.75rem; color: #64748B;">Cold-pressed botanical anti-feedant</span>
+                </div>
+                <span style="font-size: 0.85rem; font-weight: 700; color: #10B981;">₹350 / 500ml</span>
+            </div>
+
+            <div style="display: flex; align-items: center; justify-content: space-between; background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 0.75rem 1rem;">
+                <div>
+                    <strong style="font-size: 0.9rem; color: #0F172A; display: block;">Trichoderma Viride Bio-Fungicide</strong>
+                    <span style="font-size: 0.75rem; color: #64748B;">ICAR certified antagonistic fungal agent</span>
+                </div>
+                <span style="font-size: 0.85rem; font-weight: 700; color: #10B981;">₹180 / 1kg</span>
+            </div>
+
+            <div style="display: flex; align-items: center; justify-content: space-between; background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 0.75rem 1rem;">
+                <div>
+                    <strong style="font-size: 0.9rem; color: #0F172A; display: block;">Enriched Vermicompost (NPK &amp; Humic)</strong>
+                    <span style="font-size: 0.75rem; color: #64748B;">100% pure organic earthworm castings</span>
+                </div>
+                <span style="font-size: 0.85rem; font-weight: 700; color: #10B981;">₹420 / 50kg</span>
+            </div>
+        </div>
+
+        <p style="font-size: 0.78rem; color: #64748B; text-align: center; margin: 0 0 1rem 0;">
+            *Marketplace catalog is provided as an academic demo for verified agricultural suppliers.
+        </p>
+
+        <button type="button" class="btn btn-secondary" onclick="closeAgriModal('marketplace-modal')" style="width: 100%; border-radius: 999px;">
+            Close Marketplace
+        </button>
+    </div>
+</div>
+
+<!-- 6. Profile & Diagnostic Reports Modal -->
+<div class="agri-modal-backdrop" id="profile-modal" onclick="if(event.target === this) closeAgriModal('profile-modal')">
+    <div class="agri-modal-dialog">
+        <button type="button" class="modal-close-btn" onclick="closeAgriModal('profile-modal')">&times;</button>
+        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+            <div style="width: 44px; height: 44px; border-radius: 50%; background: #EFF6FF; display: flex; align-items: center; justify-content: center; font-size: 1.4rem;">👤</div>
+            <div>
+                <h3 style="margin: 0; font-size: 1.25rem; font-weight: 800; color: #0F172A;">Farmer Profile &amp; Reports</h3>
+                <span style="font-size: 0.78rem; color: #64748B;">PlantCare AI Member Account</span>
+            </div>
+        </div>
+
+        {% if session.get('user_id') %}
+            <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 14px; padding: 1rem; margin-bottom: 1rem;">
+                <div style="font-size: 0.85rem; color: #64748B; margin-bottom: 0.25rem;">Logged In As:</div>
+                <div style="font-size: 1.1rem; font-weight: 700; color: #0F172A;">{{ session.get('user_name') }}</div>
+                <div style="font-size: 0.8rem; color: #64748B;">{{ session.get('user_email') }}</div>
+            </div>
+
+            <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
+                <a href="{{ url_for('auth.history') }}" class="btn btn-primary" style="flex: 1; border-radius: 999px; text-align: center; text-decoration: none;">
+                    📜 View Past Diagnoses
+                </a>
+            </div>
+        {% else %}
+            <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 14px; padding: 1.25rem; text-align: center; margin-bottom: 1rem;">
+                <span style="font-size: 2rem; display: block; margin-bottom: 0.5rem;">🌾</span>
+                <h4 style="margin: 0 0 0.35rem 0; font-size: 1rem; color: #0F172A;">Diagnostic History &amp; Reports</h4>
+                <p style="font-size: 0.82rem; color: #64748B; margin: 0 0 1rem 0;">
+                    Log in or register to record historical foliar diagnoses, track treatments, and export PDF spray logs.
+                </p>
+                <div style="display: flex; gap: 0.5rem; justify-content: center;">
+                    <a href="{{ url_for('auth.login') }}" class="btn btn-primary btn-sm" style="border-radius: 999px; padding: 0.5rem 1.25rem; text-decoration: none;">
+                        Log In
+                    </a>
+                    <a href="{{ url_for('auth.register') }}" class="btn btn-secondary btn-sm" style="border-radius: 999px; padding: 0.5rem 1.25rem; text-decoration: none;">
+                        Register
+                    </a>
+                </div>
+            </div>
+        {% endif %}
+
+        <div style="border-top: 1px solid #E2E8F0; padding-top: 0.75rem; text-align: center;">
+            <span style="font-size: 0.75rem; color: #64748B;">PlantCare AI v2.4 • System Model: CNN Model (MobileNetV2)</span>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+    // Organic Fertilizer Calculator logic
+    function calculateOrganicDosage() {
+        const crop = document.getElementById('calc-crop-select').value;
+        const acres = parseFloat(document.getElementById('calc-acre-input').value) || 1.0;
+
+        // Base dosage rates per acre
+        const cropRates = {
+            tomato: { fym: 10.0, vermi: 2.0, neem: 250 },
+            potato: { fym: 12.0, vermi: 2.5, neem: 300 },
+            corn: { fym: 6.0, vermi: 1.2, neem: 150 },
+            pepper: { fym: 8.0, vermi: 1.8, neem: 200 },
+            apple: { fym: 15.0, vermi: 3.0, neem: 400 },
+            grape: { fym: 12.0, vermi: 2.5, neem: 350 },
+            citrus: { fym: 14.0, vermi: 2.8, neem: 350 }
+        };
+
+        const rate = cropRates[crop] || { fym: 8.0, vermi: 1.5, neem: 200 };
+        const totalFym = (rate.fym * acres).toFixed(1);
+        const totalVermi = (rate.vermi * acres).toFixed(1);
+        const totalNeem = Math.round(rate.neem * acres);
+
+        document.getElementById('res-fym').textContent = `${totalFym} tonnes`;
+        document.getElementById('res-vermi').textContent = `${totalVermi} tonnes`;
+        document.getElementById('res-neem').textContent = `${totalNeem} kg`;
+        document.getElementById('res-bio').textContent = `${(2 * acres).toFixed(1)} kg Azotobacter + ${(2 * acres).toFixed(1)} kg PSB mixed with moist compost`;
+
+        document.getElementById('calc-result-box').style.display = 'block';
+    }
+</script>
 {% endblock %}

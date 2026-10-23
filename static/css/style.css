@@ -4,33 +4,52 @@
    ============================================================================== */
 
 :root {
-    --primary: #15803d;
-    --primary-hover: #166534;
-    --primary-light: #dcfce7;
-    --primary-border: #bbf7d0;
-    --secondary: #0f766e;
-    --dark: #0f172a;
-    --text-primary: #1e293b;
-    --text-muted: #64748b;
-    --bg-light: #f8fafc;
-    --bg-card: #ffffff;
-    --border-color: #e2e8f0;
-    --border-hover: #cbd5e1;
-    --warning-bg: #fef3c7;
-    --warning-text: #92400e;
-    --warning-border: #fde68a;
-    --danger-bg: #fee2e2;
-    --danger-text: #991b1b;
-    --danger-border: #fecaca;
-    --success-bg: #dcfce7;
+    --primary: #0860D9;
+    --primary-hover: #064CB0;
+    --primary-light: #EBF3FF;
+    --primary-border: #BFDBFE;
+    --primary-gradient: linear-gradient(135deg, #0860D9 0%, #054BB0 100%);
+    
+    --hero-bg-aqua: #D9F7F4;
+    --hero-bg-mint: #D7FFF0;
+    --hero-gradient: linear-gradient(180deg, #D9F7F4 0%, #D7FFF0 55%, #F8FAFC 100%);
+
+    --accent-green: #10B981;
+    --accent-green-dark: #059669;
+    --accent-green-light: #D1FAE5;
+    
+    --accent-amber: #D97706;
+    --accent-amber-light: #FEF3C7;
+    
+    --secondary: #0D9488;
+    --dark: #0F172A;
+    --text-primary: #1E293B;
+    --text-muted: #64748B;
+    --bg-light: #F8FAFC;
+    --bg-card: #FFFFFF;
+    --border-color: #E2E8F0;
+    --border-hover: #CBD5E1;
+    
+    --warning-bg: #FEF3C7;
+    --warning-text: #92400E;
+    --warning-border: #FDE68A;
+    --danger-bg: #FEE2E2;
+    --danger-text: #991B1B;
+    --danger-border: #FECACA;
+    --success-bg: #DCFCE7;
     --success-text: #166534;
-    --success-border: #86efac;
-    --radius-sm: 6px;
-    --radius-md: 10px;
-    --radius-lg: 14px;
-    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --success-border: #86EFAC;
+    
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 20px;
+    --radius-xl: 26px;
+    --radius-pill: 9999px;
+    
+    --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 10px -2px rgb(0 0 0 / 0.06), 0 2px 4px -2px rgb(0 0 0 / 0.04);
+    --shadow-lg: 0 12px 24px -4px rgb(0 0 0 / 0.08), 0 6px 12px -4px rgb(0 0 0 / 0.04);
+    --shadow-card: 0 10px 25px -5px rgba(8, 96, 217, 0.06), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
     --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
@@ -78,6 +97,21 @@ body {
     gap: 0.75rem;
     text-decoration: none;
     color: var(--primary);
+}
+
+.brand-logo-img {
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: middle;
+    filter: drop-shadow(0 2px 4px rgba(0, 150, 136, 0.25));
+    transition: transform 0.2s ease;
+}
+
+.brand:hover .brand-logo-img {
+    transform: scale(1.05);
 }
 
 .brand-icon {
@@ -1503,6 +1537,515 @@ body {
 }
 
 /* ==============================================================================
+   Agricultural Mobile Dashboard Redesign (Reference Image 1)
+   Theme: Primary Blue (#0860D9), Aqua/Mint Hero (#D9F7F4 / #D7FFF0)
+   ============================================================================== */
+
+/* Hero Gradient Container */
+.agri-dashboard-hero {
+    background: linear-gradient(180deg, #D9F7F4 0%, #D7FFF0 45%, #F0FDF9 80%, #F8FAFC 100%);
+    padding: 1.5rem 1rem 3rem 1rem;
+    border-bottom: 1px solid rgba(13, 148, 136, 0.08);
+}
+
+.agri-hero-wrapper {
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+/* Weather & Alerts Row */
+.weather-alerts-row {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.85rem;
+    margin-bottom: 1.25rem;
+    align-items: center;
+}
+
+.weather-pill {
+    background: #FFFFFF;
+    border: 1.5px solid #BAE6FD;
+    border-radius: var(--radius-pill);
+    padding: 0.6rem 1.15rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    box-shadow: 0 2px 6px rgba(8, 96, 217, 0.05);
+    white-space: nowrap;
+}
+
+.weather-pill .weather-date {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #0F172A;
+}
+
+.weather-pill .weather-temp {
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: #0369A1;
+}
+
+.weather-pill .weather-icon {
+    font-size: 1.25rem;
+    line-height: 1;
+}
+
+.alert-pill {
+    background: #FFFFFF;
+    border: 1.5px solid #FDE68A;
+    border-radius: var(--radius-pill);
+    padding: 0.55rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    box-shadow: 0 2px 6px rgba(217, 119, 6, 0.05);
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.alert-pill:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(217, 119, 6, 0.12);
+}
+
+.alert-pill-content {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.alert-pill-title {
+    font-size: 0.75rem;
+    color: #64748B;
+    font-weight: 600;
+}
+
+.alert-pill-status {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #92400E;
+}
+
+.alert-pill-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #78350F;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 800;
+    flex-shrink: 0;
+}
+
+/* Main Disease Detection Card (Reference Image 1 Hero) */
+.main-detect-card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 24px;
+    padding: 1.85rem 1.75rem;
+    box-shadow: 0 12px 30px -5px rgba(8, 96, 217, 0.08), 0 4px 10px -2px rgba(0, 0, 0, 0.03);
+    text-align: center;
+}
+
+.detect-card-header h2 {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #0F172A;
+    margin-bottom: 0.35rem;
+    letter-spacing: -0.01em;
+}
+
+.detect-card-header p {
+    font-size: 0.875rem;
+    color: #64748B;
+    line-height: 1.45;
+    margin-bottom: 1.5rem;
+}
+
+/* Three-Step Visual Guide */
+.three-step-guide {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 0.5rem;
+    margin: 1.5rem 0 2rem 0;
+    padding: 0 0.5rem;
+}
+
+.guide-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+    min-width: 80px;
+}
+
+.step-icon-box {
+    width: 64px;
+    height: 64px;
+    border-radius: 18px;
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.6rem;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.guide-step:hover .step-icon-box {
+    transform: translateY(-2px);
+    background: #F0FDF4;
+    border-color: #86EFAC;
+}
+
+.step-arrow {
+    font-size: 1.25rem;
+    color: #94A3B8;
+    font-weight: 700;
+    margin-bottom: 1.75rem;
+    flex-shrink: 0;
+}
+
+.step-label {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #334155;
+    line-height: 1.3;
+}
+
+/* Primary Action Button */
+.btn-detect-action {
+    display: block;
+    width: 100%;
+    background: #0860D9;
+    color: #FFFFFF;
+    font-size: 1.05rem;
+    font-weight: 700;
+    text-align: center;
+    padding: 1rem 1.75rem;
+    border-radius: var(--radius-pill);
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 6px 16px -2px rgba(8, 96, 217, 0.35);
+    transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+    text-decoration: none;
+}
+
+.btn-detect-action:hover {
+    background: #064CB0;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px -2px rgba(8, 96, 217, 0.45);
+    color: #FFFFFF;
+}
+
+.btn-detect-action:active {
+    transform: translateY(0);
+}
+
+/* Inline Upload Controls inside Detect Card */
+.detect-upload-container {
+    margin-top: 1.25rem;
+    border-top: 1px dashed #E2E8F0;
+    padding-top: 1.25rem;
+}
+
+.detect-dropzone {
+    border: 2px dashed #93C5FD;
+    background: #F0F9FF;
+    border-radius: 18px;
+    padding: 1.5rem 1rem;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.detect-dropzone:hover {
+    border-color: #0860D9;
+    background: #E0F2FE;
+}
+
+/* Agricultural Tools (Feature Cards - Image 1 Reference) */
+.agri-section {
+    max-width: 680px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.agri-section-title {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #0F172A;
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+}
+
+.tool-card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 18px;
+    padding: 1.25rem 0.85rem;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tool-card:hover {
+    transform: translateY(-3px);
+    border-color: #0860D9;
+    box-shadow: 0 8px 16px -2px rgba(8, 96, 217, 0.12);
+}
+
+.tool-icon-circle {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #EFF6FF;
+    color: #0860D9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.45rem;
+    margin-bottom: 0.75rem;
+    transition: background 0.2s ease;
+}
+
+.tool-card:hover .tool-icon-circle {
+    background: #DBEAFE;
+}
+
+.tool-card h4 {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #0F172A;
+    line-height: 1.3;
+    margin-bottom: 0.25rem;
+}
+
+.tool-card p {
+    font-size: 0.72rem;
+    color: #64748B;
+    line-height: 1.35;
+    margin: 0;
+}
+
+/* Supported Crops Library Grid */
+.crops-library-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 0.75rem;
+}
+
+.crop-card-item {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 16px;
+    padding: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+    transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.crop-card-item:hover {
+    transform: translateY(-2px);
+    border-color: #10B981;
+}
+
+.crop-card-emoji {
+    font-size: 1.75rem;
+    line-height: 1;
+}
+
+.crop-card-info h5 {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #0F172A;
+    margin: 0;
+}
+
+.crop-card-info span {
+    font-size: 0.72rem;
+    color: #64748B;
+}
+
+/* Bottom Navigation Bar (Reference Image 1) */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-top: 1px solid #E2E8F0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.45rem 0.5rem 0.65rem 0.5rem;
+    z-index: 999;
+    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.04);
+}
+
+.bottom-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #64748B;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-pill);
+    transition: color 0.2s ease;
+    flex: 1;
+    max-width: 90px;
+}
+
+.bottom-nav-item .nav-icon-wrapper {
+    width: 48px;
+    height: 30px;
+    border-radius: var(--radius-pill);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease, color 0.2s ease;
+    margin-bottom: 0.2rem;
+}
+
+.bottom-nav-item.active {
+    color: #0860D9;
+}
+
+.bottom-nav-item.active .nav-icon-wrapper {
+    background: #EBF3FF;
+    color: #0860D9;
+}
+
+.bottom-nav-item:hover {
+    color: #0860D9;
+}
+
+.bottom-nav-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+}
+
+/* Add padding at bottom of main content so bottom nav does not obscure content on mobile */
+@media (max-width: 768px) {
+    body {
+        padding-bottom: 72px;
+    }
+    .weather-alerts-row {
+        grid-template-columns: 1fr;
+    }
+    .tools-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+    }
+    .tool-card {
+        padding: 0.9rem 0.45rem;
+    }
+    .tool-icon-circle {
+        width: 40px;
+        height: 40px;
+        font-size: 1.25rem;
+    }
+    .tool-card h4 {
+        font-size: 0.76rem;
+    }
+    .tool-card p {
+        display: none;
+    }
+}
+
+@media (min-width: 769px) {
+    .bottom-nav {
+        display: none;
+    }
+}
+
+/* Modal Components for Tools & Marketplace */
+.agri-modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(4px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1100;
+    padding: 1rem;
+}
+
+.agri-modal-dialog {
+    background: #FFFFFF;
+    border-radius: 20px;
+    max-width: 520px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+    padding: 1.5rem;
+    position: relative;
+    animation: modalSlideUp 0.25s ease-out;
+}
+
+@keyframes modalSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1.25rem;
+    background: #F1F5F9;
+    border: none;
+    font-size: 1.25rem;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #64748B;
+}
+
+.modal-close-btn:hover {
+    background: #E2E8F0;
+    color: #0F172A;
+}
+
+
+/* ==============================================================================
    Phase 5: User Authentication & History Dashboard Styling
    ============================================================================== */
 .auth-card {
@@ -1713,3 +2256,512 @@ body {
         break-inside: avoid;
     }
 }
+
+/* ==============================================================================
+   Agricultural Mobile Dashboard Redesign (Reference Image 1)
+   Theme: Primary Blue (#0860D9), Aqua/Mint Hero (#D9F7F4 / #D7FFF0)
+   ============================================================================== */
+
+/* Hero Gradient Container */
+.agri-dashboard-hero {
+    background: linear-gradient(180deg, #D9F7F4 0%, #D7FFF0 45%, #F0FDF9 80%, #F8FAFC 100%);
+    padding: 1.5rem 1rem 3rem 1rem;
+    border-bottom: 1px solid rgba(13, 148, 136, 0.08);
+}
+
+.agri-hero-wrapper {
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+/* Weather & Alerts Row */
+.weather-alerts-row {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.85rem;
+    margin-bottom: 1.25rem;
+    align-items: center;
+}
+
+.weather-pill {
+    background: #FFFFFF;
+    border: 1.5px solid #BAE6FD;
+    border-radius: var(--radius-pill);
+    padding: 0.6rem 1.15rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    box-shadow: 0 2px 6px rgba(8, 96, 217, 0.05);
+    white-space: nowrap;
+}
+
+.weather-pill .weather-date {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #0F172A;
+}
+
+.weather-pill .weather-temp {
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: #0369A1;
+}
+
+.weather-pill .weather-icon {
+    font-size: 1.25rem;
+    line-height: 1;
+}
+
+.alert-pill {
+    background: #FFFFFF;
+    border: 1.5px solid #FDE68A;
+    border-radius: var(--radius-pill);
+    padding: 0.55rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    box-shadow: 0 2px 6px rgba(217, 119, 6, 0.05);
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.alert-pill:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(217, 119, 6, 0.12);
+}
+
+.alert-pill-content {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.alert-pill-title {
+    font-size: 0.75rem;
+    color: #64748B;
+    font-weight: 600;
+}
+
+.alert-pill-status {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #92400E;
+}
+
+.alert-pill-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #78350F;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 800;
+    flex-shrink: 0;
+}
+
+/* Main Disease Detection Card (Reference Image 1 Hero) */
+.main-detect-card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 24px;
+    padding: 1.85rem 1.75rem;
+    box-shadow: 0 12px 30px -5px rgba(8, 96, 217, 0.08), 0 4px 10px -2px rgba(0, 0, 0, 0.03);
+    text-align: center;
+}
+
+.detect-card-header h2 {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #0F172A;
+    margin-bottom: 0.35rem;
+    letter-spacing: -0.01em;
+}
+
+.detect-card-header p {
+    font-size: 0.875rem;
+    color: #64748B;
+    line-height: 1.45;
+    margin-bottom: 1.5rem;
+}
+
+/* Three-Step Visual Guide */
+.three-step-guide {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 0.5rem;
+    margin: 1.5rem 0 2rem 0;
+    padding: 0 0.5rem;
+}
+
+.guide-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+    min-width: 80px;
+}
+
+.step-icon-box {
+    width: 64px;
+    height: 64px;
+    border-radius: 18px;
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.6rem;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.guide-step:hover .step-icon-box {
+    transform: translateY(-2px);
+    background: #F0FDF4;
+    border-color: #86EFAC;
+}
+
+.step-arrow {
+    font-size: 1.25rem;
+    color: #94A3B8;
+    font-weight: 700;
+    margin-bottom: 1.75rem;
+    flex-shrink: 0;
+}
+
+.step-label {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #334155;
+    line-height: 1.3;
+}
+
+/* Primary Action Button */
+.btn-detect-action {
+    display: block;
+    width: 100%;
+    background: #0860D9;
+    color: #FFFFFF;
+    font-size: 1.05rem;
+    font-weight: 700;
+    text-align: center;
+    padding: 1rem 1.75rem;
+    border-radius: var(--radius-pill);
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 6px 16px -2px rgba(8, 96, 217, 0.35);
+    transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+    text-decoration: none;
+}
+
+.btn-detect-action:hover {
+    background: #064CB0;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px -2px rgba(8, 96, 217, 0.45);
+    color: #FFFFFF;
+}
+
+.btn-detect-action:active {
+    transform: translateY(0);
+}
+
+/* Inline Upload Controls inside Detect Card */
+.detect-upload-container {
+    margin-top: 1.25rem;
+    border-top: 1px dashed #E2E8F0;
+    padding-top: 1.25rem;
+}
+
+.detect-dropzone {
+    border: 2px dashed #93C5FD;
+    background: #F0F9FF;
+    border-radius: 18px;
+    padding: 1.5rem 1rem;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.detect-dropzone:hover {
+    border-color: #0860D9;
+    background: #E0F2FE;
+}
+
+/* Agricultural Tools (Feature Cards - Image 1 Reference) */
+.agri-section {
+    max-width: 680px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.agri-section-title {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #0F172A;
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+}
+
+.tool-card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 18px;
+    padding: 1.25rem 0.85rem;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tool-card:hover {
+    transform: translateY(-3px);
+    border-color: #0860D9;
+    box-shadow: 0 8px 16px -2px rgba(8, 96, 217, 0.12);
+}
+
+.tool-icon-circle {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #EFF6FF;
+    color: #0860D9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.45rem;
+    margin-bottom: 0.75rem;
+    transition: background 0.2s ease;
+}
+
+.tool-card:hover .tool-icon-circle {
+    background: #DBEAFE;
+}
+
+.tool-card h4 {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #0F172A;
+    line-height: 1.3;
+    margin-bottom: 0.25rem;
+}
+
+.tool-card p {
+    font-size: 0.72rem;
+    color: #64748B;
+    line-height: 1.35;
+    margin: 0;
+}
+
+/* Supported Crops Library Grid */
+.crops-library-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 0.75rem;
+}
+
+.crop-card-item {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 16px;
+    padding: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+    transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.crop-card-item:hover {
+    transform: translateY(-2px);
+    border-color: #10B981;
+}
+
+.crop-card-emoji {
+    font-size: 1.75rem;
+    line-height: 1;
+}
+
+.crop-card-info h5 {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #0F172A;
+    margin: 0;
+}
+
+.crop-card-info span {
+    font-size: 0.72rem;
+    color: #64748B;
+}
+
+/* Bottom Navigation Bar (Reference Image 1) */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-top: 1px solid #E2E8F0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.45rem 0.5rem 0.65rem 0.5rem;
+    z-index: 999;
+    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.04);
+}
+
+.bottom-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #64748B;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-pill);
+    transition: color 0.2s ease;
+    flex: 1;
+    max-width: 90px;
+}
+
+.bottom-nav-item .nav-icon-wrapper {
+    width: 48px;
+    height: 30px;
+    border-radius: var(--radius-pill);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease, color 0.2s ease;
+    margin-bottom: 0.2rem;
+}
+
+.bottom-nav-item.active {
+    color: #0860D9;
+}
+
+.bottom-nav-item.active .nav-icon-wrapper {
+    background: #EBF3FF;
+    color: #0860D9;
+}
+
+.bottom-nav-item:hover {
+    color: #0860D9;
+}
+
+.bottom-nav-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+}
+
+/* Add padding at bottom of main content so bottom nav does not obscure content on mobile */
+@media (max-width: 768px) {
+    body {
+        padding-bottom: 72px;
+    }
+    .weather-alerts-row {
+        grid-template-columns: 1fr;
+    }
+    .tools-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+    }
+    .tool-card {
+        padding: 0.9rem 0.45rem;
+    }
+    .tool-icon-circle {
+        width: 40px;
+        height: 40px;
+        font-size: 1.25rem;
+    }
+    .tool-card h4 {
+        font-size: 0.76rem;
+    }
+    .tool-card p {
+        display: none;
+    }
+}
+
+@media (min-width: 769px) {
+    .bottom-nav {
+        display: none;
+    }
+}
+
+/* Modal Components for Tools & Marketplace */
+.agri-modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(4px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1100;
+    padding: 1rem;
+}
+
+.agri-modal-dialog {
+    background: #FFFFFF;
+    border-radius: 20px;
+    max-width: 520px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+    padding: 1.5rem;
+    position: relative;
+    animation: modalSlideUp 0.25s ease-out;
+}
+
+@keyframes modalSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1.25rem;
+    background: #F1F5F9;
+    border: none;
+    font-size: 1.25rem;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #64748B;
+}
+
+.modal-close-btn:hover {
+    background: #E2E8F0;
+    color: #0F172A;
+}
+

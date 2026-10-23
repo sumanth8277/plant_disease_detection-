@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}Diagnosis Results — {{ result.crop_name }} {{ result.disease_name }} — Agrotech{% endblock %}
+{% block title %}Diagnosis Results — {{ result.crop_name }} {{ result.disease_name }} — PlantCare AI{% endblock %}
 
 {% block content %}
 <div class="container">
@@ -94,18 +94,6 @@
                             {% endfor %}
                         </ul>
                     {% endif %}
-
-                    <div class="audit-metadata-box">
-                        <p class="small text-muted">
-                            <strong>Model Version:</strong> {{ result.model_version }}<br>
-                            <strong>Audit Log:</strong>
-                            {% if result.persisted %}
-                                <span class="text-success">✅ Persisted in MySQL (ID: #{{ result.prediction_id }})</span>
-                            {% else %}
-                                <span class="text-warning">⚡ {{ result.persist_message }}</span>
-                            {% endif %}
-                        </p>
-                    </div>
                 </div>
             </div>
         </div>
@@ -202,124 +190,6 @@
                 </div>
             </div>
 
-            <!-- Gemini Supplementary Multimodal Botanical Analysis Card -->
-            <div class="card result-card gemini-analysis-card" id="gemini-card" style="border: 1px solid #c7d2fe; box-shadow: 0 4px 14px rgba(99, 102, 241, 0.08); margin-bottom: 1.5rem;">
-                <div class="card-header header-with-icon" style="background: linear-gradient(135deg, #eef2ff 0%, #f5f3ff 100%); border-bottom: 1px solid #e0e7ff; display: flex; justify-content: space-between; align-items: center; padding: 0.85rem 1.25rem;">
-                    <div style="display: flex; align-items: center; gap: 0.65rem;">
-                        <span class="section-icon" style="font-size: 1.35rem;">✨</span>
-                        <div>
-                            <h3 style="margin: 0; color: #3730a3; font-size: 1.15rem; font-weight: 700;">Gemini Supplementary Botanical Analysis</h3>
-                            <span class="small text-muted" style="font-size: 0.78rem;">Multimodal Vision Layer &bull; Independent of CNN Classifier</span>
-                        </div>
-                    </div>
-                    <span class="badge" style="background: #4f46e5; color: #fff; font-size: 0.75rem; padding: 0.3rem 0.65rem; border-radius: 9999px;">
-                        {{ result.gemini_analysis.model if result.gemini_analysis and result.gemini_analysis.model else 'Gemini Multimodal AI' }}
-                    </span>
-                </div>
-                <div class="card-body" id="gemini-card-body" style="padding: 1.25rem;">
-                    {% if result.gemini_analysis and result.gemini_analysis.status == 'success' %}
-                        {% set g = result.gemini_analysis %}
-                        <div class="gemini-results-grid">
-                            <!-- Species Identification Row -->
-                            <div class="gemini-field-row" style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid #f1f5f9; padding-bottom: 0.75rem; margin-bottom: 0.85rem;">
-                                <div>
-                                    <span class="text-muted small" style="text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; color: #64748b; font-size: 0.75rem;">Observed Plant Species</span>
-                                    <h4 style="margin: 0.2rem 0 0 0; color: #1e1b4b; font-size: 1.2rem; font-weight: 700;">{{ g.identified_plant_species }}</h4>
-                                </div>
-                                <span class="badge {% if g.certainty_level == 'High' %}badge-healthy{% elif g.certainty_level == 'Moderate' %}badge-warning{% else %}badge-code{% endif %}" style="font-size: 0.8rem; padding: 0.35rem 0.65rem;">
-                                    Observation Certainty: {{ g.certainty_level }}
-                                </span>
-                            </div>
-
-                            <!-- Visual Symptoms -->
-                            <div class="gemini-field-block mb-3" style="border-bottom: 1px solid #f1f5f9; padding-bottom: 0.75rem;">
-                                <span class="text-muted small" style="text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; color: #64748b; font-size: 0.75rem;">Visual Foliar Symptoms</span>
-                                <p style="margin: 0.3rem 0 0 0; color: #334155; line-height: 1.55; font-size: 0.95rem;">
-                                    {{ g.visual_symptoms }}
-                                </p>
-                            </div>
-
-                            <!-- Suspected Pathology & Image Clarity Box -->
-                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 0.85rem;">
-                                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 0.75rem 0.9rem;">
-                                    <span class="text-muted small" style="text-transform: uppercase; font-weight: 700; font-size: 0.72rem; color: #64748b;">Suspected Condition</span>
-                                    <p style="margin: 0.25rem 0 0 0; color: #0f172a; font-weight: 600; font-size: 0.95rem;">{{ g.suspected_condition }}</p>
-                                </div>
-                                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 0.75rem 0.9rem;">
-                                    <span class="text-muted small" style="text-transform: uppercase; font-weight: 700; font-size: 0.72rem; color: #64748b;">Specimen Image Clarity</span>
-                                    <p style="margin: 0.25rem 0 0 0; color: #0f172a; font-weight: 600; font-size: 0.95rem;">
-                                        {% if g.is_leaf_clear %}
-                                            <span style="color: #16a34a;">✅ Clear & In Focus</span>
-                                        {% else %}
-                                            <span style="color: #ea580c;">⚠️ Obscured or Ambiguous</span>
-                                        {% endif %}
-                                    </p>
-                                </div>
-                            </div>
-
-                            <!-- Botanical Observations -->
-                            {% if g.botanical_observations %}
-                                <div class="gemini-field-block mb-3" style="background: #faf5ff; border: 1px solid #f3e8ff; border-radius: 8px; padding: 0.75rem 0.9rem;">
-                                    <span class="text-muted small" style="text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; color: #7e22ce; font-size: 0.72rem;">Botanical Observations</span>
-                                    <p style="margin: 0.25rem 0 0 0; color: #581c87; font-style: italic; line-height: 1.5; font-size: 0.92rem;">
-                                        &ldquo;{{ g.botanical_observations }}&rdquo;
-                                    </p>
-                                </div>
-                            {% endif %}
-
-                            <!-- Recommended Next Step -->
-                            {% if g.recommended_next_step %}
-                                <div style="background: #eff6ff; border-left: 4px solid #3b82f6; padding: 0.65rem 0.9rem; border-radius: 4px; margin-bottom: 0.85rem;">
-                                    <span class="small" style="font-weight: 700; color: #1d4ed8;">🌱 Recommended Next Step: </span>
-                                    <span class="small" style="color: #1e40af;">{{ g.recommended_next_step }}</span>
-                                </div>
-                            {% endif %}
-
-                            <!-- Safety & Separation Disclaimer -->
-                            <div style="background: #fafafa; border: 1px solid #e5e5e5; border-radius: 6px; padding: 0.6rem 0.85rem;">
-                                <p class="small text-muted mb-0" style="font-size: 0.78rem; line-height: 1.4;">
-                                    <strong>🛡️ Architectural Independence:</strong> {{ g.disclaimer }}
-                                </p>
-                            </div>
-                        </div>
-
-                    {% else %}
-                        <!-- Gemini Status when not yet run, unavailable, or rate limited -->
-                        <div id="gemini-fallback-box" style="padding: 0.5rem 0;">
-                            <div style="display: flex; align-items: flex-start; gap: 0.85rem; margin-bottom: 0.75rem;">
-                                <span style="font-size: 1.6rem; line-height: 1;">ℹ️</span>
-                                <div>
-                                    <h4 style="margin: 0 0 0.25rem 0; font-size: 1rem; color: #334155;">
-                                        {% if result.gemini_analysis and result.gemini_analysis.status == 'not_configured' %}
-                                            Gemini API Key Not Configured
-                                        {% elif result.gemini_analysis and result.gemini_analysis.status == 'rate_limited' %}
-                                            Gemini Rate Limit Exceeded
-                                        {% elif result.gemini_analysis and result.gemini_analysis.status == 'unavailable' %}
-                                            Gemini Service Temporarily Busy
-                                        {% else %}
-                                            Supplementary Multimodal AI Analysis
-                                        {% endif %}
-                                    </h4>
-                                    <p class="small text-muted mb-0" style="line-height: 1.45;">
-                                        {{ result.gemini_analysis.botanical_observations if (result.gemini_analysis and result.gemini_analysis.botanical_observations) else 'Supplementary multimodal vision analysis provides botanical species recognition and visible symptom descriptions without overriding CNN classification.' }}
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div style="display: flex; gap: 0.75rem; align-items: center; margin-top: 0.65rem;">
-                                <button type="button" class="btn btn-primary btn-sm" id="btn-run-gemini" onclick="triggerGeminiAnalysis('{{ result.prediction_id or result.upload_id }}')">
-                                    <span id="gemini-btn-icon">✨</span>
-                                    <span id="gemini-btn-text">Run Gemini Botanical Analysis</span>
-                                </button>
-                                <span id="gemini-loading-spinner" style="display: none; font-size: 0.85rem; color: #4f46e5; font-weight: 600;">
-                                    ⏳ Analyzing leaf imagery with Gemini AI...
-                                </span>
-                            </div>
-                        </div>
-                    {% endif %}
-                </div>
-            </div>
-
             <!-- Disease Management & Treatment Guidance -->
             <div class="card result-card">
                 <div class="card-header header-with-icon">
@@ -379,6 +249,201 @@
                     {% endif %}
                 </div>
             </div>
+
+            <!-- Verified Indian Agricultural Treatment & Pesticide Advisory (CIBRC / ICAR / TNAU / DPPQS) -->
+            {% if result.has_verified_indian_treatment and result.verified_indian_treatment %}
+                {% set vit = result.verified_indian_treatment %}
+                <div class="card result-card mb-3" style="border-left: 6px solid #16a34a; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08);">
+                    <div class="card-header header-with-icon" style="background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-bottom: 1px solid #bbf7d0; display: flex; justify-content: space-between; align-items: center;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <span class="section-icon">🏛️</span>
+                            <div>
+                                <h3 style="margin: 0; color: #166534; font-size: 1.15rem; font-weight: 700;">Verified Indian Agricultural Treatment &amp; Pesticide Advisory</h3>
+                                <span class="small text-muted" style="font-size: 0.76rem;">CIBRC (Central Insecticides Board) &bull; ICAR &bull; TNAU &bull; DPPQS Standards</span>
+                            </div>
+                        </div>
+                        <span class="badge" style="background-color: #15803d; color: white; padding: 0.35rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.025em;">
+                            Government Verified
+                        </span>
+                    </div>
+                    <div class="card-body">
+                        <!-- Non-Chemical / Cultural IPM Management -->
+                        {% if vit.non_chemical_management %}
+                        <div style="margin-bottom: 1rem;">
+                            <h4 style="margin: 0 0 0.35rem 0; color: #14532d; font-size: 0.95rem; font-weight: 700; display: flex; align-items: center; gap: 0.35rem;">
+                                <span>🌿</span> Non-Chemical Cultural Management &amp; Biological IPM
+                            </h4>
+                            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 0.75rem 0.95rem;">
+                                <ul style="margin: 0; padding-left: 1.25rem; font-size: 0.88rem; color: #334155; line-height: 1.5;">
+                                    {% for step in vit.non_chemical_management.split('\n') %}
+                                        {% if step.strip() %}
+                                        <li style="margin-bottom: 0.25rem;">{{ step.strip() }}</li>
+                                        {% endif %}
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                        {% endif %}
+
+                        <!-- Verified Pesticide Information -->
+                        {% if vit.verified_pesticide_information %}
+                        {% set pinfo = vit.verified_pesticide_information %}
+                        <div style="margin-bottom: 1rem;">
+                            <h4 style="margin: 0 0 0.35rem 0; color: #1e3a8a; font-size: 0.95rem; font-weight: 700; display: flex; align-items: center; gap: 0.35rem;">
+                                <span>🛡️</span> CIBRC-Approved Pesticide &amp; Chemical Treatment Protocol
+                            </h4>
+                            <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; overflow: hidden;">
+                                <table style="width: 100%; border-collapse: collapse; font-size: 0.86rem;">
+                                    <tbody>
+                                        <tr style="border-bottom: 1px solid #f1f5f9; background: #f8fafc;">
+                                            <td style="padding: 0.5rem 0.75rem; font-weight: 600; color: #475569; width: 35%;">Approved Active Ingredient</td>
+                                            <td style="padding: 0.5rem 0.75rem; color: #0f172a; font-weight: 600;">{{ pinfo.approved_active_ingredient }}</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid #f1f5f9;">
+                                            <td style="padding: 0.5rem 0.75rem; font-weight: 600; color: #475569;">Registered Formulation</td>
+                                            <td style="padding: 0.5rem 0.75rem; color: #334155;">{{ pinfo.cibrc_registered_formulation }}</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid #f1f5f9; background: #f8fafc;">
+                                            <td style="padding: 0.5rem 0.75rem; font-weight: 600; color: #475569;">Recommended Dosage</td>
+                                            <td style="padding: 0.5rem 0.75rem; color: #1e293b;">
+                                                {% if 'Verified treatment information unavailable' in pinfo.recommended_dosage %}
+                                                    <span style="color: #b45309; font-weight: 600;">⚠️ Verified treatment information unavailable</span>
+                                                    <span style="display: block; font-size: 0.8rem; color: #64748b;">(Systemic viral pathogens cannot be cured chemically. Follow sanitation and vector controls).</span>
+                                                {% else %}
+                                                    <span style="color: #047857; font-weight: 600;">{{ pinfo.recommended_dosage }}</span>
+                                                {% endif %}
+                                            </td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid #f1f5f9;">
+                                            <td style="padding: 0.5rem 0.75rem; font-weight: 600; color: #475569;">Pre-Harvest Interval (PHI)</td>
+                                            <td style="padding: 0.5rem 0.75rem; color: #b91c1c; font-weight: 600;">{{ pinfo.pre_harvest_interval_phi }}</td>
+                                        </tr>
+                                        {% if pinfo.application_timing and pinfo.application_timing != 'N/A' %}
+                                        <tr style="background: #f8fafc;">
+                                            <td style="padding: 0.5rem 0.75rem; font-weight: 600; color: #475569;">Application Timing</td>
+                                            <td style="padding: 0.5rem 0.75rem; color: #334155;">{{ pinfo.application_timing }}</td>
+                                        </tr>
+                                        {% endif %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        {% endif %}
+
+                        <!-- Verified Fertilizer Guidance -->
+                        {% if vit.fertilizer_guidance %}
+                        <div style="margin-bottom: 1rem;">
+                            <h4 style="margin: 0 0 0.35rem 0; color: #854d0e; font-size: 0.95rem; font-weight: 700; display: flex; align-items: center; gap: 0.35rem;">
+                                <span>🧪</span> ICAR / State Agronomic Fertilizer Schedule
+                            </h4>
+                            <div style="background: #fefce8; border: 1px solid #fef08a; border-radius: 6px; padding: 0.65rem 0.85rem;">
+                                <p style="margin: 0; font-size: 0.88rem; color: #713f12; line-height: 1.45;">
+                                    {{ vit.fertilizer_guidance }}
+                                </p>
+                            </div>
+                        </div>
+                        {% endif %}
+
+                        <!-- Safety Notes & Pollinator Protection -->
+                        {% if vit.safety_notes %}
+                        <div style="margin-bottom: 0.75rem;">
+                            <div style="background: #fff1f2; border-left: 4px solid #f43f5e; border-radius: 4px; padding: 0.55rem 0.85rem;">
+                                <span style="font-size: 0.82rem; font-weight: 700; color: #be123c;">⚠️ Safety &amp; Environmental Protection: </span>
+                                <span style="font-size: 0.82rem; color: #9f1239;">{{ vit.safety_notes }}</span>
+                            </div>
+                        </div>
+                        {% endif %}
+
+                        <!-- Authoritative Source Attribution -->
+                        {% if vit.source_url %}
+                        <div style="display: flex; justify-content: flex-end; align-items: center; margin-top: 0.5rem;">
+                            <span class="small text-muted" style="font-size: 0.76rem;">
+                                📚 <strong>Official Sources:</strong> 
+                                {% for url in vit.source_url.split('&') %}
+                                    <a href="{{ url.strip() }}" target="_blank" rel="noopener noreferrer" style="color: #166534; font-weight: 600; text-decoration: underline; margin-left: 0.35rem;">
+                                        {% if 'cibrc' in url.lower() or 'ppqs' in url.lower() %}CIBRC Pesticide Directory{% elif 'tnau' in url.lower() %}TNAU Agritech{% elif 'icar' in url.lower() %}ICAR Advisory{% else %}Government Advisory{% endif %} ↗
+                                    </a>
+                                {% endfor %}
+                            </span>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endif %}
+
+            <!-- Targeted Commercial Treatment & Fertilizer Supplement (Multi-Dataset Integration) -->
+            {% if result.has_commercial_supplement and result.commercial_supplement %}
+                {% set supp = result.commercial_supplement %}
+                <div class="card result-card mb-3" style="border-left: 6px solid #0284c7; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08);">
+                    <div class="card-header header-with-icon" style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border-bottom: 1px solid #bae6fd; display: flex; justify-content: space-between; align-items: center;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <span class="section-icon">💊</span>
+                            <h3 style="margin: 0; color: #0369a1; font-size: 1.15rem; font-weight: 700;">Targeted Commercial Remedy &amp; Fertilizer</h3>
+                        </div>
+                        <span class="badge" style="background-color: #0284c7; color: white; padding: 0.35rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.025em;">
+                            {{ supp.supplement_category }}
+                        </span>
+                    </div>
+                    <div class="card-body">
+                        <div style="display: flex; gap: 1.25rem; align-items: flex-start; flex-wrap: wrap;">
+                            {% if supp.product_image_url %}
+                            <div style="flex-shrink: 0; text-align: center;">
+                                <img src="{{ supp.product_image_url }}" alt="{{ supp.recommended_supplement_name }}" style="width: 110px; height: 110px; object-fit: contain; border-radius: 8px; border: 1px solid #cbd5e1; background: #ffffff; padding: 4px;" onerror="this.style.display='none';">
+                            </div>
+                            {% endif %}
+                            <div style="flex-grow: 1; min-width: 260px;">
+                                <h4 style="margin: 0 0 0.4rem 0; color: #0f172a; font-size: 1.1rem; font-weight: 700;">
+                                    {{ supp.recommended_supplement_name }}
+                                </h4>
+                                <p class="small text-muted mb-2">
+                                    <strong>Target Specimen:</strong> {{ supp.crop }} &mdash; <em>{{ supp.condition }}</em>
+                                </p>
+                                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 0.65rem 0.85rem; margin-bottom: 0.75rem;">
+                                    <span class="small" style="color: #1e293b; display: block; font-weight: 600; margin-bottom: 0.25rem;">🔬 Active Application Protocol &amp; Chemical Guidance:</span>
+                                    <p class="small mb-0" style="color: #475569; line-height: 1.45;">
+                                        {{ supp.active_ingredients_and_guidance }}
+                                    </p>
+                                </div>
+                                {% if supp.possible_steps %}
+                                <div class="mb-3">
+                                    <span class="small" style="color: #1e293b; display: block; font-weight: 600; margin-bottom: 0.25rem;">📋 Step-by-Step Agronomic Recovery Measures:</span>
+                                    <ul class="small mb-0" style="color: #475569; padding-left: 1.25rem; line-height: 1.45;">
+                                        {% for step in supp.possible_steps.split('\n') %}
+                                            {% if step.strip() %}
+                                            <li>{{ step.strip() }}</li>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                                {% endif %}
+                                {% if supp.agrisens_precision_fertilizer %}
+                                <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 6px; padding: 0.65rem 0.85rem; margin-bottom: 0.75rem;">
+                                    <span class="small" style="color: #166534; display: block; font-weight: 600; margin-bottom: 0.2rem;">🌾 Precision Soil Nutrition Compound (AgriSens Multi-Nutrient):</span>
+                                    <p class="small mb-0" style="color: #15803d; line-height: 1.4;">
+                                        <strong>Recommended Blend:</strong> {{ supp.agrisens_precision_fertilizer.primary_compound }} &mdash; <em>{{ supp.agrisens_precision_fertilizer.role }}</em>
+                                    </p>
+                                </div>
+                                {% endif %}
+                                {% if supp.academic_extension_reference %}
+                                <div class="mb-2">
+                                    <span class="small text-muted" style="font-size: 0.78rem;">
+                                        📚 <strong>Diagnostic Source:</strong> {{ supp.academic_extension_reference }}
+                                    </span>
+                                </div>
+                                {% endif %}
+                                {% if supp.buy_or_source_link %}
+                                <div style="margin-top: 0.75rem;">
+                                    <a href="{{ supp.buy_or_source_link }}" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm" style="display: inline-flex; align-items: center; gap: 0.4rem; font-weight: 600; font-size: 0.85rem;">
+                                        <span>🛒 Verified Product Sourcing &amp; Details</span>
+                                        <span style="font-size: 0.75rem;">↗</span>
+                                    </a>
+                                </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
 
             <!-- Smart Fertilizer & Crop Nutrition Recommendations -->
             <div class="card result-card">
@@ -475,40 +540,4 @@
         </div>
     </div>
 </div>
-
-<script>
-function triggerGeminiAnalysis(predictionId) {
-    const btn = document.getElementById("btn-run-gemini");
-    const spinner = document.getElementById("gemini-loading-spinner");
-    const csrfMeta = document.querySelector('meta[name="csrf-token"]');
-    const csrfToken = csrfMeta ? csrfMeta.getAttribute("content") : "";
-
-    if (btn) btn.disabled = true;
-    if (spinner) spinner.style.display = "inline-block";
-
-    fetch(`/api/gemini/analyze/${encodeURIComponent(predictionId)}`, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            "X-CSRFToken": csrfToken,
-            "X-Requested-With": "XMLHttpRequest",
-        },
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success && data.gemini_analysis) {
-            window.location.reload();
-        } else {
-            alert(data.error || "Gemini analysis could not be completed. Please check network connectivity.");
-            if (btn) btn.disabled = false;
-            if (spinner) spinner.style.display = "none";
-        }
-    })
-    .catch(err => {
-        alert("Network communication error with Gemini service.");
-        if (btn) btn.disabled = false;
-        if (spinner) spinner.style.display = "none";
-    });
-}
-</script>
 {% endblock %}

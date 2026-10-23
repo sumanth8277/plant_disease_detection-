@@ -1,0 +1,20 @@
+{
+  "candidate_model_path": "C:\\Users\\karth\\OneDrive\\Desktop\\plant desiease setection mini project\\models\\candidates\\plantdoc_candidate.keras",
+  "architecture": "MobileNetV2",
+  "num_classes": 38,
+  "input_shape": [
+    224,
+    224,
+    3
+  ],
+  "preprocessing": "mobilenet_v2.preprocess_input",
+  "training_time_seconds": 388.04,
+  "sha256": "c83b193b9d59f0c4657db89b4dae284ad4ef575bac08ece02ec837e4ae88574c",
+  "dataset_source": "PlantDoc (Real-World In-The-Wild Imagery)",
+  "history_summary": {
+    "final_train_accuracy": 0.6356316208839417,
+    "final_val_accuracy": 0.5163204669952393,
+    "final_train_loss": 1.169756531715393,
+    "final_val_loss": 1.4942113161087036
+  }
+}

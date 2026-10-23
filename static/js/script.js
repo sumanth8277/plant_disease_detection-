@@ -1,8 +1,39 @@
 /**
- * Plant Disease Detection System - Phase 2 Client Script
- * Handles drag-and-drop, client-side validation, object URL previewing,
- * loading states, accessible feedback, and diagnostic health polling.
+ * PlantCare AI - Agricultural Dashboard & Diagnostic Client Script
+ * Handles image selection, drag-and-drop, client-side validation, object URL previewing,
+ * loading states, accessible feedback, agricultural modals, and diagnostic polling.
  */
+
+// -----------------------------------------------------------------------------
+// Global Modal Controls (Accessible Everywhere)
+// -----------------------------------------------------------------------------
+window.openAgriModal = function(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+        modal.style.display = "flex";
+        document.body.style.overflow = "hidden"; // Prevent background scroll
+    }
+};
+
+window.closeAgriModal = function(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+        modal.style.display = "none";
+        document.body.style.overflow = "";
+    }
+};
+
+// Close modal on ESC key
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+        document.querySelectorAll(".agri-modal-backdrop").forEach((m) => {
+            if (m.style.display === "flex") {
+                m.style.display = "none";
+                document.body.style.overflow = "";
+            }
+        });
+    }
+});
 
 document.addEventListener("DOMContentLoaded", () => {
     // -------------------------------------------------------------------------
@@ -159,10 +190,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (imagePreview) {
             imagePreview.src = currentObjectUrl;
-            imagePreview.onload = () => {
-                // Free URL when preview DOM has finished loading
-                // (kept active until replacement or form reset)
-            };
         }
 
         if (previewFilename) previewFilename.textContent = filename;
@@ -182,6 +209,16 @@ document.addEventListener("DOMContentLoaded", () => {
         const file = e.target.files && e.target.files[0];
         handleSelectedFile(file);
     });
+
+    // Clicking dropzone opens native file selector if preview is not currently showing
+    if (dropzone) {
+        dropzone.addEventListener("click", (e) => {
+            if (e.target.closest("#remove-image-btn") || e.target.closest("#preview-container")) {
+                return; // Let remove button or preview clicks behave normally
+            }
+            fileInput.click();
+        });
+    }
 
     // Remove / Replace button
     if (removeImageBtn) {
@@ -234,8 +271,6 @@ document.addEventListener("DOMContentLoaded", () => {
         if (btnText) btnText.style.display = "none";
         if (btnSpinner) btnSpinner.style.display = "inline-flex";
 
-        // If standard form submit is preferred, allow event to propagate.
-        // Let's use fetch for smooth Post/Redirect/Get handling with immediate error display:
         e.preventDefault();
         clearError();
 

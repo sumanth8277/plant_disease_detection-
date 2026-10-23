@@ -88,3 +88,99 @@ def test_get_recommendations_for_healthy_foliage():
         rec = bundle["disease_recommendation"]
         assert "No therapeutic chemical treatments" in rec["treatment_guidance"]
         assert "Balanced irrigation" in rec["prevention_guidance"] or "Continue balanced" in rec["prevention_guidance"]
+
+
+def test_get_commercial_supplement_recommendation():
+    """Verify commercial treatment and fertilizer catalog retrieval."""
+    diseased_pred = {
+        "crop_name": "Tomato",
+        "disease_code": "TOMATO_EARLY_BLIGHT",
+        "disease_name": "Early Blight (Alternaria solani)",
+        "raw_class": "Tomato___Early_blight",
+        "is_healthy": False,
+    }
+
+    with patch("services.recommendation_service.check_db_connection", return_value=(False, "Offline")):
+        bundle = get_recommendations_for_prediction(diseased_pred)
+        assert bundle["has_commercial_supplement"] is True
+        supp = bundle["commercial_supplement"]
+        assert supp is not None
+        assert "NATIVO" in supp["recommended_supplement_name"] or "Fungicide" in supp["supplement_category"]
+        assert "buy_or_source_link" in supp
+
+    # Test Neem withholding
+    neem_pred = {
+        "crop_name": "Neem",
+        "disease_code": "NEEM_DISEASE_UNSUPPORTED",
+        "is_neem": True,
+        "is_supported": False,
+    }
+    neem_bundle = get_recommendations_for_prediction(neem_pred)
+    assert neem_bundle["has_commercial_supplement"] is False
+    assert neem_bundle["commercial_supplement"] is None
+    assert neem_bundle["has_verified_indian_treatment"] is False
+    assert neem_bundle["verified_indian_treatment"] is None
+
+
+def test_get_verified_indian_agronomic_treatment_found():
+    """Verify verified Indian CIBRC/ICAR treatment record retrieval."""
+    from services.recommendation_service import get_verified_indian_agronomic_treatment
+
+    pred_data = {
+        "crop_name": "Tomato",
+        "disease_code": "TOMATO_EARLY_BLIGHT",
+        "disease_name": "Early Blight (Alternaria solani)",
+        "raw_class": "Tomato___Early_blight",
+        "is_healthy": False,
+        "is_supported": True,
+    }
+
+    result = get_verified_indian_agronomic_treatment(pred_data)
+    assert result is not None
+    assert result["crop"] == "Tomato"
+    assert "non_chemical_management" in result
+    pesticide = result["verified_pesticide_information"]
+    assert "Mancozeb" in pesticide["approved_active_ingredient"] or "Mancozeb" in pesticide["cibrc_registered_formulation"]
+    assert "pre_harvest_interval_phi" in pesticide
+    assert "source_url" in result
+    assert "safety_notes" in result
+
+
+def test_get_verified_indian_agronomic_treatment_viral_fallback():
+    """Verify systemic viral infection returns explicit 'Verified treatment information unavailable' for chemical doses."""
+    from services.recommendation_service import get_verified_indian_agronomic_treatment
+
+    pred_data = {
+        "crop_name": "Tomato",
+        "disease_code": "TOMATO_MOSAIC_VIRUS",
+        "disease_name": "Tomato Mosaic Virus",
+        "raw_class": "Tomato___Tomato_mosaic_virus",
+        "is_healthy": False,
+        "is_supported": True,
+    }
+
+    result = get_verified_indian_agronomic_treatment(pred_data)
+    assert result is not None
+    pesticide = result["verified_pesticide_information"]
+    assert "Verified treatment information unavailable" in pesticide["recommended_dosage"]
+
+
+def test_get_verified_indian_agronomic_treatment_withholding():
+    """Verify treatment is withheld for unverified, unsupported, or neem specimens."""
+    from services.recommendation_service import get_verified_indian_agronomic_treatment
+
+    unsupported_pred = {
+        "crop_name": "Unknown",
+        "disease_code": "UNSUPPORTED_SPECIMEN",
+        "is_supported": False,
+    }
+    assert get_verified_indian_agronomic_treatment(unsupported_pred) is None
+
+    neem_pred = {
+        "crop_name": "Neem",
+        "disease_code": "NEEM_DISEASE_UNSUPPORTED",
+        "is_neem": True,
+        "is_supported": False,
+    }
+    assert get_verified_indian_agronomic_treatment(neem_pred) is None
+

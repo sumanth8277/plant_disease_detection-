@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}User Registration — Agrotech{% endblock %}
+{% block title %}User Registration — PlantCare AI{% endblock %}
 
 {% block content %}
 <div class="container container-sm">
@@ -10,8 +10,10 @@
 
     <div class="card auth-card">
         <div class="card-header text-center">
-            <div class="auth-icon-badge">📝</div>
-            <h2>Create an Agrotech Account</h2>
+            <div class="auth-logo-wrapper" style="margin-bottom: 0.75rem;">
+                <img src="{{ url_for('static', filename='images/plant_logo.png') }}" alt="PlantCare AI Logo" style="width: 58px; height: 58px; border-radius: 50%; box-shadow: 0 4px 12px rgba(8, 96, 217, 0.15);">
+            </div>
+            <h2>Create a PlantCare AI Account</h2>
             <p class="section-desc">Register to save, track, and review your diagnostic history and treatment plans.</p>
         </div>
 
